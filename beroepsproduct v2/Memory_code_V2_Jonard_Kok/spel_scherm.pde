@@ -67,17 +67,22 @@ void tekenGebruikersInterface() {
   tekenSpelers();
 }
 
+
 void stopBeurt() {
   if (voorkantKaartKleur1 == voorkantKaartKleur2) {
     switch (spelerMetBeurt) {
     case 1:
       puntspeler1++;
+      spelerMetBeurt++;
     case 2:
       puntspeler2++;
+      spelerMetBeurt++;
     case 3:
       puntspeler3++;
+      spelerMetBeurt++;
     case 4:
       puntspeler4++;
+      spelerMetBeurt++;
     }
   } else {
     spelerMetBeurt++;
@@ -107,7 +112,7 @@ void tekenKaarten() {
  speler krijgt een punt erbij
  anders gaat de beurt naar de volgende speler
  */
-void tekenGeklikteKaartenBuitenScherm() {
+void tekenGeklikteKaartenBuitenScherm() {//fixt een bug waar de kaart linksboven in het scherm "spawnt"
   if (isXGekliktekaartNul()) {
     xGeklikteKaart1 = width;
     yGeklikteKaart1 = height;
@@ -143,7 +148,7 @@ void kijkOpWelkeKaartGekliktIs() {
     for (int j = 0; j < (plekkenMetKaartGetekend[i].length); j++) {
       voorkantKaartPlekBerekenen(i, j);
       if (opKaartGeklikt(xKaart, yKaart, kaartBreedte, kaartHoogte)) {
-        hoevaakOpKaartGeklikt++;
+        hoevaakOpKaartGeklikt =+1;
         switch (hoevaakOpKaartGeklikt) {
         case 0:
           geefKaartPlekDoor(xKaart, yKaart);
@@ -281,7 +286,7 @@ int getAantalSpelers() {
   return aantalSpelers;
 }
 
-boolean isSpelerIndicatorTeVer(int y){
+boolean isSpelerIndicatorTeVer(int y) {
   return y >= (getTekstgrootte("klein") * getAantalSpelers());
 }
 
