@@ -40,7 +40,7 @@ boolean op16Gedrukt;
 boolean op20Gedrukt;
 boolean opStartGedrukt;
 boolean opStopGedrukt;
-boolean[] knop= {opMinGedrukt, opPlusGedrukt, opJaGedrukt, opNeeGedrukt, op12Gedrukt, op16Gedrukt, op20Gedrukt, opStartGedrukt, opStopGedrukt};
+boolean[] knop = {opMinGedrukt, opPlusGedrukt, opJaGedrukt, opNeeGedrukt, op12Gedrukt, op16Gedrukt, op20Gedrukt, opStartGedrukt, opStopGedrukt};
 
 
 void tekenStartScherm() {
