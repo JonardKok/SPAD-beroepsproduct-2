@@ -260,23 +260,9 @@ void tekenSpelers() {
     textSize(getTekstgrootte("klein"));
     fill(GEEL);
     text(tekenSpelerNamen[i] + " Score:" + spelerScore, xSpelerText, ySpelerText + ySpelerText * i);
-    tekenHuidigeSpelerIndicator(tekenSpelerNamen[i], xSpelerText, ySpelerText, spelerMetBeurt);
     if (speler >= maxAantalSpelers) {
       speler = 0;
     }
-  }
-}
-
-void tekenHuidigeSpelerIndicator(String tekst, int x, int y, int welkeSpeler) {
-  knopTextBreedte = int(textWidth(tekst)) * 2;
-  y = (y - getTekstgrootte("klein") / 2) * welkeSpeler;
-  x = x + knopTextBreedte;
-  int breedte = width/100;
-  int hoogte = height/90;
-  fill(ROOD);
-  rect(x, y, breedte, hoogte);
-  if (isSpelerIndicatorTeVer(y)){
-    y = getTekstgrootte("klein");
   }
 }
 
