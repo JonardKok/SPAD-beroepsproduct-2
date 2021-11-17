@@ -100,7 +100,7 @@ void tekenKaarten() {
 
 //methode maken die de geplaatste plek van een kleur de kleur maakt.
 /*
- als dingeng gerenderd zijn dan
+ als dingen gerenderd zijn dan
  en als er op een kaart is geklikt dan
  teken de kleur van de kaart
  als de kleur van de kaart gelijk is aan de kleur van de kaart die daarvoor aangeklikt is 
@@ -184,7 +184,8 @@ void tekenGeklikteKaarten() {
   tekenKaart(xGeklikteKaart2, yGeklikteKaart2, kaartBreedte, kaartHoogte, voorkantKaartKleur2);
 }
 
-//methode die de kaartplek met kleur berekend.
+//DIT BEREKEND DE KLEUREN________________________________________________________________________________________
+//Tekent de kaart met kleur
 void berekenKaartPlek() {
   kleurKaart = new int[getAantalSetjes()];
   for (int i = 0; i < kleurKaart.length; i++) {
@@ -200,10 +201,11 @@ void berekenKaartPlek() {
       }
     }
   }
+  println(kleurKaart);
   kaartPlekkenZijnBerekend = true;
 }
 
-//tekent de grid van kaarten.
+//tekent de grid van kaarten zonder kleur.
 void tekenKaartenLayout() {
   for (int i = 0; i < (kaartPlekken.length - yCorrectie); i++) {
     for (int j = 0; j < (kaartPlekken[i].length  - xCorrectie); j++) {
@@ -273,7 +275,6 @@ void tekenHuidigeSpelerIndicator(String tekst, int x, int y, int welkeSpeler) {
   int hoogte = height/90;
   fill(ROOD);
   rect(x, y, breedte, hoogte);
-  println(getTekstgrootte("klein") * 4);
   if (isSpelerIndicatorTeVer(y)){
     y = getTekstgrootte("klein");
   }
