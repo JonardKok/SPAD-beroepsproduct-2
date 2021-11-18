@@ -95,7 +95,7 @@ void tekenKaarten() {
   kaartHoogte = height / 10;
   afstandTussenKaarten = kaartBreedte / 10;
   if (!kaartPlekkenZijnBerekend) { //zorgt ervoor dat de kaartplek maar 1x berekend wordt waardoor de kaarten niet van plek veranderen. Bug voorkomen dus.
-    berekenKaartPlek();
+    berekenKaartKleur();
   }
   hoeveelSetjesMoetenGetekendWorden();
   tekenKaartenLayout();
@@ -190,8 +190,7 @@ void tekenGeklikteKaarten() {
 }
 
 //DIT BEREKEND DE KLEUREN________________________________________________________________________________________
-//Tekent de kaart met kleur
-void berekenKaartPlek() {
+void berekenKaartKleur() {
   kleurKaart = new int[getAantalSetjes()];
   for (int i = 0; i < kleurKaart.length; i++) {
     kleurKaart[i] = int(random(1, (kleurKaart.length/2) + 1));
