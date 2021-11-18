@@ -55,7 +55,7 @@ void tekenSpelScherm() {
 void veranderSpelScherm() {
   kijkOpWelkeKaartGekliktIs();
   if (hoevaakOpKaartGeklikt >= 2) {
-    stopBeurt();
+    beurtEinde();
     geefVolgendeSpelerDeBeurt();
     hoevaakOpKaartGeklikt = 0;
   }
@@ -68,7 +68,7 @@ void tekenGebruikersInterface() {
 }
 
 
-void stopBeurt() {
+void beurtEinde() {
   if (voorkantKaartKleur1 == voorkantKaartKleur2) {
     switch (spelerMetBeurt) {
     case 1:
@@ -99,7 +99,7 @@ void tekenKaarten() {
   }
   hoeveelSetjesMoetenGetekendWorden();
   tekenKaartenLayout();
-  tekenGeklikteKaartenBuitenScherm();
+  tekenKaartenBuitenScherm();
   tekenGeklikteKaarten();
 }
 
@@ -112,8 +112,8 @@ void tekenKaarten() {
  speler krijgt een punt erbij
  anders gaat de beurt naar de volgende speler
  */
-void tekenGeklikteKaartenBuitenScherm() {//fixt een bug waar de kaart linksboven in het scherm "spawnt"
-  if (isXGekliktekaartNul()) {
+void tekenKaartenBuitenScherm() {
+  if (isXGekliktekaartNul()) {//fixt een bug waar de kaart linksboven in het scherm "spawnt"
     xGeklikteKaart1 = width;
     yGeklikteKaart1 = height;
     xGeklikteKaart2 = width;
