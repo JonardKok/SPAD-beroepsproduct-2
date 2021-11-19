@@ -102,6 +102,8 @@ void beurtEinde() {
   }
 }
 
+
+
 //tekent alle kaarten
 void tekenKaarten() {
   kaartBreedte = width / 10;
