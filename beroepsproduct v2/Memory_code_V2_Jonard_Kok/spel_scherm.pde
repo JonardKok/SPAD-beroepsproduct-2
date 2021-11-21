@@ -3,6 +3,7 @@ boolean achterkantKaart;
 boolean opKaartGeklikt;
 boolean kaartPlekkenZijnBerekend;
 boolean eindebeurt;
+boolean kaartenOmdraaien;
 int speler;
 int maxAantalSpelers;
 int spelerScore;
@@ -56,6 +57,12 @@ void tekenSpelScherm() {
 void veranderSpelScherm() {
   kijkOpWelkeKaartGekliktIs();
   switch(hoevaakOpKaartGeklikt) {
+  case 0:
+  if (kaartenOmdraaien){
+    voorkantKaartKleur1 = ROOD;
+    voorkantKaartKleur2 = ROOD;
+  }
+  break;
   case 2:
     eindebeurt = true;
     break;
@@ -64,6 +71,7 @@ void veranderSpelScherm() {
     geefVolgendeSpelerDeBeurt();
     hoevaakOpKaartGeklikt = 0;
     eindebeurt = false;
+    kaartenOmdraaien = true;
     break;
   }
 }
@@ -168,12 +176,12 @@ void kijkOpWelkeKaartGekliktIs() {
         switch(hoevaakOpKaartGeklikt) {
         case 1:
           geefKaartPlekDoor(xKaart, yKaart);
-          println("kleur" + kleurKaart[j], "kaartplek " + plekkenMetKaartGetekend[i].length, j, i);
-          voorkantKaartKleur1 = kaartKleuren[kleurKaart[i]];
+          println("kleur " + kleurKaart[j], "kaartplek " + plekkenMetKaartGetekend[i].length, j, i);
+          voorkantKaartKleur1 = kaartKleuren[kleurKaart[j]];
           break;
         case 2:
           geefKaartPlekDoor(xKaart, yKaart);
-          voorkantKaartKleur2 = kaartKleuren[kleurKaart[i]];
+          voorkantKaartKleur2 = kaartKleuren[kleurKaart[j]];
           break;
         }
       }
