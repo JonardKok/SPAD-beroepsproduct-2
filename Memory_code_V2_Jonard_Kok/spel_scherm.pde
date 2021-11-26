@@ -3,11 +3,10 @@ boolean achterkantKaart;
 boolean opKaartGeklikt;
 boolean kaartPlekkenZijnBerekend;
 boolean eindebeurt;
-boolean kaartenOmdraaien;
+boolean overalKlikken;
 int speler;
 int maxAantalSpelers;
-int spelerScore;
-int spelerMetBeurt;
+int spelerMetBeurt = 1;
 int hoevaakOpKaartGeklikt;
 int kaartsoort;
 int xKaart;
@@ -32,6 +31,7 @@ int puntspeler2;
 int puntspeler3;
 int puntspeler4;
 int[] kleurKaart;
+int[] spelerScore = {0, 0, 0, 0};
 int[] kaartKleuren = {doodskaartofnormalekaartkleur, BLAUW, GRIJS, GEEL, ORANJE, PAARS, CYAAN, ROZE, BRUIN, DONKERROOD, DONKERBLAUW, DONKERGROEN, ZANDBRUIN, LICHT_BLAUW, WIT, BOSGROEN, CEMENTGRIJS, MIDDENVIOLETROOD, LEIGRIJS, DIEPROZE};
 int[][] plekkenMetKaartGetekend;
 int[][] kaartPlekken = {
@@ -57,21 +57,15 @@ void tekenSpelScherm() {
 void veranderSpelScherm() {
   kijkOpWelkeKaartGekliktIs();
   switch(hoevaakOpKaartGeklikt) {
-  case 0:
-  if (kaartenOmdraaien){
-    voorkantKaartKleur1 = ROOD;
-    voorkantKaartKleur2 = ROOD;
-  }
-  break;
   case 2:
     eindebeurt = true;
     break;
   case 3:
     beurtEinde();
-    geefVolgendeSpelerDeBeurt();
     hoevaakOpKaartGeklikt = 0;
     eindebeurt = false;
-    kaartenOmdraaien = true;
+    voorkantKaartKleur1 = ROOD;
+    voorkantKaartKleur2 = ROOD;
     break;
   }
 }
@@ -90,23 +84,28 @@ void tekenBeurtEindeIndicator() {
 }
 
 void beurtEinde() {
+  println(voorkantKaartKleur1, voorkantKaartKleur2);
   if (voorkantKaartKleur1 == voorkantKaartKleur2) {
     switch(spelerMetBeurt) {
     case 1:
-      puntspeler1++;
+      spelerScore[0]++;
+      println(spelerScore[0]);
       spelerMetBeurt++;
     case 2:
-      puntspeler2++;
+      spelerScore[1]++;
       spelerMetBeurt++;
     case 3:
-      puntspeler3++;
+      spelerScore[2]++;
       spelerMetBeurt++;
     case 4:
-      puntspeler4++;
+      spelerScore[3]++;
       spelerMetBeurt++;
     }
   } else {
     spelerMetBeurt++;
+  }
+  if (spelerMetBeurt > getAantalSpelers()){
+    spelerMetBeurt = 1;
   }
 }
 
@@ -287,17 +286,12 @@ void tekenSpelers() {
     speler++;
     textSize(getTekstgrootte("klein"));
     fill(GEEL);
-    text(tekenSpelerNamen[i] + " Score : " + spelerScore, xSpelerText, ySpelerText + ySpelerText * i);
+    text(tekenSpelerNamen[i] + " Score : " + spelerScore[i], xSpelerText, ySpelerText + ySpelerText * i);
     if (speler >= maxAantalSpelers) {
       speler = 0;
     }
   }
 }
-
-void geefVolgendeSpelerDeBeurt() {
-  spelerMetBeurt++;
-}
-
 
 //integer die het aantal setjes van het startscherm pakt.
 int getAantalSetjes() {

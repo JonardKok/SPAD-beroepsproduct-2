@@ -60,11 +60,3 @@ void mouseClicked() {
     veranderSpelScherm();
   }
 }
-
-//void mouseMoved() {
-//  if (scherm == START_SCHERM) {
-//    veranderStartScherm();
-//  } else if (scherm == SPEL_SCHERM) {
-//    veranderSpelScherm();
-//  }
-//}
