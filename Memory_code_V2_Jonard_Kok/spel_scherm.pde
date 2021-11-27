@@ -45,7 +45,7 @@ int[][] kaartPlekken = {
 int[][] gekliktOpPlek = {{} };
 String tekst;
 String tekstGrootte;
-String[] tekenSpelerNamen = {"Speler 1", "Speler 2", "Speler 3", "Speler 4"};
+String[] spelerNamen = {"Speler 1", "Speler 2", "Speler 3", "Speler 4"};
 
 
 //tekent het hele spelscherm
@@ -67,6 +67,18 @@ void veranderSpelScherm() {
     voorkantKaartKleur1 = ROOD;
     voorkantKaartKleur2 = ROOD;
     break;
+    case 4:
+    hoevaakOpKaartGeklikt = 0;
+    break;
+  }
+  if (eindebeurt){
+     klikOveral();
+  }
+}
+
+void klikOveral() {
+  if (mouseX != -1 || mouseY != -1) {
+    hoevaakOpKaartGeklikt++;
   }
 }
 
@@ -84,31 +96,33 @@ void tekenBeurtEindeIndicator() {
 }
 
 void beurtEinde() {
-  println(voorkantKaartKleur1, voorkantKaartKleur2);
   if (voorkantKaartKleur1 == voorkantKaartKleur2) {
     switch(spelerMetBeurt) {
     case 1:
       spelerScore[0]++;
       println(spelerScore[0]);
       spelerMetBeurt++;
+      break;
     case 2:
       spelerScore[1]++;
       spelerMetBeurt++;
+      break;
     case 3:
       spelerScore[2]++;
       spelerMetBeurt++;
+      break;
     case 4:
       spelerScore[3]++;
       spelerMetBeurt++;
+      break;
     }
   } else {
     spelerMetBeurt++;
   }
-  if (spelerMetBeurt > getAantalSpelers()){
+  if (spelerMetBeurt > getAantalSpelers()) {
     spelerMetBeurt = 1;
   }
 }
-
 
 
 //tekent alle kaarten
@@ -171,7 +185,7 @@ void kijkOpWelkeKaartGekliktIs() {
       voorkantKaartPlekBerekenen(i, j);
       if (opKaartGeklikt(xKaart, yKaart, kaartBreedte, kaartHoogte)) {
         hoevaakOpKaartGeklikt += 1;
-        println("opKaartGeklikt  " + hoevaakOpKaartGeklikt);
+        //println("opKaartGeklikt  " + hoevaakOpKaartGeklikt);
         switch(hoevaakOpKaartGeklikt) {
         case 1:
           geefKaartPlekDoor(xKaart, yKaart);
@@ -285,12 +299,22 @@ void tekenSpelers() {
   for (int i = 0; i < maxAantalSpelers; i++) {
     speler++;
     textSize(getTekstgrootte("klein"));
-    fill(GEEL);
-    text(tekenSpelerNamen[i] + " Score : " + spelerScore[i], xSpelerText, ySpelerText + ySpelerText * i);
+    if (i == spelerMetBeurt - 1) {
+      tekenSpelerNamen(spelerNamen, spelerScore, i, xSpelerText, ySpelerText, ROOD);
+    } else {
+      tekenSpelerNamen(spelerNamen, spelerScore, i, xSpelerText, ySpelerText, GEEL);
+    }
     if (speler >= maxAantalSpelers) {
       speler = 0;
     }
   }
+}
+
+//text(spelerNamen[i] + " Score : " + spelerScore[i], xSpelerText, );
+
+void tekenSpelerNamen(String spelernaam[], int spelerScore[], int i, int x, int y, int kleur) {
+  fill(kleur);
+  text(spelernaam[i] + " Score : " + spelerScore[i], x, y + y * i);
 }
 
 //integer die het aantal setjes van het startscherm pakt.
