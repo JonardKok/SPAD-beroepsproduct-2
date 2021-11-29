@@ -59,29 +59,26 @@ void veranderSpelScherm() {
   switch(hoevaakOpKaartGeklikt) {
   case 2:
     eindebeurt = true;
+    klikOveral();
     break;
   case 3:
     beurtEinde();
-    hoevaakOpKaartGeklikt = 0;
     eindebeurt = false;
     voorkantKaartKleur1 = ROOD;
     voorkantKaartKleur2 = ROOD;
-    break;
-    case 4:
     hoevaakOpKaartGeklikt = 0;
     break;
-  }
-  if (eindebeurt){
-     klikOveral();
   }
 }
 
 void klikOveral() {
-  if (mouseX != -1 || mouseY != -1) {
+  if (mouseX != -1 || mouseY != -1 && hoevaakOpKaartGeklikt <= 4 && eindebeurt) {
     hoevaakOpKaartGeklikt++;
+    println("hoevaakOpKaartGeklikt" + hoevaakOpKaartGeklikt);
+  } else {
+    hoevaakOpKaartGeklikt = 0;
   }
 }
-
 void tekenGebruikersInterface() {
   tekenDoodskaartIndicator();
   tekenKaarten();
@@ -100,7 +97,7 @@ void beurtEinde() {
     switch(spelerMetBeurt) {
     case 1:
       spelerScore[0]++;
-      println(spelerScore[0]);
+      println("spelerScore" + spelerScore[0]);
       spelerMetBeurt++;
       break;
     case 2:
@@ -179,6 +176,7 @@ void hoeveelSetjesMoetenGetekendWorden() {
 }
 
 //zoekt naar de positie van de kaart waarop geklikt is.
+//Werkt niet omdat de kleuren steeds gepakt worden vanuit de i of de J dus als er eenmaal een rij getekend wordt wordt de hele rij zo.
 void kijkOpWelkeKaartGekliktIs() { 
   for (int i = 0; i < (plekkenMetKaartGetekend.length); i++) {
     for (int j = 0; j < (plekkenMetKaartGetekend[i].length); j++) {
@@ -190,11 +188,11 @@ void kijkOpWelkeKaartGekliktIs() {
         case 1:
           geefKaartPlekDoor(xKaart, yKaart);
           println("kleur " + kleurKaart[j], "kaartplek " + plekkenMetKaartGetekend[i].length, j, i);
-          voorkantKaartKleur1 = kaartKleuren[kleurKaart[j]];
+          voorkantKaartKleur1 = kaartKleuren[kleurKaart[i]];
           break;
         case 2:
           geefKaartPlekDoor(xKaart, yKaart);
-          voorkantKaartKleur2 = kaartKleuren[kleurKaart[j]];
+          voorkantKaartKleur2 = kaartKleuren[kleurKaart[i]];
           break;
         }
       }
@@ -226,9 +224,10 @@ void tekenGeklikteKaarten() {
   tekenKaart(xGeklikteKaart2, yGeklikteKaart2, kaartBreedte, kaartHoogte, voorkantKaartKleur2);
 }
 
-//DIT BEREKEND DE KLEUREN________________________________________________________________________________________
+//DIT BEREKENT DE KLEUREN________________________________________________________________________________________
 void berekenKaartKleur() {
-  kleurKaart = new int[getAantalSetjes()];
+  kleurKaart = new int[getAantalSetjes() * 2];
+  println("boe" + kleurKaart.length);
   for (int i = 0; i < kleurKaart.length; i++) {
     kleurKaart[i] = int(random(1, (kleurKaart.length / 2) + 1));
     int cijferFrequentie = 0;
