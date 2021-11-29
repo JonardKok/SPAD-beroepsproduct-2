@@ -13,7 +13,6 @@ int xKaart;
 int yKaart;
 int kaartBreedte;
 int kaartHoogte;
-int tussenKaartGrootte;
 int voorkantKaartKleur1;
 int voorkantKaartKleur2;
 int doodskaartofnormalekaartkleur;
@@ -203,7 +202,6 @@ void kijkOpWelkeKaartGekliktIs() {
 void voorkantKaartPlekBerekenen(int i, int j) {
   xKaart = kaartBreedte + kaartBreedte * j + afstandTussenKaarten * j;
   yKaart = kaartHoogte * 2 + kaartHoogte * i + afstandTussenKaarten * i;
-  tussenKaartGrootte = width / 100;
 }
 
 void geefKaartPlekDoor(int x, int y) {
@@ -251,7 +249,6 @@ void tekenKaartenLayout() {
     for (int j = 0; j < (kaartPlekken[i].length  - xCorrectie); j++) {
       xKaart = kaartBreedte + kaartBreedte * j + afstandTussenKaarten * j;
       yKaart = kaartHoogte * 2 + kaartHoogte * i + afstandTussenKaarten * i;
-      tussenKaartGrootte = width / 100;
       tekenKaart(xKaart, yKaart, kaartBreedte, kaartHoogte, ROOD);
     }
   }
