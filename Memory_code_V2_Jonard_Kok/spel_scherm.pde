@@ -29,10 +29,10 @@ int puntspeler1;
 int puntspeler2;
 int puntspeler3;
 int puntspeler4;
-int[] kleurKaart;
 int[] spelerScore = {0, 0, 0, 0};
 int[] kaartKleuren = {doodskaartofnormalekaartkleur, BLAUW, GRIJS, GEEL, ORANJE, PAARS, CYAAN, ROZE, BRUIN, DONKERROOD, DONKERBLAUW, DONKERGROEN, ZANDBRUIN, LICHT_BLAUW, WIT, BOSGROEN, CEMENTGRIJS, MIDDENVIOLETROOD, LEIGRIJS, DIEPROZE};
-int[][] plekkenMetKaartGetekend;
+int[][] kaartKleur;
+int[][] plekkenMetKaart;
 int[][] kaartPlekken = {
   {0, 1, 2, 3, 4, 5, 6, 7}, 
   {0, 1, 2, 3, 4, 5, 6, 7}, 
@@ -157,17 +157,17 @@ void tekenKaartenBuitenScherm() {
 void hoeveelSetjesMoetenGetekendWorden() {
   switch(getAantalSetjes()) {
   case 12:
-    plekkenMetKaartGetekend = new int[4][6];
+    plekkenMetKaart = new int[4][6];
     xCorrectie = 2; 
     yCorrectie = 1;
     break;
   case 16:
-    plekkenMetKaartGetekend = new int[4][8];
+    plekkenMetKaart = new int[4][8];
     xCorrectie = 0;
     yCorrectie = 1;
     break;
   case 20:
-    plekkenMetKaartGetekend = new int[5][8];
+    plekkenMetKaart = new int[5][8];
     xCorrectie = 0;
     yCorrectie = 0;
     break;
@@ -177,8 +177,8 @@ void hoeveelSetjesMoetenGetekendWorden() {
 //zoekt naar de positie van de kaart waarop geklikt is.
 //Werkt niet omdat de kleuren steeds gepakt worden vanuit de i of de J dus als er eenmaal een rij getekend wordt wordt de hele rij zo.
 void kijkOpWelkeKaartGekliktIs() { 
-  for (int i = 0; i < (plekkenMetKaartGetekend.length); i++) {
-    for (int j = 0; j < (plekkenMetKaartGetekend[i].length); j++) {
+  for (int i = 0; i < (plekkenMetKaart.length); i++) {
+    for (int j = 0; j < (plekkenMetKaart[i].length); j++) {
       voorkantKaartPlekBerekenen(i, j);
       if (opKaartGeklikt(xKaart, yKaart, kaartBreedte, kaartHoogte)) {
         hoevaakOpKaartGeklikt += 1;
@@ -186,12 +186,12 @@ void kijkOpWelkeKaartGekliktIs() {
         switch(hoevaakOpKaartGeklikt) {
         case 1:
           geefKaartPlekDoor(xKaart, yKaart);
-          println("kleur " + kleurKaart[j], "kaartplek " + plekkenMetKaartGetekend[i].length, j, i);
-          voorkantKaartKleur1 = kaartKleuren[kleurKaart[i]];
+          println("kleur " + kaartKleur[j], "kaartplek " + plekkenMetKaart[i].length, j, i);
+          voorkantKaartKleur1 = kaartKleuren[kaartKleur[i][j]];
           break;
         case 2:
           geefKaartPlekDoor(xKaart, yKaart);
-          voorkantKaartKleur2 = kaartKleuren[kleurKaart[i]];
+          voorkantKaartKleur2 = kaartKleuren[kaartKleur[i][j]];
           break;
         }
       }
@@ -223,7 +223,8 @@ void tekenGeklikteKaarten() {
 }
 
 //DIT BEREKENT DE KLEUREN________________________________________________________________________________________
-void berekenKaartKleur() {
+/*void berekenKaartKleur() {
+  //kaartKleur = new int [1][1]; __________________________________________________________________________________________________ NOG AANPASSEN
   kleurKaart = new int[getAantalSetjes() * 2];
   println("boe" + kleurKaart.length);
   for (int i = 0; i < kleurKaart.length; i++) {
@@ -241,15 +242,42 @@ void berekenKaartKleur() {
   }
   println(kleurKaart);
   kaartPlekkenZijnBerekend = true;
+}*/
+
+void berekenKaartKleur() {
+  //kaartKleur = plekkenMetKaart;
+  kaartKleur = new int[4][6] ;
+  for (int i = 0; i < kaartKleur.length; i++) {
+    for (int j = 0; j < kaartKleur[i].length; j++) {
+      kaartKleur[i][j] = int(random(1, (aantalSetjes) + 1));
+      int kleurFrequentie = 0;
+      for (int k = 0; k < kaartKleur.length; k++) {
+        for (int l = 0; l < kaartKleur[k].length; l++) {//gaat de hele rij af om te kijken of de kleur al 2x bestaat.
+          if (kaartKleur[i][j] != 0 && kaartKleur[i][j] == kaartKleur[k][l]) {
+            kleurFrequentie++;
+          }
+          if (kleurFrequentie > 2 && j > 0) {
+            j--;
+            kleurFrequentie = 0;
+          }
+        }
+      }
+    }  
+    for (int j = 0; j < kaartKleur[i].length; j++) {
+      println(i,j, "kleurkaart "+kaartKleur[i][j] );//kaartkleur is berekend
+    }
+  }
+  kaartPlekkenZijnBerekend = true;
 }
 
-//tekent de grid van kaarten zonder kleur.
+//tekent de grid van kaarten zonder kleur._______________________________________________________________________
 void tekenKaartenLayout() {
   for (int i = 0; i < (kaartPlekken.length - yCorrectie); i++) {
-    for (int j = 0; j < (kaartPlekken[i].length  - xCorrectie); j++) {
+    for (int j = 0; j < (kaartPlekken[i].length  - xCorrectie); j++) {//tekent de rij
       xKaart = kaartBreedte + kaartBreedte * j + afstandTussenKaarten * j;
       yKaart = kaartHoogte * 2 + kaartHoogte * i + afstandTussenKaarten * i;
-      tekenKaart(xKaart, yKaart, kaartBreedte, kaartHoogte, ROOD);
+      //tekenKaart(xKaart, yKaart, kaartBreedte, kaartHoogte, ROOD); ORIGINEEL
+      tekenKaart(xKaart, yKaart, kaartBreedte, kaartHoogte, kaartKleuren[kaartKleur[i][j]]); //test
     }
   }
 }
