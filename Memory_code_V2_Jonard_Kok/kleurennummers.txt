@@ -1,0 +1,2010 @@
+11 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:11
+KleurFrequentie: (1)
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+5 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:5
+Check_cijfer:5 checkt dit cijfer:5
+KleurFrequentie: (1)
+Check_cijfer:0 checkt dit cijfer:5
+Check_cijfer:0 checkt dit cijfer:5
+Check_cijfer:0 checkt dit cijfer:5
+Check_cijfer:0 checkt dit cijfer:5
+Check_cijfer:0 checkt dit cijfer:5
+Check_cijfer:0 checkt dit cijfer:5
+Check_cijfer:0 checkt dit cijfer:5
+Check_cijfer:0 checkt dit cijfer:5
+Check_cijfer:0 checkt dit cijfer:5
+Check_cijfer:0 checkt dit cijfer:5
+Check_cijfer:0 checkt dit cijfer:5
+Check_cijfer:0 checkt dit cijfer:5
+Check_cijfer:0 checkt dit cijfer:5
+Check_cijfer:0 checkt dit cijfer:5
+Check_cijfer:0 checkt dit cijfer:5
+Check_cijfer:0 checkt dit cijfer:5
+Check_cijfer:0 checkt dit cijfer:5
+Check_cijfer:0 checkt dit cijfer:5
+Check_cijfer:0 checkt dit cijfer:5
+Check_cijfer:0 checkt dit cijfer:5
+Check_cijfer:0 checkt dit cijfer:5
+Check_cijfer:0 checkt dit cijfer:5
+4 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:4
+Check_cijfer:5 checkt dit cijfer:4
+Check_cijfer:4 checkt dit cijfer:4
+KleurFrequentie: (1)
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+0 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:0
+Check_cijfer:5 checkt dit cijfer:0
+Check_cijfer:4 checkt dit cijfer:0
+Check_cijfer:0 checkt dit cijfer:0
+KleurFrequentie: (1)
+Check_cijfer:0 checkt dit cijfer:0
+KleurFrequentie: (2)
+Check_cijfer:0 checkt dit cijfer:0
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+10 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:10
+Check_cijfer:5 checkt dit cijfer:10
+Check_cijfer:4 checkt dit cijfer:10
+Check_cijfer:10 checkt dit cijfer:10
+KleurFrequentie: (1)
+Check_cijfer:0 checkt dit cijfer:10
+Check_cijfer:0 checkt dit cijfer:10
+Check_cijfer:0 checkt dit cijfer:10
+Check_cijfer:0 checkt dit cijfer:10
+Check_cijfer:0 checkt dit cijfer:10
+Check_cijfer:0 checkt dit cijfer:10
+Check_cijfer:0 checkt dit cijfer:10
+Check_cijfer:0 checkt dit cijfer:10
+Check_cijfer:0 checkt dit cijfer:10
+Check_cijfer:0 checkt dit cijfer:10
+Check_cijfer:0 checkt dit cijfer:10
+Check_cijfer:0 checkt dit cijfer:10
+Check_cijfer:0 checkt dit cijfer:10
+Check_cijfer:0 checkt dit cijfer:10
+Check_cijfer:0 checkt dit cijfer:10
+Check_cijfer:0 checkt dit cijfer:10
+Check_cijfer:0 checkt dit cijfer:10
+Check_cijfer:0 checkt dit cijfer:10
+Check_cijfer:0 checkt dit cijfer:10
+Check_cijfer:0 checkt dit cijfer:10
+4 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:4
+Check_cijfer:5 checkt dit cijfer:4
+Check_cijfer:4 checkt dit cijfer:4
+KleurFrequentie: (1)
+Check_cijfer:10 checkt dit cijfer:4
+Check_cijfer:4 checkt dit cijfer:4
+KleurFrequentie: (2)
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+Check_cijfer:0 checkt dit cijfer:4
+3 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:3
+Check_cijfer:5 checkt dit cijfer:3
+Check_cijfer:4 checkt dit cijfer:3
+Check_cijfer:10 checkt dit cijfer:3
+Check_cijfer:4 checkt dit cijfer:3
+Check_cijfer:3 checkt dit cijfer:3
+KleurFrequentie: (1)
+Check_cijfer:0 checkt dit cijfer:3
+Check_cijfer:0 checkt dit cijfer:3
+Check_cijfer:0 checkt dit cijfer:3
+Check_cijfer:0 checkt dit cijfer:3
+Check_cijfer:0 checkt dit cijfer:3
+Check_cijfer:0 checkt dit cijfer:3
+Check_cijfer:0 checkt dit cijfer:3
+Check_cijfer:0 checkt dit cijfer:3
+Check_cijfer:0 checkt dit cijfer:3
+Check_cijfer:0 checkt dit cijfer:3
+Check_cijfer:0 checkt dit cijfer:3
+Check_cijfer:0 checkt dit cijfer:3
+Check_cijfer:0 checkt dit cijfer:3
+Check_cijfer:0 checkt dit cijfer:3
+Check_cijfer:0 checkt dit cijfer:3
+Check_cijfer:0 checkt dit cijfer:3
+Check_cijfer:0 checkt dit cijfer:3
+Check_cijfer:0 checkt dit cijfer:3
+5 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:5
+Check_cijfer:5 checkt dit cijfer:5
+KleurFrequentie: (1)
+Check_cijfer:4 checkt dit cijfer:5
+Check_cijfer:10 checkt dit cijfer:5
+Check_cijfer:4 checkt dit cijfer:5
+Check_cijfer:3 checkt dit cijfer:5
+Check_cijfer:5 checkt dit cijfer:5
+KleurFrequentie: (2)
+Check_cijfer:0 checkt dit cijfer:5
+Check_cijfer:0 checkt dit cijfer:5
+Check_cijfer:0 checkt dit cijfer:5
+Check_cijfer:0 checkt dit cijfer:5
+Check_cijfer:0 checkt dit cijfer:5
+Check_cijfer:0 checkt dit cijfer:5
+Check_cijfer:0 checkt dit cijfer:5
+Check_cijfer:0 checkt dit cijfer:5
+Check_cijfer:0 checkt dit cijfer:5
+Check_cijfer:0 checkt dit cijfer:5
+Check_cijfer:0 checkt dit cijfer:5
+Check_cijfer:0 checkt dit cijfer:5
+Check_cijfer:0 checkt dit cijfer:5
+Check_cijfer:0 checkt dit cijfer:5
+Check_cijfer:0 checkt dit cijfer:5
+Check_cijfer:0 checkt dit cijfer:5
+Check_cijfer:0 checkt dit cijfer:5
+10 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:10
+Check_cijfer:5 checkt dit cijfer:10
+Check_cijfer:4 checkt dit cijfer:10
+Check_cijfer:10 checkt dit cijfer:10
+KleurFrequentie: (1)
+Check_cijfer:4 checkt dit cijfer:10
+Check_cijfer:3 checkt dit cijfer:10
+Check_cijfer:5 checkt dit cijfer:10
+Check_cijfer:10 checkt dit cijfer:10
+KleurFrequentie: (2)
+Check_cijfer:0 checkt dit cijfer:10
+Check_cijfer:0 checkt dit cijfer:10
+Check_cijfer:0 checkt dit cijfer:10
+Check_cijfer:0 checkt dit cijfer:10
+Check_cijfer:0 checkt dit cijfer:10
+Check_cijfer:0 checkt dit cijfer:10
+Check_cijfer:0 checkt dit cijfer:10
+Check_cijfer:0 checkt dit cijfer:10
+Check_cijfer:0 checkt dit cijfer:10
+Check_cijfer:0 checkt dit cijfer:10
+Check_cijfer:0 checkt dit cijfer:10
+Check_cijfer:0 checkt dit cijfer:10
+Check_cijfer:0 checkt dit cijfer:10
+Check_cijfer:0 checkt dit cijfer:10
+Check_cijfer:0 checkt dit cijfer:10
+Check_cijfer:0 checkt dit cijfer:10
+2 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:2
+Check_cijfer:5 checkt dit cijfer:2
+Check_cijfer:4 checkt dit cijfer:2
+Check_cijfer:10 checkt dit cijfer:2
+Check_cijfer:4 checkt dit cijfer:2
+Check_cijfer:3 checkt dit cijfer:2
+Check_cijfer:5 checkt dit cijfer:2
+Check_cijfer:10 checkt dit cijfer:2
+Check_cijfer:2 checkt dit cijfer:2
+KleurFrequentie: (1)
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+10 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:10
+Check_cijfer:5 checkt dit cijfer:10
+Check_cijfer:4 checkt dit cijfer:10
+Check_cijfer:10 checkt dit cijfer:10
+KleurFrequentie: (1)
+Check_cijfer:4 checkt dit cijfer:10
+Check_cijfer:3 checkt dit cijfer:10
+Check_cijfer:5 checkt dit cijfer:10
+Check_cijfer:10 checkt dit cijfer:10
+KleurFrequentie: (2)
+Check_cijfer:2 checkt dit cijfer:10
+Check_cijfer:10 checkt dit cijfer:10
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+10 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:10
+Check_cijfer:5 checkt dit cijfer:10
+Check_cijfer:4 checkt dit cijfer:10
+Check_cijfer:10 checkt dit cijfer:10
+KleurFrequentie: (1)
+Check_cijfer:4 checkt dit cijfer:10
+Check_cijfer:3 checkt dit cijfer:10
+Check_cijfer:5 checkt dit cijfer:10
+Check_cijfer:10 checkt dit cijfer:10
+KleurFrequentie: (2)
+Check_cijfer:2 checkt dit cijfer:10
+Check_cijfer:10 checkt dit cijfer:10
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+0 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:0
+Check_cijfer:5 checkt dit cijfer:0
+Check_cijfer:4 checkt dit cijfer:0
+Check_cijfer:10 checkt dit cijfer:0
+Check_cijfer:4 checkt dit cijfer:0
+Check_cijfer:3 checkt dit cijfer:0
+Check_cijfer:5 checkt dit cijfer:0
+Check_cijfer:10 checkt dit cijfer:0
+Check_cijfer:2 checkt dit cijfer:0
+Check_cijfer:0 checkt dit cijfer:0
+KleurFrequentie: (1)
+Check_cijfer:0 checkt dit cijfer:0
+KleurFrequentie: (2)
+Check_cijfer:0 checkt dit cijfer:0
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+0 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:0
+Check_cijfer:5 checkt dit cijfer:0
+Check_cijfer:4 checkt dit cijfer:0
+Check_cijfer:10 checkt dit cijfer:0
+Check_cijfer:4 checkt dit cijfer:0
+Check_cijfer:3 checkt dit cijfer:0
+Check_cijfer:5 checkt dit cijfer:0
+Check_cijfer:10 checkt dit cijfer:0
+Check_cijfer:2 checkt dit cijfer:0
+Check_cijfer:0 checkt dit cijfer:0
+KleurFrequentie: (1)
+Check_cijfer:0 checkt dit cijfer:0
+KleurFrequentie: (2)
+Check_cijfer:0 checkt dit cijfer:0
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+11 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:11
+KleurFrequentie: (1)
+Check_cijfer:5 checkt dit cijfer:11
+Check_cijfer:4 checkt dit cijfer:11
+Check_cijfer:10 checkt dit cijfer:11
+Check_cijfer:4 checkt dit cijfer:11
+Check_cijfer:3 checkt dit cijfer:11
+Check_cijfer:5 checkt dit cijfer:11
+Check_cijfer:10 checkt dit cijfer:11
+Check_cijfer:2 checkt dit cijfer:11
+Check_cijfer:11 checkt dit cijfer:11
+KleurFrequentie: (2)
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+10 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:10
+Check_cijfer:5 checkt dit cijfer:10
+Check_cijfer:4 checkt dit cijfer:10
+Check_cijfer:10 checkt dit cijfer:10
+KleurFrequentie: (1)
+Check_cijfer:4 checkt dit cijfer:10
+Check_cijfer:3 checkt dit cijfer:10
+Check_cijfer:5 checkt dit cijfer:10
+Check_cijfer:10 checkt dit cijfer:10
+KleurFrequentie: (2)
+Check_cijfer:2 checkt dit cijfer:10
+Check_cijfer:11 checkt dit cijfer:10
+Check_cijfer:10 checkt dit cijfer:10
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+0 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:0
+Check_cijfer:5 checkt dit cijfer:0
+Check_cijfer:4 checkt dit cijfer:0
+Check_cijfer:10 checkt dit cijfer:0
+Check_cijfer:4 checkt dit cijfer:0
+Check_cijfer:3 checkt dit cijfer:0
+Check_cijfer:5 checkt dit cijfer:0
+Check_cijfer:10 checkt dit cijfer:0
+Check_cijfer:2 checkt dit cijfer:0
+Check_cijfer:11 checkt dit cijfer:0
+Check_cijfer:0 checkt dit cijfer:0
+KleurFrequentie: (1)
+Check_cijfer:0 checkt dit cijfer:0
+KleurFrequentie: (2)
+Check_cijfer:0 checkt dit cijfer:0
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+1 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:1
+Check_cijfer:5 checkt dit cijfer:1
+Check_cijfer:4 checkt dit cijfer:1
+Check_cijfer:10 checkt dit cijfer:1
+Check_cijfer:4 checkt dit cijfer:1
+Check_cijfer:3 checkt dit cijfer:1
+Check_cijfer:5 checkt dit cijfer:1
+Check_cijfer:10 checkt dit cijfer:1
+Check_cijfer:2 checkt dit cijfer:1
+Check_cijfer:11 checkt dit cijfer:1
+Check_cijfer:1 checkt dit cijfer:1
+KleurFrequentie: (1)
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+5 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:5
+Check_cijfer:5 checkt dit cijfer:5
+KleurFrequentie: (1)
+Check_cijfer:4 checkt dit cijfer:5
+Check_cijfer:10 checkt dit cijfer:5
+Check_cijfer:4 checkt dit cijfer:5
+Check_cijfer:3 checkt dit cijfer:5
+Check_cijfer:5 checkt dit cijfer:5
+KleurFrequentie: (2)
+Check_cijfer:10 checkt dit cijfer:5
+Check_cijfer:2 checkt dit cijfer:5
+Check_cijfer:11 checkt dit cijfer:5
+Check_cijfer:1 checkt dit cijfer:5
+Check_cijfer:5 checkt dit cijfer:5
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+9 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:9
+Check_cijfer:5 checkt dit cijfer:9
+Check_cijfer:4 checkt dit cijfer:9
+Check_cijfer:10 checkt dit cijfer:9
+Check_cijfer:4 checkt dit cijfer:9
+Check_cijfer:3 checkt dit cijfer:9
+Check_cijfer:5 checkt dit cijfer:9
+Check_cijfer:10 checkt dit cijfer:9
+Check_cijfer:2 checkt dit cijfer:9
+Check_cijfer:11 checkt dit cijfer:9
+Check_cijfer:1 checkt dit cijfer:9
+Check_cijfer:9 checkt dit cijfer:9
+KleurFrequentie: (1)
+Check_cijfer:0 checkt dit cijfer:9
+Check_cijfer:0 checkt dit cijfer:9
+Check_cijfer:0 checkt dit cijfer:9
+Check_cijfer:0 checkt dit cijfer:9
+Check_cijfer:0 checkt dit cijfer:9
+Check_cijfer:0 checkt dit cijfer:9
+Check_cijfer:0 checkt dit cijfer:9
+Check_cijfer:0 checkt dit cijfer:9
+Check_cijfer:0 checkt dit cijfer:9
+Check_cijfer:0 checkt dit cijfer:9
+Check_cijfer:0 checkt dit cijfer:9
+Check_cijfer:0 checkt dit cijfer:9
+11 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:11
+KleurFrequentie: (1)
+Check_cijfer:5 checkt dit cijfer:11
+Check_cijfer:4 checkt dit cijfer:11
+Check_cijfer:10 checkt dit cijfer:11
+Check_cijfer:4 checkt dit cijfer:11
+Check_cijfer:3 checkt dit cijfer:11
+Check_cijfer:5 checkt dit cijfer:11
+Check_cijfer:10 checkt dit cijfer:11
+Check_cijfer:2 checkt dit cijfer:11
+Check_cijfer:11 checkt dit cijfer:11
+KleurFrequentie: (2)
+Check_cijfer:1 checkt dit cijfer:11
+Check_cijfer:9 checkt dit cijfer:11
+Check_cijfer:11 checkt dit cijfer:11
+KleurFrequentie: (3)
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+11 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:11
+KleurFrequentie: (1)
+Check_cijfer:5 checkt dit cijfer:11
+Check_cijfer:4 checkt dit cijfer:11
+Check_cijfer:10 checkt dit cijfer:11
+Check_cijfer:4 checkt dit cijfer:11
+Check_cijfer:3 checkt dit cijfer:11
+Check_cijfer:5 checkt dit cijfer:11
+Check_cijfer:10 checkt dit cijfer:11
+Check_cijfer:2 checkt dit cijfer:11
+Check_cijfer:11 checkt dit cijfer:11
+KleurFrequentie: (2)
+Check_cijfer:1 checkt dit cijfer:11
+Check_cijfer:9 checkt dit cijfer:11
+Check_cijfer:11 checkt dit cijfer:11
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+Check_cijfer:11 checkt dit cijfer:11
+KleurFrequentie: (1)
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+Check_cijfer:0 checkt dit cijfer:11
+1 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:1
+Check_cijfer:5 checkt dit cijfer:1
+Check_cijfer:4 checkt dit cijfer:1
+Check_cijfer:10 checkt dit cijfer:1
+Check_cijfer:4 checkt dit cijfer:1
+Check_cijfer:3 checkt dit cijfer:1
+Check_cijfer:5 checkt dit cijfer:1
+Check_cijfer:10 checkt dit cijfer:1
+Check_cijfer:2 checkt dit cijfer:1
+Check_cijfer:11 checkt dit cijfer:1
+Check_cijfer:1 checkt dit cijfer:1
+KleurFrequentie: (1)
+Check_cijfer:9 checkt dit cijfer:1
+Check_cijfer:11 checkt dit cijfer:1
+Check_cijfer:1 checkt dit cijfer:1
+KleurFrequentie: (2)
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+1 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:1
+Check_cijfer:5 checkt dit cijfer:1
+Check_cijfer:4 checkt dit cijfer:1
+Check_cijfer:10 checkt dit cijfer:1
+Check_cijfer:4 checkt dit cijfer:1
+Check_cijfer:3 checkt dit cijfer:1
+Check_cijfer:5 checkt dit cijfer:1
+Check_cijfer:10 checkt dit cijfer:1
+Check_cijfer:2 checkt dit cijfer:1
+Check_cijfer:11 checkt dit cijfer:1
+Check_cijfer:1 checkt dit cijfer:1
+KleurFrequentie: (1)
+Check_cijfer:9 checkt dit cijfer:1
+Check_cijfer:11 checkt dit cijfer:1
+Check_cijfer:1 checkt dit cijfer:1
+KleurFrequentie: (2)
+Check_cijfer:1 checkt dit cijfer:1
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+Check_cijfer:0 checkt dit cijfer:1
+3 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:3
+Check_cijfer:5 checkt dit cijfer:3
+Check_cijfer:4 checkt dit cijfer:3
+Check_cijfer:10 checkt dit cijfer:3
+Check_cijfer:4 checkt dit cijfer:3
+Check_cijfer:3 checkt dit cijfer:3
+KleurFrequentie: (1)
+Check_cijfer:5 checkt dit cijfer:3
+Check_cijfer:10 checkt dit cijfer:3
+Check_cijfer:2 checkt dit cijfer:3
+Check_cijfer:11 checkt dit cijfer:3
+Check_cijfer:1 checkt dit cijfer:3
+Check_cijfer:9 checkt dit cijfer:3
+Check_cijfer:11 checkt dit cijfer:3
+Check_cijfer:1 checkt dit cijfer:3
+Check_cijfer:3 checkt dit cijfer:3
+KleurFrequentie: (2)
+Check_cijfer:0 checkt dit cijfer:3
+Check_cijfer:0 checkt dit cijfer:3
+Check_cijfer:0 checkt dit cijfer:3
+Check_cijfer:0 checkt dit cijfer:3
+Check_cijfer:0 checkt dit cijfer:3
+Check_cijfer:0 checkt dit cijfer:3
+Check_cijfer:0 checkt dit cijfer:3
+Check_cijfer:0 checkt dit cijfer:3
+Check_cijfer:0 checkt dit cijfer:3
+0 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:0
+Check_cijfer:5 checkt dit cijfer:0
+Check_cijfer:4 checkt dit cijfer:0
+Check_cijfer:10 checkt dit cijfer:0
+Check_cijfer:4 checkt dit cijfer:0
+Check_cijfer:3 checkt dit cijfer:0
+Check_cijfer:5 checkt dit cijfer:0
+Check_cijfer:10 checkt dit cijfer:0
+Check_cijfer:2 checkt dit cijfer:0
+Check_cijfer:11 checkt dit cijfer:0
+Check_cijfer:1 checkt dit cijfer:0
+Check_cijfer:9 checkt dit cijfer:0
+Check_cijfer:11 checkt dit cijfer:0
+Check_cijfer:1 checkt dit cijfer:0
+Check_cijfer:3 checkt dit cijfer:0
+Check_cijfer:0 checkt dit cijfer:0
+KleurFrequentie: (1)
+Check_cijfer:0 checkt dit cijfer:0
+KleurFrequentie: (2)
+Check_cijfer:0 checkt dit cijfer:0
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+Check_cijfer:0 checkt dit cijfer:3
+Check_cijfer:0 checkt dit cijfer:3
+Check_cijfer:0 checkt dit cijfer:3
+Check_cijfer:0 checkt dit cijfer:3
+Check_cijfer:0 checkt dit cijfer:3
+Check_cijfer:0 checkt dit cijfer:3
+9 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:9
+Check_cijfer:5 checkt dit cijfer:9
+Check_cijfer:4 checkt dit cijfer:9
+Check_cijfer:10 checkt dit cijfer:9
+Check_cijfer:4 checkt dit cijfer:9
+Check_cijfer:3 checkt dit cijfer:9
+Check_cijfer:5 checkt dit cijfer:9
+Check_cijfer:10 checkt dit cijfer:9
+Check_cijfer:2 checkt dit cijfer:9
+Check_cijfer:11 checkt dit cijfer:9
+Check_cijfer:1 checkt dit cijfer:9
+Check_cijfer:9 checkt dit cijfer:9
+KleurFrequentie: (1)
+Check_cijfer:11 checkt dit cijfer:9
+Check_cijfer:1 checkt dit cijfer:9
+Check_cijfer:3 checkt dit cijfer:9
+Check_cijfer:9 checkt dit cijfer:9
+KleurFrequentie: (2)
+Check_cijfer:0 checkt dit cijfer:9
+Check_cijfer:0 checkt dit cijfer:9
+Check_cijfer:0 checkt dit cijfer:9
+Check_cijfer:0 checkt dit cijfer:9
+Check_cijfer:0 checkt dit cijfer:9
+Check_cijfer:0 checkt dit cijfer:9
+Check_cijfer:0 checkt dit cijfer:9
+Check_cijfer:0 checkt dit cijfer:9
+11 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:11
+KleurFrequentie: (1)
+Check_cijfer:5 checkt dit cijfer:11
+Check_cijfer:4 checkt dit cijfer:11
+Check_cijfer:10 checkt dit cijfer:11
+Check_cijfer:4 checkt dit cijfer:11
+Check_cijfer:3 checkt dit cijfer:11
+Check_cijfer:5 checkt dit cijfer:11
+Check_cijfer:10 checkt dit cijfer:11
+Check_cijfer:2 checkt dit cijfer:11
+Check_cijfer:11 checkt dit cijfer:11
+KleurFrequentie: (2)
+Check_cijfer:1 checkt dit cijfer:11
+Check_cijfer:9 checkt dit cijfer:11
+Check_cijfer:11 checkt dit cijfer:11
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+Check_cijfer:1 checkt dit cijfer:9
+Check_cijfer:3 checkt dit cijfer:9
+Check_cijfer:9 checkt dit cijfer:9
+KleurFrequentie: (1)
+Check_cijfer:11 checkt dit cijfer:9
+Check_cijfer:0 checkt dit cijfer:9
+Check_cijfer:0 checkt dit cijfer:9
+Check_cijfer:0 checkt dit cijfer:9
+Check_cijfer:0 checkt dit cijfer:9
+Check_cijfer:0 checkt dit cijfer:9
+Check_cijfer:0 checkt dit cijfer:9
+Check_cijfer:0 checkt dit cijfer:9
+7 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:7
+Check_cijfer:5 checkt dit cijfer:7
+Check_cijfer:4 checkt dit cijfer:7
+Check_cijfer:10 checkt dit cijfer:7
+Check_cijfer:4 checkt dit cijfer:7
+Check_cijfer:3 checkt dit cijfer:7
+Check_cijfer:5 checkt dit cijfer:7
+Check_cijfer:10 checkt dit cijfer:7
+Check_cijfer:2 checkt dit cijfer:7
+Check_cijfer:11 checkt dit cijfer:7
+Check_cijfer:1 checkt dit cijfer:7
+Check_cijfer:9 checkt dit cijfer:7
+Check_cijfer:11 checkt dit cijfer:7
+Check_cijfer:1 checkt dit cijfer:7
+Check_cijfer:3 checkt dit cijfer:7
+Check_cijfer:9 checkt dit cijfer:7
+Check_cijfer:7 checkt dit cijfer:7
+KleurFrequentie: (1)
+Check_cijfer:0 checkt dit cijfer:7
+Check_cijfer:0 checkt dit cijfer:7
+Check_cijfer:0 checkt dit cijfer:7
+Check_cijfer:0 checkt dit cijfer:7
+Check_cijfer:0 checkt dit cijfer:7
+Check_cijfer:0 checkt dit cijfer:7
+Check_cijfer:0 checkt dit cijfer:7
+1 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:1
+Check_cijfer:5 checkt dit cijfer:1
+Check_cijfer:4 checkt dit cijfer:1
+Check_cijfer:10 checkt dit cijfer:1
+Check_cijfer:4 checkt dit cijfer:1
+Check_cijfer:3 checkt dit cijfer:1
+Check_cijfer:5 checkt dit cijfer:1
+Check_cijfer:10 checkt dit cijfer:1
+Check_cijfer:2 checkt dit cijfer:1
+Check_cijfer:11 checkt dit cijfer:1
+Check_cijfer:1 checkt dit cijfer:1
+KleurFrequentie: (1)
+Check_cijfer:9 checkt dit cijfer:1
+Check_cijfer:11 checkt dit cijfer:1
+Check_cijfer:1 checkt dit cijfer:1
+KleurFrequentie: (2)
+Check_cijfer:3 checkt dit cijfer:1
+Check_cijfer:9 checkt dit cijfer:1
+Check_cijfer:7 checkt dit cijfer:1
+Check_cijfer:1 checkt dit cijfer:1
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+Check_cijfer:0 checkt dit cijfer:7
+Check_cijfer:0 checkt dit cijfer:7
+Check_cijfer:0 checkt dit cijfer:7
+Check_cijfer:0 checkt dit cijfer:7
+Check_cijfer:0 checkt dit cijfer:7
+Check_cijfer:0 checkt dit cijfer:7
+7 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:7
+Check_cijfer:5 checkt dit cijfer:7
+Check_cijfer:4 checkt dit cijfer:7
+Check_cijfer:10 checkt dit cijfer:7
+Check_cijfer:4 checkt dit cijfer:7
+Check_cijfer:3 checkt dit cijfer:7
+Check_cijfer:5 checkt dit cijfer:7
+Check_cijfer:10 checkt dit cijfer:7
+Check_cijfer:2 checkt dit cijfer:7
+Check_cijfer:11 checkt dit cijfer:7
+Check_cijfer:1 checkt dit cijfer:7
+Check_cijfer:9 checkt dit cijfer:7
+Check_cijfer:11 checkt dit cijfer:7
+Check_cijfer:1 checkt dit cijfer:7
+Check_cijfer:3 checkt dit cijfer:7
+Check_cijfer:9 checkt dit cijfer:7
+Check_cijfer:7 checkt dit cijfer:7
+KleurFrequentie: (1)
+Check_cijfer:7 checkt dit cijfer:7
+KleurFrequentie: (2)
+Check_cijfer:0 checkt dit cijfer:7
+Check_cijfer:0 checkt dit cijfer:7
+Check_cijfer:0 checkt dit cijfer:7
+Check_cijfer:0 checkt dit cijfer:7
+Check_cijfer:0 checkt dit cijfer:7
+Check_cijfer:0 checkt dit cijfer:7
+6 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:6
+Check_cijfer:5 checkt dit cijfer:6
+Check_cijfer:4 checkt dit cijfer:6
+Check_cijfer:10 checkt dit cijfer:6
+Check_cijfer:4 checkt dit cijfer:6
+Check_cijfer:3 checkt dit cijfer:6
+Check_cijfer:5 checkt dit cijfer:6
+Check_cijfer:10 checkt dit cijfer:6
+Check_cijfer:2 checkt dit cijfer:6
+Check_cijfer:11 checkt dit cijfer:6
+Check_cijfer:1 checkt dit cijfer:6
+Check_cijfer:9 checkt dit cijfer:6
+Check_cijfer:11 checkt dit cijfer:6
+Check_cijfer:1 checkt dit cijfer:6
+Check_cijfer:3 checkt dit cijfer:6
+Check_cijfer:9 checkt dit cijfer:6
+Check_cijfer:7 checkt dit cijfer:6
+Check_cijfer:7 checkt dit cijfer:6
+Check_cijfer:6 checkt dit cijfer:6
+KleurFrequentie: (1)
+Check_cijfer:0 checkt dit cijfer:6
+Check_cijfer:0 checkt dit cijfer:6
+Check_cijfer:0 checkt dit cijfer:6
+Check_cijfer:0 checkt dit cijfer:6
+Check_cijfer:0 checkt dit cijfer:6
+9 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:9
+Check_cijfer:5 checkt dit cijfer:9
+Check_cijfer:4 checkt dit cijfer:9
+Check_cijfer:10 checkt dit cijfer:9
+Check_cijfer:4 checkt dit cijfer:9
+Check_cijfer:3 checkt dit cijfer:9
+Check_cijfer:5 checkt dit cijfer:9
+Check_cijfer:10 checkt dit cijfer:9
+Check_cijfer:2 checkt dit cijfer:9
+Check_cijfer:11 checkt dit cijfer:9
+Check_cijfer:1 checkt dit cijfer:9
+Check_cijfer:9 checkt dit cijfer:9
+KleurFrequentie: (1)
+Check_cijfer:11 checkt dit cijfer:9
+Check_cijfer:1 checkt dit cijfer:9
+Check_cijfer:3 checkt dit cijfer:9
+Check_cijfer:9 checkt dit cijfer:9
+KleurFrequentie: (2)
+Check_cijfer:7 checkt dit cijfer:9
+Check_cijfer:7 checkt dit cijfer:9
+Check_cijfer:6 checkt dit cijfer:9
+Check_cijfer:9 checkt dit cijfer:9
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+Check_cijfer:0 checkt dit cijfer:6
+Check_cijfer:0 checkt dit cijfer:6
+Check_cijfer:0 checkt dit cijfer:6
+Check_cijfer:0 checkt dit cijfer:6
+7 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:7
+Check_cijfer:5 checkt dit cijfer:7
+Check_cijfer:4 checkt dit cijfer:7
+Check_cijfer:10 checkt dit cijfer:7
+Check_cijfer:4 checkt dit cijfer:7
+Check_cijfer:3 checkt dit cijfer:7
+Check_cijfer:5 checkt dit cijfer:7
+Check_cijfer:10 checkt dit cijfer:7
+Check_cijfer:2 checkt dit cijfer:7
+Check_cijfer:11 checkt dit cijfer:7
+Check_cijfer:1 checkt dit cijfer:7
+Check_cijfer:9 checkt dit cijfer:7
+Check_cijfer:11 checkt dit cijfer:7
+Check_cijfer:1 checkt dit cijfer:7
+Check_cijfer:3 checkt dit cijfer:7
+Check_cijfer:9 checkt dit cijfer:7
+Check_cijfer:7 checkt dit cijfer:7
+KleurFrequentie: (1)
+Check_cijfer:7 checkt dit cijfer:7
+KleurFrequentie: (2)
+Check_cijfer:6 checkt dit cijfer:7
+Check_cijfer:7 checkt dit cijfer:7
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+Check_cijfer:0 checkt dit cijfer:6
+Check_cijfer:0 checkt dit cijfer:6
+Check_cijfer:0 checkt dit cijfer:6
+Check_cijfer:0 checkt dit cijfer:6
+11 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:11
+KleurFrequentie: (1)
+Check_cijfer:5 checkt dit cijfer:11
+Check_cijfer:4 checkt dit cijfer:11
+Check_cijfer:10 checkt dit cijfer:11
+Check_cijfer:4 checkt dit cijfer:11
+Check_cijfer:3 checkt dit cijfer:11
+Check_cijfer:5 checkt dit cijfer:11
+Check_cijfer:10 checkt dit cijfer:11
+Check_cijfer:2 checkt dit cijfer:11
+Check_cijfer:11 checkt dit cijfer:11
+KleurFrequentie: (2)
+Check_cijfer:1 checkt dit cijfer:11
+Check_cijfer:9 checkt dit cijfer:11
+Check_cijfer:11 checkt dit cijfer:11
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+Check_cijfer:1 checkt dit cijfer:6
+Check_cijfer:3 checkt dit cijfer:6
+Check_cijfer:9 checkt dit cijfer:6
+Check_cijfer:7 checkt dit cijfer:6
+Check_cijfer:7 checkt dit cijfer:6
+Check_cijfer:6 checkt dit cijfer:6
+KleurFrequentie: (1)
+Check_cijfer:11 checkt dit cijfer:6
+Check_cijfer:0 checkt dit cijfer:6
+Check_cijfer:0 checkt dit cijfer:6
+Check_cijfer:0 checkt dit cijfer:6
+Check_cijfer:0 checkt dit cijfer:6
+10 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:10
+Check_cijfer:5 checkt dit cijfer:10
+Check_cijfer:4 checkt dit cijfer:10
+Check_cijfer:10 checkt dit cijfer:10
+KleurFrequentie: (1)
+Check_cijfer:4 checkt dit cijfer:10
+Check_cijfer:3 checkt dit cijfer:10
+Check_cijfer:5 checkt dit cijfer:10
+Check_cijfer:10 checkt dit cijfer:10
+KleurFrequentie: (2)
+Check_cijfer:2 checkt dit cijfer:10
+Check_cijfer:11 checkt dit cijfer:10
+Check_cijfer:1 checkt dit cijfer:10
+Check_cijfer:9 checkt dit cijfer:10
+Check_cijfer:11 checkt dit cijfer:10
+Check_cijfer:1 checkt dit cijfer:10
+Check_cijfer:3 checkt dit cijfer:10
+Check_cijfer:9 checkt dit cijfer:10
+Check_cijfer:7 checkt dit cijfer:10
+Check_cijfer:7 checkt dit cijfer:10
+Check_cijfer:6 checkt dit cijfer:10
+Check_cijfer:10 checkt dit cijfer:10
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+Check_cijfer:0 checkt dit cijfer:6
+Check_cijfer:0 checkt dit cijfer:6
+Check_cijfer:0 checkt dit cijfer:6
+Check_cijfer:0 checkt dit cijfer:6
+0 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:0
+Check_cijfer:5 checkt dit cijfer:0
+Check_cijfer:4 checkt dit cijfer:0
+Check_cijfer:10 checkt dit cijfer:0
+Check_cijfer:4 checkt dit cijfer:0
+Check_cijfer:3 checkt dit cijfer:0
+Check_cijfer:5 checkt dit cijfer:0
+Check_cijfer:10 checkt dit cijfer:0
+Check_cijfer:2 checkt dit cijfer:0
+Check_cijfer:11 checkt dit cijfer:0
+Check_cijfer:1 checkt dit cijfer:0
+Check_cijfer:9 checkt dit cijfer:0
+Check_cijfer:11 checkt dit cijfer:0
+Check_cijfer:1 checkt dit cijfer:0
+Check_cijfer:3 checkt dit cijfer:0
+Check_cijfer:9 checkt dit cijfer:0
+Check_cijfer:7 checkt dit cijfer:0
+Check_cijfer:7 checkt dit cijfer:0
+Check_cijfer:6 checkt dit cijfer:0
+Check_cijfer:0 checkt dit cijfer:0
+KleurFrequentie: (1)
+Check_cijfer:0 checkt dit cijfer:0
+KleurFrequentie: (2)
+Check_cijfer:0 checkt dit cijfer:0
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+Check_cijfer:0 checkt dit cijfer:6
+Check_cijfer:0 checkt dit cijfer:6
+11 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:11
+KleurFrequentie: (1)
+Check_cijfer:5 checkt dit cijfer:11
+Check_cijfer:4 checkt dit cijfer:11
+Check_cijfer:10 checkt dit cijfer:11
+Check_cijfer:4 checkt dit cijfer:11
+Check_cijfer:3 checkt dit cijfer:11
+Check_cijfer:5 checkt dit cijfer:11
+Check_cijfer:10 checkt dit cijfer:11
+Check_cijfer:2 checkt dit cijfer:11
+Check_cijfer:11 checkt dit cijfer:11
+KleurFrequentie: (2)
+Check_cijfer:1 checkt dit cijfer:11
+Check_cijfer:9 checkt dit cijfer:11
+Check_cijfer:11 checkt dit cijfer:11
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+Check_cijfer:1 checkt dit cijfer:6
+Check_cijfer:3 checkt dit cijfer:6
+Check_cijfer:9 checkt dit cijfer:6
+Check_cijfer:7 checkt dit cijfer:6
+Check_cijfer:7 checkt dit cijfer:6
+Check_cijfer:6 checkt dit cijfer:6
+KleurFrequentie: (1)
+Check_cijfer:11 checkt dit cijfer:6
+Check_cijfer:0 checkt dit cijfer:6
+Check_cijfer:0 checkt dit cijfer:6
+Check_cijfer:0 checkt dit cijfer:6
+Check_cijfer:0 checkt dit cijfer:6
+3 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:3
+Check_cijfer:5 checkt dit cijfer:3
+Check_cijfer:4 checkt dit cijfer:3
+Check_cijfer:10 checkt dit cijfer:3
+Check_cijfer:4 checkt dit cijfer:3
+Check_cijfer:3 checkt dit cijfer:3
+KleurFrequentie: (1)
+Check_cijfer:5 checkt dit cijfer:3
+Check_cijfer:10 checkt dit cijfer:3
+Check_cijfer:2 checkt dit cijfer:3
+Check_cijfer:11 checkt dit cijfer:3
+Check_cijfer:1 checkt dit cijfer:3
+Check_cijfer:9 checkt dit cijfer:3
+Check_cijfer:11 checkt dit cijfer:3
+Check_cijfer:1 checkt dit cijfer:3
+Check_cijfer:3 checkt dit cijfer:3
+KleurFrequentie: (2)
+Check_cijfer:9 checkt dit cijfer:3
+Check_cijfer:7 checkt dit cijfer:3
+Check_cijfer:7 checkt dit cijfer:3
+Check_cijfer:6 checkt dit cijfer:3
+Check_cijfer:3 checkt dit cijfer:3
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+Check_cijfer:0 checkt dit cijfer:6
+Check_cijfer:0 checkt dit cijfer:6
+Check_cijfer:0 checkt dit cijfer:6
+Check_cijfer:0 checkt dit cijfer:6
+4 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:4
+Check_cijfer:5 checkt dit cijfer:4
+Check_cijfer:4 checkt dit cijfer:4
+KleurFrequentie: (1)
+Check_cijfer:10 checkt dit cijfer:4
+Check_cijfer:4 checkt dit cijfer:4
+KleurFrequentie: (2)
+Check_cijfer:3 checkt dit cijfer:4
+Check_cijfer:5 checkt dit cijfer:4
+Check_cijfer:10 checkt dit cijfer:4
+Check_cijfer:2 checkt dit cijfer:4
+Check_cijfer:11 checkt dit cijfer:4
+Check_cijfer:1 checkt dit cijfer:4
+Check_cijfer:9 checkt dit cijfer:4
+Check_cijfer:11 checkt dit cijfer:4
+Check_cijfer:1 checkt dit cijfer:4
+Check_cijfer:3 checkt dit cijfer:4
+Check_cijfer:9 checkt dit cijfer:4
+Check_cijfer:7 checkt dit cijfer:4
+Check_cijfer:7 checkt dit cijfer:4
+Check_cijfer:6 checkt dit cijfer:4
+Check_cijfer:4 checkt dit cijfer:4
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+Check_cijfer:0 checkt dit cijfer:6
+Check_cijfer:0 checkt dit cijfer:6
+Check_cijfer:0 checkt dit cijfer:6
+Check_cijfer:0 checkt dit cijfer:6
+8 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:8
+Check_cijfer:5 checkt dit cijfer:8
+Check_cijfer:4 checkt dit cijfer:8
+Check_cijfer:10 checkt dit cijfer:8
+Check_cijfer:4 checkt dit cijfer:8
+Check_cijfer:3 checkt dit cijfer:8
+Check_cijfer:5 checkt dit cijfer:8
+Check_cijfer:10 checkt dit cijfer:8
+Check_cijfer:2 checkt dit cijfer:8
+Check_cijfer:11 checkt dit cijfer:8
+Check_cijfer:1 checkt dit cijfer:8
+Check_cijfer:9 checkt dit cijfer:8
+Check_cijfer:11 checkt dit cijfer:8
+Check_cijfer:1 checkt dit cijfer:8
+Check_cijfer:3 checkt dit cijfer:8
+Check_cijfer:9 checkt dit cijfer:8
+Check_cijfer:7 checkt dit cijfer:8
+Check_cijfer:7 checkt dit cijfer:8
+Check_cijfer:6 checkt dit cijfer:8
+Check_cijfer:8 checkt dit cijfer:8
+KleurFrequentie: (1)
+Check_cijfer:0 checkt dit cijfer:8
+Check_cijfer:0 checkt dit cijfer:8
+Check_cijfer:0 checkt dit cijfer:8
+Check_cijfer:0 checkt dit cijfer:8
+11 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:11
+KleurFrequentie: (1)
+Check_cijfer:5 checkt dit cijfer:11
+Check_cijfer:4 checkt dit cijfer:11
+Check_cijfer:10 checkt dit cijfer:11
+Check_cijfer:4 checkt dit cijfer:11
+Check_cijfer:3 checkt dit cijfer:11
+Check_cijfer:5 checkt dit cijfer:11
+Check_cijfer:10 checkt dit cijfer:11
+Check_cijfer:2 checkt dit cijfer:11
+Check_cijfer:11 checkt dit cijfer:11
+KleurFrequentie: (2)
+Check_cijfer:1 checkt dit cijfer:11
+Check_cijfer:9 checkt dit cijfer:11
+Check_cijfer:11 checkt dit cijfer:11
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+Check_cijfer:1 checkt dit cijfer:8
+Check_cijfer:3 checkt dit cijfer:8
+Check_cijfer:9 checkt dit cijfer:8
+Check_cijfer:7 checkt dit cijfer:8
+Check_cijfer:7 checkt dit cijfer:8
+Check_cijfer:6 checkt dit cijfer:8
+Check_cijfer:8 checkt dit cijfer:8
+KleurFrequentie: (1)
+Check_cijfer:11 checkt dit cijfer:8
+Check_cijfer:0 checkt dit cijfer:8
+Check_cijfer:0 checkt dit cijfer:8
+Check_cijfer:0 checkt dit cijfer:8
+6 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:6
+Check_cijfer:5 checkt dit cijfer:6
+Check_cijfer:4 checkt dit cijfer:6
+Check_cijfer:10 checkt dit cijfer:6
+Check_cijfer:4 checkt dit cijfer:6
+Check_cijfer:3 checkt dit cijfer:6
+Check_cijfer:5 checkt dit cijfer:6
+Check_cijfer:10 checkt dit cijfer:6
+Check_cijfer:2 checkt dit cijfer:6
+Check_cijfer:11 checkt dit cijfer:6
+Check_cijfer:1 checkt dit cijfer:6
+Check_cijfer:9 checkt dit cijfer:6
+Check_cijfer:11 checkt dit cijfer:6
+Check_cijfer:1 checkt dit cijfer:6
+Check_cijfer:3 checkt dit cijfer:6
+Check_cijfer:9 checkt dit cijfer:6
+Check_cijfer:7 checkt dit cijfer:6
+Check_cijfer:7 checkt dit cijfer:6
+Check_cijfer:6 checkt dit cijfer:6
+KleurFrequentie: (1)
+Check_cijfer:8 checkt dit cijfer:6
+Check_cijfer:6 checkt dit cijfer:6
+KleurFrequentie: (2)
+Check_cijfer:0 checkt dit cijfer:6
+Check_cijfer:0 checkt dit cijfer:6
+Check_cijfer:0 checkt dit cijfer:6
+9 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:9
+Check_cijfer:5 checkt dit cijfer:9
+Check_cijfer:4 checkt dit cijfer:9
+Check_cijfer:10 checkt dit cijfer:9
+Check_cijfer:4 checkt dit cijfer:9
+Check_cijfer:3 checkt dit cijfer:9
+Check_cijfer:5 checkt dit cijfer:9
+Check_cijfer:10 checkt dit cijfer:9
+Check_cijfer:2 checkt dit cijfer:9
+Check_cijfer:11 checkt dit cijfer:9
+Check_cijfer:1 checkt dit cijfer:9
+Check_cijfer:9 checkt dit cijfer:9
+KleurFrequentie: (1)
+Check_cijfer:11 checkt dit cijfer:9
+Check_cijfer:1 checkt dit cijfer:9
+Check_cijfer:3 checkt dit cijfer:9
+Check_cijfer:9 checkt dit cijfer:9
+KleurFrequentie: (2)
+Check_cijfer:7 checkt dit cijfer:9
+Check_cijfer:7 checkt dit cijfer:9
+Check_cijfer:6 checkt dit cijfer:9
+Check_cijfer:8 checkt dit cijfer:9
+Check_cijfer:6 checkt dit cijfer:9
+Check_cijfer:9 checkt dit cijfer:9
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+Check_cijfer:0 checkt dit cijfer:6
+Check_cijfer:0 checkt dit cijfer:6
+10 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:10
+Check_cijfer:5 checkt dit cijfer:10
+Check_cijfer:4 checkt dit cijfer:10
+Check_cijfer:10 checkt dit cijfer:10
+KleurFrequentie: (1)
+Check_cijfer:4 checkt dit cijfer:10
+Check_cijfer:3 checkt dit cijfer:10
+Check_cijfer:5 checkt dit cijfer:10
+Check_cijfer:10 checkt dit cijfer:10
+KleurFrequentie: (2)
+Check_cijfer:2 checkt dit cijfer:10
+Check_cijfer:11 checkt dit cijfer:10
+Check_cijfer:1 checkt dit cijfer:10
+Check_cijfer:9 checkt dit cijfer:10
+Check_cijfer:11 checkt dit cijfer:10
+Check_cijfer:1 checkt dit cijfer:10
+Check_cijfer:3 checkt dit cijfer:10
+Check_cijfer:9 checkt dit cijfer:10
+Check_cijfer:7 checkt dit cijfer:10
+Check_cijfer:7 checkt dit cijfer:10
+Check_cijfer:6 checkt dit cijfer:10
+Check_cijfer:8 checkt dit cijfer:10
+Check_cijfer:6 checkt dit cijfer:10
+Check_cijfer:10 checkt dit cijfer:10
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+Check_cijfer:0 checkt dit cijfer:6
+Check_cijfer:0 checkt dit cijfer:6
+10 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:10
+Check_cijfer:5 checkt dit cijfer:10
+Check_cijfer:4 checkt dit cijfer:10
+Check_cijfer:10 checkt dit cijfer:10
+KleurFrequentie: (1)
+Check_cijfer:4 checkt dit cijfer:10
+Check_cijfer:3 checkt dit cijfer:10
+Check_cijfer:5 checkt dit cijfer:10
+Check_cijfer:10 checkt dit cijfer:10
+KleurFrequentie: (2)
+Check_cijfer:2 checkt dit cijfer:10
+Check_cijfer:11 checkt dit cijfer:10
+Check_cijfer:1 checkt dit cijfer:10
+Check_cijfer:9 checkt dit cijfer:10
+Check_cijfer:11 checkt dit cijfer:10
+Check_cijfer:1 checkt dit cijfer:10
+Check_cijfer:3 checkt dit cijfer:10
+Check_cijfer:9 checkt dit cijfer:10
+Check_cijfer:7 checkt dit cijfer:10
+Check_cijfer:7 checkt dit cijfer:10
+Check_cijfer:6 checkt dit cijfer:10
+Check_cijfer:8 checkt dit cijfer:10
+Check_cijfer:6 checkt dit cijfer:10
+Check_cijfer:10 checkt dit cijfer:10
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+Check_cijfer:0 checkt dit cijfer:6
+Check_cijfer:0 checkt dit cijfer:6
+11 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:11
+KleurFrequentie: (1)
+Check_cijfer:5 checkt dit cijfer:11
+Check_cijfer:4 checkt dit cijfer:11
+Check_cijfer:10 checkt dit cijfer:11
+Check_cijfer:4 checkt dit cijfer:11
+Check_cijfer:3 checkt dit cijfer:11
+Check_cijfer:5 checkt dit cijfer:11
+Check_cijfer:10 checkt dit cijfer:11
+Check_cijfer:2 checkt dit cijfer:11
+Check_cijfer:11 checkt dit cijfer:11
+KleurFrequentie: (2)
+Check_cijfer:1 checkt dit cijfer:11
+Check_cijfer:9 checkt dit cijfer:11
+Check_cijfer:11 checkt dit cijfer:11
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+Check_cijfer:1 checkt dit cijfer:6
+Check_cijfer:3 checkt dit cijfer:6
+Check_cijfer:9 checkt dit cijfer:6
+Check_cijfer:7 checkt dit cijfer:6
+Check_cijfer:7 checkt dit cijfer:6
+Check_cijfer:6 checkt dit cijfer:6
+KleurFrequentie: (1)
+Check_cijfer:8 checkt dit cijfer:6
+Check_cijfer:6 checkt dit cijfer:6
+KleurFrequentie: (2)
+Check_cijfer:11 checkt dit cijfer:6
+Check_cijfer:0 checkt dit cijfer:6
+Check_cijfer:0 checkt dit cijfer:6
+3 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:3
+Check_cijfer:5 checkt dit cijfer:3
+Check_cijfer:4 checkt dit cijfer:3
+Check_cijfer:10 checkt dit cijfer:3
+Check_cijfer:4 checkt dit cijfer:3
+Check_cijfer:3 checkt dit cijfer:3
+KleurFrequentie: (1)
+Check_cijfer:5 checkt dit cijfer:3
+Check_cijfer:10 checkt dit cijfer:3
+Check_cijfer:2 checkt dit cijfer:3
+Check_cijfer:11 checkt dit cijfer:3
+Check_cijfer:1 checkt dit cijfer:3
+Check_cijfer:9 checkt dit cijfer:3
+Check_cijfer:11 checkt dit cijfer:3
+Check_cijfer:1 checkt dit cijfer:3
+Check_cijfer:3 checkt dit cijfer:3
+KleurFrequentie: (2)
+Check_cijfer:9 checkt dit cijfer:3
+Check_cijfer:7 checkt dit cijfer:3
+Check_cijfer:7 checkt dit cijfer:3
+Check_cijfer:6 checkt dit cijfer:3
+Check_cijfer:8 checkt dit cijfer:3
+Check_cijfer:6 checkt dit cijfer:3
+Check_cijfer:3 checkt dit cijfer:3
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+Check_cijfer:0 checkt dit cijfer:6
+Check_cijfer:0 checkt dit cijfer:6
+11 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:11
+KleurFrequentie: (1)
+Check_cijfer:5 checkt dit cijfer:11
+Check_cijfer:4 checkt dit cijfer:11
+Check_cijfer:10 checkt dit cijfer:11
+Check_cijfer:4 checkt dit cijfer:11
+Check_cijfer:3 checkt dit cijfer:11
+Check_cijfer:5 checkt dit cijfer:11
+Check_cijfer:10 checkt dit cijfer:11
+Check_cijfer:2 checkt dit cijfer:11
+Check_cijfer:11 checkt dit cijfer:11
+KleurFrequentie: (2)
+Check_cijfer:1 checkt dit cijfer:11
+Check_cijfer:9 checkt dit cijfer:11
+Check_cijfer:11 checkt dit cijfer:11
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+Check_cijfer:1 checkt dit cijfer:6
+Check_cijfer:3 checkt dit cijfer:6
+Check_cijfer:9 checkt dit cijfer:6
+Check_cijfer:7 checkt dit cijfer:6
+Check_cijfer:7 checkt dit cijfer:6
+Check_cijfer:6 checkt dit cijfer:6
+KleurFrequentie: (1)
+Check_cijfer:8 checkt dit cijfer:6
+Check_cijfer:6 checkt dit cijfer:6
+KleurFrequentie: (2)
+Check_cijfer:11 checkt dit cijfer:6
+Check_cijfer:0 checkt dit cijfer:6
+Check_cijfer:0 checkt dit cijfer:6
+2 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:2
+Check_cijfer:5 checkt dit cijfer:2
+Check_cijfer:4 checkt dit cijfer:2
+Check_cijfer:10 checkt dit cijfer:2
+Check_cijfer:4 checkt dit cijfer:2
+Check_cijfer:3 checkt dit cijfer:2
+Check_cijfer:5 checkt dit cijfer:2
+Check_cijfer:10 checkt dit cijfer:2
+Check_cijfer:2 checkt dit cijfer:2
+KleurFrequentie: (1)
+Check_cijfer:11 checkt dit cijfer:2
+Check_cijfer:1 checkt dit cijfer:2
+Check_cijfer:9 checkt dit cijfer:2
+Check_cijfer:11 checkt dit cijfer:2
+Check_cijfer:1 checkt dit cijfer:2
+Check_cijfer:3 checkt dit cijfer:2
+Check_cijfer:9 checkt dit cijfer:2
+Check_cijfer:7 checkt dit cijfer:2
+Check_cijfer:7 checkt dit cijfer:2
+Check_cijfer:6 checkt dit cijfer:2
+Check_cijfer:8 checkt dit cijfer:2
+Check_cijfer:6 checkt dit cijfer:2
+Check_cijfer:2 checkt dit cijfer:2
+KleurFrequentie: (2)
+Check_cijfer:0 checkt dit cijfer:2
+Check_cijfer:0 checkt dit cijfer:2
+9 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:9
+Check_cijfer:5 checkt dit cijfer:9
+Check_cijfer:4 checkt dit cijfer:9
+Check_cijfer:10 checkt dit cijfer:9
+Check_cijfer:4 checkt dit cijfer:9
+Check_cijfer:3 checkt dit cijfer:9
+Check_cijfer:5 checkt dit cijfer:9
+Check_cijfer:10 checkt dit cijfer:9
+Check_cijfer:2 checkt dit cijfer:9
+Check_cijfer:11 checkt dit cijfer:9
+Check_cijfer:1 checkt dit cijfer:9
+Check_cijfer:9 checkt dit cijfer:9
+KleurFrequentie: (1)
+Check_cijfer:11 checkt dit cijfer:9
+Check_cijfer:1 checkt dit cijfer:9
+Check_cijfer:3 checkt dit cijfer:9
+Check_cijfer:9 checkt dit cijfer:9
+KleurFrequentie: (2)
+Check_cijfer:7 checkt dit cijfer:9
+Check_cijfer:7 checkt dit cijfer:9
+Check_cijfer:6 checkt dit cijfer:9
+Check_cijfer:8 checkt dit cijfer:9
+Check_cijfer:6 checkt dit cijfer:9
+Check_cijfer:2 checkt dit cijfer:9
+Check_cijfer:9 checkt dit cijfer:9
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+Check_cijfer:0 checkt dit cijfer:2
+5 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:5
+Check_cijfer:5 checkt dit cijfer:5
+KleurFrequentie: (1)
+Check_cijfer:4 checkt dit cijfer:5
+Check_cijfer:10 checkt dit cijfer:5
+Check_cijfer:4 checkt dit cijfer:5
+Check_cijfer:3 checkt dit cijfer:5
+Check_cijfer:5 checkt dit cijfer:5
+KleurFrequentie: (2)
+Check_cijfer:10 checkt dit cijfer:5
+Check_cijfer:2 checkt dit cijfer:5
+Check_cijfer:11 checkt dit cijfer:5
+Check_cijfer:1 checkt dit cijfer:5
+Check_cijfer:9 checkt dit cijfer:5
+Check_cijfer:11 checkt dit cijfer:5
+Check_cijfer:1 checkt dit cijfer:5
+Check_cijfer:3 checkt dit cijfer:5
+Check_cijfer:9 checkt dit cijfer:5
+Check_cijfer:7 checkt dit cijfer:5
+Check_cijfer:7 checkt dit cijfer:5
+Check_cijfer:6 checkt dit cijfer:5
+Check_cijfer:8 checkt dit cijfer:5
+Check_cijfer:6 checkt dit cijfer:5
+Check_cijfer:2 checkt dit cijfer:5
+Check_cijfer:5 checkt dit cijfer:5
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+Check_cijfer:0 checkt dit cijfer:2
+4 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:4
+Check_cijfer:5 checkt dit cijfer:4
+Check_cijfer:4 checkt dit cijfer:4
+KleurFrequentie: (1)
+Check_cijfer:10 checkt dit cijfer:4
+Check_cijfer:4 checkt dit cijfer:4
+KleurFrequentie: (2)
+Check_cijfer:3 checkt dit cijfer:4
+Check_cijfer:5 checkt dit cijfer:4
+Check_cijfer:10 checkt dit cijfer:4
+Check_cijfer:2 checkt dit cijfer:4
+Check_cijfer:11 checkt dit cijfer:4
+Check_cijfer:1 checkt dit cijfer:4
+Check_cijfer:9 checkt dit cijfer:4
+Check_cijfer:11 checkt dit cijfer:4
+Check_cijfer:1 checkt dit cijfer:4
+Check_cijfer:3 checkt dit cijfer:4
+Check_cijfer:9 checkt dit cijfer:4
+Check_cijfer:7 checkt dit cijfer:4
+Check_cijfer:7 checkt dit cijfer:4
+Check_cijfer:6 checkt dit cijfer:4
+Check_cijfer:8 checkt dit cijfer:4
+Check_cijfer:6 checkt dit cijfer:4
+Check_cijfer:2 checkt dit cijfer:4
+Check_cijfer:4 checkt dit cijfer:4
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+Check_cijfer:0 checkt dit cijfer:2
+7 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:7
+Check_cijfer:5 checkt dit cijfer:7
+Check_cijfer:4 checkt dit cijfer:7
+Check_cijfer:10 checkt dit cijfer:7
+Check_cijfer:4 checkt dit cijfer:7
+Check_cijfer:3 checkt dit cijfer:7
+Check_cijfer:5 checkt dit cijfer:7
+Check_cijfer:10 checkt dit cijfer:7
+Check_cijfer:2 checkt dit cijfer:7
+Check_cijfer:11 checkt dit cijfer:7
+Check_cijfer:1 checkt dit cijfer:7
+Check_cijfer:9 checkt dit cijfer:7
+Check_cijfer:11 checkt dit cijfer:7
+Check_cijfer:1 checkt dit cijfer:7
+Check_cijfer:3 checkt dit cijfer:7
+Check_cijfer:9 checkt dit cijfer:7
+Check_cijfer:7 checkt dit cijfer:7
+KleurFrequentie: (1)
+Check_cijfer:7 checkt dit cijfer:7
+KleurFrequentie: (2)
+Check_cijfer:6 checkt dit cijfer:7
+Check_cijfer:8 checkt dit cijfer:7
+Check_cijfer:6 checkt dit cijfer:7
+Check_cijfer:2 checkt dit cijfer:7
+Check_cijfer:7 checkt dit cijfer:7
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+Check_cijfer:0 checkt dit cijfer:2
+2 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:2
+Check_cijfer:5 checkt dit cijfer:2
+Check_cijfer:4 checkt dit cijfer:2
+Check_cijfer:10 checkt dit cijfer:2
+Check_cijfer:4 checkt dit cijfer:2
+Check_cijfer:3 checkt dit cijfer:2
+Check_cijfer:5 checkt dit cijfer:2
+Check_cijfer:10 checkt dit cijfer:2
+Check_cijfer:2 checkt dit cijfer:2
+KleurFrequentie: (1)
+Check_cijfer:11 checkt dit cijfer:2
+Check_cijfer:1 checkt dit cijfer:2
+Check_cijfer:9 checkt dit cijfer:2
+Check_cijfer:11 checkt dit cijfer:2
+Check_cijfer:1 checkt dit cijfer:2
+Check_cijfer:3 checkt dit cijfer:2
+Check_cijfer:9 checkt dit cijfer:2
+Check_cijfer:7 checkt dit cijfer:2
+Check_cijfer:7 checkt dit cijfer:2
+Check_cijfer:6 checkt dit cijfer:2
+Check_cijfer:8 checkt dit cijfer:2
+Check_cijfer:6 checkt dit cijfer:2
+Check_cijfer:2 checkt dit cijfer:2
+KleurFrequentie: (2)
+Check_cijfer:2 checkt dit cijfer:2
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+Check_cijfer:0 checkt dit cijfer:2
+10 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:10
+Check_cijfer:5 checkt dit cijfer:10
+Check_cijfer:4 checkt dit cijfer:10
+Check_cijfer:10 checkt dit cijfer:10
+KleurFrequentie: (1)
+Check_cijfer:4 checkt dit cijfer:10
+Check_cijfer:3 checkt dit cijfer:10
+Check_cijfer:5 checkt dit cijfer:10
+Check_cijfer:10 checkt dit cijfer:10
+KleurFrequentie: (2)
+Check_cijfer:2 checkt dit cijfer:10
+Check_cijfer:11 checkt dit cijfer:10
+Check_cijfer:1 checkt dit cijfer:10
+Check_cijfer:9 checkt dit cijfer:10
+Check_cijfer:11 checkt dit cijfer:10
+Check_cijfer:1 checkt dit cijfer:10
+Check_cijfer:3 checkt dit cijfer:10
+Check_cijfer:9 checkt dit cijfer:10
+Check_cijfer:7 checkt dit cijfer:10
+Check_cijfer:7 checkt dit cijfer:10
+Check_cijfer:6 checkt dit cijfer:10
+Check_cijfer:8 checkt dit cijfer:10
+Check_cijfer:6 checkt dit cijfer:10
+Check_cijfer:2 checkt dit cijfer:10
+Check_cijfer:10 checkt dit cijfer:10
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+Check_cijfer:0 checkt dit cijfer:2
+8 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:8
+Check_cijfer:5 checkt dit cijfer:8
+Check_cijfer:4 checkt dit cijfer:8
+Check_cijfer:10 checkt dit cijfer:8
+Check_cijfer:4 checkt dit cijfer:8
+Check_cijfer:3 checkt dit cijfer:8
+Check_cijfer:5 checkt dit cijfer:8
+Check_cijfer:10 checkt dit cijfer:8
+Check_cijfer:2 checkt dit cijfer:8
+Check_cijfer:11 checkt dit cijfer:8
+Check_cijfer:1 checkt dit cijfer:8
+Check_cijfer:9 checkt dit cijfer:8
+Check_cijfer:11 checkt dit cijfer:8
+Check_cijfer:1 checkt dit cijfer:8
+Check_cijfer:3 checkt dit cijfer:8
+Check_cijfer:9 checkt dit cijfer:8
+Check_cijfer:7 checkt dit cijfer:8
+Check_cijfer:7 checkt dit cijfer:8
+Check_cijfer:6 checkt dit cijfer:8
+Check_cijfer:8 checkt dit cijfer:8
+KleurFrequentie: (1)
+Check_cijfer:6 checkt dit cijfer:8
+Check_cijfer:2 checkt dit cijfer:8
+Check_cijfer:8 checkt dit cijfer:8
+KleurFrequentie: (2)
+Check_cijfer:0 checkt dit cijfer:8
+7 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:7
+Check_cijfer:5 checkt dit cijfer:7
+Check_cijfer:4 checkt dit cijfer:7
+Check_cijfer:10 checkt dit cijfer:7
+Check_cijfer:4 checkt dit cijfer:7
+Check_cijfer:3 checkt dit cijfer:7
+Check_cijfer:5 checkt dit cijfer:7
+Check_cijfer:10 checkt dit cijfer:7
+Check_cijfer:2 checkt dit cijfer:7
+Check_cijfer:11 checkt dit cijfer:7
+Check_cijfer:1 checkt dit cijfer:7
+Check_cijfer:9 checkt dit cijfer:7
+Check_cijfer:11 checkt dit cijfer:7
+Check_cijfer:1 checkt dit cijfer:7
+Check_cijfer:3 checkt dit cijfer:7
+Check_cijfer:9 checkt dit cijfer:7
+Check_cijfer:7 checkt dit cijfer:7
+KleurFrequentie: (1)
+Check_cijfer:7 checkt dit cijfer:7
+KleurFrequentie: (2)
+Check_cijfer:6 checkt dit cijfer:7
+Check_cijfer:8 checkt dit cijfer:7
+Check_cijfer:6 checkt dit cijfer:7
+Check_cijfer:2 checkt dit cijfer:7
+Check_cijfer:8 checkt dit cijfer:7
+Check_cijfer:7 checkt dit cijfer:7
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+2 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:2
+Check_cijfer:5 checkt dit cijfer:2
+Check_cijfer:4 checkt dit cijfer:2
+Check_cijfer:10 checkt dit cijfer:2
+Check_cijfer:4 checkt dit cijfer:2
+Check_cijfer:3 checkt dit cijfer:2
+Check_cijfer:5 checkt dit cijfer:2
+Check_cijfer:10 checkt dit cijfer:2
+Check_cijfer:2 checkt dit cijfer:2
+KleurFrequentie: (1)
+Check_cijfer:11 checkt dit cijfer:2
+Check_cijfer:1 checkt dit cijfer:2
+Check_cijfer:9 checkt dit cijfer:2
+Check_cijfer:11 checkt dit cijfer:2
+Check_cijfer:1 checkt dit cijfer:2
+Check_cijfer:3 checkt dit cijfer:2
+Check_cijfer:9 checkt dit cijfer:2
+Check_cijfer:7 checkt dit cijfer:2
+Check_cijfer:7 checkt dit cijfer:2
+Check_cijfer:6 checkt dit cijfer:2
+Check_cijfer:8 checkt dit cijfer:2
+Check_cijfer:6 checkt dit cijfer:2
+Check_cijfer:2 checkt dit cijfer:2
+KleurFrequentie: (2)
+Check_cijfer:8 checkt dit cijfer:2
+Check_cijfer:2 checkt dit cijfer:2
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+3 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:3
+Check_cijfer:5 checkt dit cijfer:3
+Check_cijfer:4 checkt dit cijfer:3
+Check_cijfer:10 checkt dit cijfer:3
+Check_cijfer:4 checkt dit cijfer:3
+Check_cijfer:3 checkt dit cijfer:3
+KleurFrequentie: (1)
+Check_cijfer:5 checkt dit cijfer:3
+Check_cijfer:10 checkt dit cijfer:3
+Check_cijfer:2 checkt dit cijfer:3
+Check_cijfer:11 checkt dit cijfer:3
+Check_cijfer:1 checkt dit cijfer:3
+Check_cijfer:9 checkt dit cijfer:3
+Check_cijfer:11 checkt dit cijfer:3
+Check_cijfer:1 checkt dit cijfer:3
+Check_cijfer:3 checkt dit cijfer:3
+KleurFrequentie: (2)
+Check_cijfer:9 checkt dit cijfer:3
+Check_cijfer:7 checkt dit cijfer:3
+Check_cijfer:7 checkt dit cijfer:3
+Check_cijfer:6 checkt dit cijfer:3
+Check_cijfer:8 checkt dit cijfer:3
+Check_cijfer:6 checkt dit cijfer:3
+Check_cijfer:2 checkt dit cijfer:3
+Check_cijfer:8 checkt dit cijfer:3
+Check_cijfer:3 checkt dit cijfer:3
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+2 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:2
+Check_cijfer:5 checkt dit cijfer:2
+Check_cijfer:4 checkt dit cijfer:2
+Check_cijfer:10 checkt dit cijfer:2
+Check_cijfer:4 checkt dit cijfer:2
+Check_cijfer:3 checkt dit cijfer:2
+Check_cijfer:5 checkt dit cijfer:2
+Check_cijfer:10 checkt dit cijfer:2
+Check_cijfer:2 checkt dit cijfer:2
+KleurFrequentie: (1)
+Check_cijfer:11 checkt dit cijfer:2
+Check_cijfer:1 checkt dit cijfer:2
+Check_cijfer:9 checkt dit cijfer:2
+Check_cijfer:11 checkt dit cijfer:2
+Check_cijfer:1 checkt dit cijfer:2
+Check_cijfer:3 checkt dit cijfer:2
+Check_cijfer:9 checkt dit cijfer:2
+Check_cijfer:7 checkt dit cijfer:2
+Check_cijfer:7 checkt dit cijfer:2
+Check_cijfer:6 checkt dit cijfer:2
+Check_cijfer:8 checkt dit cijfer:2
+Check_cijfer:6 checkt dit cijfer:2
+Check_cijfer:2 checkt dit cijfer:2
+KleurFrequentie: (2)
+Check_cijfer:8 checkt dit cijfer:2
+Check_cijfer:2 checkt dit cijfer:2
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+10 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:10
+Check_cijfer:5 checkt dit cijfer:10
+Check_cijfer:4 checkt dit cijfer:10
+Check_cijfer:10 checkt dit cijfer:10
+KleurFrequentie: (1)
+Check_cijfer:4 checkt dit cijfer:10
+Check_cijfer:3 checkt dit cijfer:10
+Check_cijfer:5 checkt dit cijfer:10
+Check_cijfer:10 checkt dit cijfer:10
+KleurFrequentie: (2)
+Check_cijfer:2 checkt dit cijfer:10
+Check_cijfer:11 checkt dit cijfer:10
+Check_cijfer:1 checkt dit cijfer:10
+Check_cijfer:9 checkt dit cijfer:10
+Check_cijfer:11 checkt dit cijfer:10
+Check_cijfer:1 checkt dit cijfer:10
+Check_cijfer:3 checkt dit cijfer:10
+Check_cijfer:9 checkt dit cijfer:10
+Check_cijfer:7 checkt dit cijfer:10
+Check_cijfer:7 checkt dit cijfer:10
+Check_cijfer:6 checkt dit cijfer:10
+Check_cijfer:8 checkt dit cijfer:10
+Check_cijfer:6 checkt dit cijfer:10
+Check_cijfer:2 checkt dit cijfer:10
+Check_cijfer:8 checkt dit cijfer:10
+Check_cijfer:10 checkt dit cijfer:10
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+10 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:10
+Check_cijfer:5 checkt dit cijfer:10
+Check_cijfer:4 checkt dit cijfer:10
+Check_cijfer:10 checkt dit cijfer:10
+KleurFrequentie: (1)
+Check_cijfer:4 checkt dit cijfer:10
+Check_cijfer:3 checkt dit cijfer:10
+Check_cijfer:5 checkt dit cijfer:10
+Check_cijfer:10 checkt dit cijfer:10
+KleurFrequentie: (2)
+Check_cijfer:2 checkt dit cijfer:10
+Check_cijfer:11 checkt dit cijfer:10
+Check_cijfer:1 checkt dit cijfer:10
+Check_cijfer:9 checkt dit cijfer:10
+Check_cijfer:11 checkt dit cijfer:10
+Check_cijfer:1 checkt dit cijfer:10
+Check_cijfer:3 checkt dit cijfer:10
+Check_cijfer:9 checkt dit cijfer:10
+Check_cijfer:7 checkt dit cijfer:10
+Check_cijfer:7 checkt dit cijfer:10
+Check_cijfer:6 checkt dit cijfer:10
+Check_cijfer:8 checkt dit cijfer:10
+Check_cijfer:6 checkt dit cijfer:10
+Check_cijfer:2 checkt dit cijfer:10
+Check_cijfer:8 checkt dit cijfer:10
+Check_cijfer:10 checkt dit cijfer:10
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+8 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:8
+Check_cijfer:5 checkt dit cijfer:8
+Check_cijfer:4 checkt dit cijfer:8
+Check_cijfer:10 checkt dit cijfer:8
+Check_cijfer:4 checkt dit cijfer:8
+Check_cijfer:3 checkt dit cijfer:8
+Check_cijfer:5 checkt dit cijfer:8
+Check_cijfer:10 checkt dit cijfer:8
+Check_cijfer:2 checkt dit cijfer:8
+Check_cijfer:11 checkt dit cijfer:8
+Check_cijfer:1 checkt dit cijfer:8
+Check_cijfer:9 checkt dit cijfer:8
+Check_cijfer:11 checkt dit cijfer:8
+Check_cijfer:1 checkt dit cijfer:8
+Check_cijfer:3 checkt dit cijfer:8
+Check_cijfer:9 checkt dit cijfer:8
+Check_cijfer:7 checkt dit cijfer:8
+Check_cijfer:7 checkt dit cijfer:8
+Check_cijfer:6 checkt dit cijfer:8
+Check_cijfer:8 checkt dit cijfer:8
+KleurFrequentie: (1)
+Check_cijfer:6 checkt dit cijfer:8
+Check_cijfer:2 checkt dit cijfer:8
+Check_cijfer:8 checkt dit cijfer:8
+KleurFrequentie: (2)
+Check_cijfer:8 checkt dit cijfer:8
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+1 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:1
+Check_cijfer:5 checkt dit cijfer:1
+Check_cijfer:4 checkt dit cijfer:1
+Check_cijfer:10 checkt dit cijfer:1
+Check_cijfer:4 checkt dit cijfer:1
+Check_cijfer:3 checkt dit cijfer:1
+Check_cijfer:5 checkt dit cijfer:1
+Check_cijfer:10 checkt dit cijfer:1
+Check_cijfer:2 checkt dit cijfer:1
+Check_cijfer:11 checkt dit cijfer:1
+Check_cijfer:1 checkt dit cijfer:1
+KleurFrequentie: (1)
+Check_cijfer:9 checkt dit cijfer:1
+Check_cijfer:11 checkt dit cijfer:1
+Check_cijfer:1 checkt dit cijfer:1
+KleurFrequentie: (2)
+Check_cijfer:3 checkt dit cijfer:1
+Check_cijfer:9 checkt dit cijfer:1
+Check_cijfer:7 checkt dit cijfer:1
+Check_cijfer:7 checkt dit cijfer:1
+Check_cijfer:6 checkt dit cijfer:1
+Check_cijfer:8 checkt dit cijfer:1
+Check_cijfer:6 checkt dit cijfer:1
+Check_cijfer:2 checkt dit cijfer:1
+Check_cijfer:8 checkt dit cijfer:1
+Check_cijfer:1 checkt dit cijfer:1
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+6 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:6
+Check_cijfer:5 checkt dit cijfer:6
+Check_cijfer:4 checkt dit cijfer:6
+Check_cijfer:10 checkt dit cijfer:6
+Check_cijfer:4 checkt dit cijfer:6
+Check_cijfer:3 checkt dit cijfer:6
+Check_cijfer:5 checkt dit cijfer:6
+Check_cijfer:10 checkt dit cijfer:6
+Check_cijfer:2 checkt dit cijfer:6
+Check_cijfer:11 checkt dit cijfer:6
+Check_cijfer:1 checkt dit cijfer:6
+Check_cijfer:9 checkt dit cijfer:6
+Check_cijfer:11 checkt dit cijfer:6
+Check_cijfer:1 checkt dit cijfer:6
+Check_cijfer:3 checkt dit cijfer:6
+Check_cijfer:9 checkt dit cijfer:6
+Check_cijfer:7 checkt dit cijfer:6
+Check_cijfer:7 checkt dit cijfer:6
+Check_cijfer:6 checkt dit cijfer:6
+KleurFrequentie: (1)
+Check_cijfer:8 checkt dit cijfer:6
+Check_cijfer:6 checkt dit cijfer:6
+KleurFrequentie: (2)
+Check_cijfer:2 checkt dit cijfer:6
+Check_cijfer:8 checkt dit cijfer:6
+Check_cijfer:6 checkt dit cijfer:6
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+8 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:8
+Check_cijfer:5 checkt dit cijfer:8
+Check_cijfer:4 checkt dit cijfer:8
+Check_cijfer:10 checkt dit cijfer:8
+Check_cijfer:4 checkt dit cijfer:8
+Check_cijfer:3 checkt dit cijfer:8
+Check_cijfer:5 checkt dit cijfer:8
+Check_cijfer:10 checkt dit cijfer:8
+Check_cijfer:2 checkt dit cijfer:8
+Check_cijfer:11 checkt dit cijfer:8
+Check_cijfer:1 checkt dit cijfer:8
+Check_cijfer:9 checkt dit cijfer:8
+Check_cijfer:11 checkt dit cijfer:8
+Check_cijfer:1 checkt dit cijfer:8
+Check_cijfer:3 checkt dit cijfer:8
+Check_cijfer:9 checkt dit cijfer:8
+Check_cijfer:7 checkt dit cijfer:8
+Check_cijfer:7 checkt dit cijfer:8
+Check_cijfer:6 checkt dit cijfer:8
+Check_cijfer:8 checkt dit cijfer:8
+KleurFrequentie: (1)
+Check_cijfer:6 checkt dit cijfer:8
+Check_cijfer:2 checkt dit cijfer:8
+Check_cijfer:8 checkt dit cijfer:8
+KleurFrequentie: (2)
+Check_cijfer:8 checkt dit cijfer:8
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+5 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:5
+Check_cijfer:5 checkt dit cijfer:5
+KleurFrequentie: (1)
+Check_cijfer:4 checkt dit cijfer:5
+Check_cijfer:10 checkt dit cijfer:5
+Check_cijfer:4 checkt dit cijfer:5
+Check_cijfer:3 checkt dit cijfer:5
+Check_cijfer:5 checkt dit cijfer:5
+KleurFrequentie: (2)
+Check_cijfer:10 checkt dit cijfer:5
+Check_cijfer:2 checkt dit cijfer:5
+Check_cijfer:11 checkt dit cijfer:5
+Check_cijfer:1 checkt dit cijfer:5
+Check_cijfer:9 checkt dit cijfer:5
+Check_cijfer:11 checkt dit cijfer:5
+Check_cijfer:1 checkt dit cijfer:5
+Check_cijfer:3 checkt dit cijfer:5
+Check_cijfer:9 checkt dit cijfer:5
+Check_cijfer:7 checkt dit cijfer:5
+Check_cijfer:7 checkt dit cijfer:5
+Check_cijfer:6 checkt dit cijfer:5
+Check_cijfer:8 checkt dit cijfer:5
+Check_cijfer:6 checkt dit cijfer:5
+Check_cijfer:2 checkt dit cijfer:5
+Check_cijfer:8 checkt dit cijfer:5
+Check_cijfer:5 checkt dit cijfer:5
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+10 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:10
+Check_cijfer:5 checkt dit cijfer:10
+Check_cijfer:4 checkt dit cijfer:10
+Check_cijfer:10 checkt dit cijfer:10
+KleurFrequentie: (1)
+Check_cijfer:4 checkt dit cijfer:10
+Check_cijfer:3 checkt dit cijfer:10
+Check_cijfer:5 checkt dit cijfer:10
+Check_cijfer:10 checkt dit cijfer:10
+KleurFrequentie: (2)
+Check_cijfer:2 checkt dit cijfer:10
+Check_cijfer:11 checkt dit cijfer:10
+Check_cijfer:1 checkt dit cijfer:10
+Check_cijfer:9 checkt dit cijfer:10
+Check_cijfer:11 checkt dit cijfer:10
+Check_cijfer:1 checkt dit cijfer:10
+Check_cijfer:3 checkt dit cijfer:10
+Check_cijfer:9 checkt dit cijfer:10
+Check_cijfer:7 checkt dit cijfer:10
+Check_cijfer:7 checkt dit cijfer:10
+Check_cijfer:6 checkt dit cijfer:10
+Check_cijfer:8 checkt dit cijfer:10
+Check_cijfer:6 checkt dit cijfer:10
+Check_cijfer:2 checkt dit cijfer:10
+Check_cijfer:8 checkt dit cijfer:10
+Check_cijfer:10 checkt dit cijfer:10
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+1 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:1
+Check_cijfer:5 checkt dit cijfer:1
+Check_cijfer:4 checkt dit cijfer:1
+Check_cijfer:10 checkt dit cijfer:1
+Check_cijfer:4 checkt dit cijfer:1
+Check_cijfer:3 checkt dit cijfer:1
+Check_cijfer:5 checkt dit cijfer:1
+Check_cijfer:10 checkt dit cijfer:1
+Check_cijfer:2 checkt dit cijfer:1
+Check_cijfer:11 checkt dit cijfer:1
+Check_cijfer:1 checkt dit cijfer:1
+KleurFrequentie: (1)
+Check_cijfer:9 checkt dit cijfer:1
+Check_cijfer:11 checkt dit cijfer:1
+Check_cijfer:1 checkt dit cijfer:1
+KleurFrequentie: (2)
+Check_cijfer:3 checkt dit cijfer:1
+Check_cijfer:9 checkt dit cijfer:1
+Check_cijfer:7 checkt dit cijfer:1
+Check_cijfer:7 checkt dit cijfer:1
+Check_cijfer:6 checkt dit cijfer:1
+Check_cijfer:8 checkt dit cijfer:1
+Check_cijfer:6 checkt dit cijfer:1
+Check_cijfer:2 checkt dit cijfer:1
+Check_cijfer:8 checkt dit cijfer:1
+Check_cijfer:1 checkt dit cijfer:1
+KleurFrequentie: (3)
+J is in de MIN gegaan.
+0 Is_gegenereerd
+Check_cijfer:11 checkt dit cijfer:0
+Check_cijfer:5 checkt dit cijfer:0
+Check_cijfer:4 checkt dit cijfer:0
+Check_cijfer:10 checkt dit cijfer:0
+Check_cijfer:4 checkt dit cijfer:0
+Check_cijfer:3 checkt dit cijfer:0
+Check_cijfer:5 checkt dit cijfer:0
+Check_cijfer:10 checkt dit cijfer:0
+Check_cijfer:2 checkt dit cijfer:0
+Check_cijfer:11 checkt dit cijfer:0
+Check_cijfer:1 checkt dit cijfer:0
+Check_cijfer:9 checkt dit cijfer:0
+Check_cijfer:11 checkt dit cijfer:0
+Check_cijfer:1 checkt dit cijfer:0
+Check_cijfer:3 checkt dit cijfer:0
+Check_cijfer:9 checkt dit cijfer:0
+Check_cijfer:7 checkt dit cijfer:0
+Check_cijfer:7 checkt dit cijfer:0
+Check_cijfer:6 checkt dit cijfer:0
+Check_cijfer:8 checkt dit cijfer:0
+Check_cijfer:6 checkt dit cijfer:0
+Check_cijfer:2 checkt dit cijfer:0
+Check_cijfer:8 checkt dit cijfer:0
+Check_cijfer:0 checkt dit cijfer:0
+KleurFrequentie: (1)
+Klaar

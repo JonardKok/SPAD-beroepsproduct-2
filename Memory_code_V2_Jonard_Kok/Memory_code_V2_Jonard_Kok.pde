@@ -28,13 +28,14 @@ final int MIDDENVIOLETROOD= #C71585;
 final int LEIGRIJS = #708090;
 final int DIEPROZE= #FF1493;
 final int ACHTERKANT_VAN_KAART_KLEUR = 0;
-
+PrintWriter kleurennummers;
 
 void setup() {
   //pakVernieuwingsFrequentie();
   fullScreen(FX2D);
   //frameRate(spelFrequentie);
   textAlign(TOP, LEFT);
+  kleurennummers=createWriter("kleurennummers.txt");
 }
 
 void draw() {
