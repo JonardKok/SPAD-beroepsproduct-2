@@ -31,8 +31,8 @@ int puntspeler3;
 int puntspeler4;
 int[] spelerScore = {0, 0, 0, 0};
 int[] kaartKleuren = {doodskaartofnormalekaartkleur, BLAUW, GRIJS, GEEL, ORANJE, PAARS, CYAAN, ROZE, BRUIN, DONKERROOD, DONKERBLAUW, DONKERGROEN, ZANDBRUIN, LICHT_BLAUW, WIT, BOSGROEN, CEMENTGRIJS, MIDDENVIOLETROOD, LEIGRIJS, DIEPROZE};
-int[][] kaartKleur;
 int[][] plekkenMetKaart;
+int[][] kaartKleur;
 int[][] kaartPlekken = {
   {0, 1, 2, 3, 4, 5, 6, 7}, 
   {0, 1, 2, 3, 4, 5, 6, 7}, 
@@ -91,8 +91,10 @@ void tekenBeurtEindeIndicator() {
   text("Einde beurt", width/2, height/10);
 }
 
+//kijkt naar de kleur van de kaarten en 
 void beurtEinde() {
-  if (voorkantKaartKleur1 == voorkantKaartKleur2) {
+  if (voorkantKaartKleur1 == voorkantKaartKleur2) {//hier kan een for lus gemaakt van worden
+    haalKaartUitSpel();
     switch(spelerMetBeurt) {
     case 1:
       spelerScore[0]++;
@@ -120,6 +122,9 @@ void beurtEinde() {
   }
 }
 
+void haalKaartUitSpel(int kaartnummer ) {  
+  
+}
 
 //tekent alle kaarten
 void tekenKaarten() {
@@ -127,23 +132,14 @@ void tekenKaarten() {
   kaartHoogte = height / 10;
   afstandTussenKaarten = kaartBreedte / 10;
   if (!kaartPlekkenZijnBerekend) { //zorgt ervoor dat de kaartplek maar 1x berekend wordt waardoor de kaarten niet van plek veranderen. Bug voorkomen dus.
+    hoeveelSetjesMoetenGetekendWorden();
     berekenKaartKleur();
   }
-  hoeveelSetjesMoetenGetekendWorden();
   tekenKaartenLayout();
   tekenKaartenBuitenScherm();
   tekenGeklikteKaarten();
 }
 
-//methode maken die de geplaatste plek van een kleur de kleur maakt.
-/*
-als dingen gerenderd zijn dan
- en als er op een kaart is geklikt dan
- teken de kleur van de kaart
- als de kleur van de kaart gelijk is aan de kleur van de kaart die daarvoor aangeklikt is 
- speler krijgt een punt erbij
- anders gaat de beurt naar de volgende speler
- */
 void tekenKaartenBuitenScherm() {
   if (isXGekliktekaartNul()) {//fixt een bug waar de kaart linksboven in het scherm "spawnt"
     xGeklikteKaart1 = width;
@@ -186,7 +182,7 @@ void kijkOpWelkeKaartGekliktIs() {
         switch(hoevaakOpKaartGeklikt) {
         case 1:
           geefKaartPlekDoor(xKaart, yKaart);
-          println("kleur " + kaartKleur[j], "kaartplek " + plekkenMetKaart[i].length, j, i);
+          println("kleur " + kaartKleur[i][j], "kaartplek " + plekkenMetKaart[i].length, j, i);
           voorkantKaartKleur1 = kaartKleuren[kaartKleur[i][j]];
           break;
         case 2:
@@ -223,37 +219,16 @@ void tekenGeklikteKaarten() {
 }
 
 //DIT BEREKENT DE KLEUREN________________________________________________________________________________________
-/*void berekenKaartKleur() {
-  //kaartKleur = new int [1][1]; __________________________________________________________________________________________________ NOG AANPASSEN
-  kleurKaart = new int[getAantalSetjes() * 2];
-  println("boe" + kleurKaart.length);
-  for (int i = 0; i < kleurKaart.length; i++) {
-    kleurKaart[i] = int(random(1, (kleurKaart.length / 2) + 1));
-    int cijferFrequentie = 0;
-    for (int j = 0; j < kleurKaart.length; j++) {
-      if (kleurKaart[i] != 0 && kleurKaart[j] ==  kleurKaart[i]) {
-        cijferFrequentie++;
-      }
-      if (komtCijferVakerVoor(cijferFrequentie, i)) {
-        i--;
-        cijferFrequentie = 0;
-      }
-    }
-  }
-  println(kleurKaart);
-  kaartPlekkenZijnBerekend = true;
-}*/
-
 void berekenKaartKleur() {
-  //kaartKleur = plekkenMetKaart;
-  kaartKleur = new int[4][6] ;
+  kaartKleur = new int[plekkenMetKaart.length][plekkenMetKaart[0].length];
   for (int i = 0; i < kaartKleur.length; i++) {
     for (int j = 0; j < kaartKleur[i].length; j++) {
       kaartKleur[i][j] = int(random(1, (aantalSetjes) + 1));
+      kaartKleur[i][j] = kaartKleur[i][j] - 1;
       int kleurFrequentie = 0;
       for (int k = 0; k < kaartKleur.length; k++) {
         for (int l = 0; l < kaartKleur[k].length; l++) {//gaat de hele rij af om te kijken of de kleur al 2x bestaat.
-          if (kaartKleur[i][j] != 0 && kaartKleur[i][j] == kaartKleur[k][l]) {
+          if (kaartKleur[i][j] == kaartKleur[k][l]) {
             kleurFrequentie++;
           }
           if (kleurFrequentie > 2 && j > 0) {
@@ -264,7 +239,7 @@ void berekenKaartKleur() {
       }
     }  
     for (int j = 0; j < kaartKleur[i].length; j++) {
-      println(i,j, "kleurkaart "+kaartKleur[i][j] );//kaartkleur is berekend
+      println(i, j, "kleurkaart "+kaartKleur[i][j] );//kaartkleur is berekend
     }
   }
   kaartPlekkenZijnBerekend = true;
