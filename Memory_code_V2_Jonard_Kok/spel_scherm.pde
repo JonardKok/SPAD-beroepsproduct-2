@@ -15,7 +15,7 @@ int kaartBreedte;
 int kaartHoogte;
 int voorkantKaartKleur1;
 int voorkantKaartKleur2;
-int doodskaartofnormalekaartkleur;
+int doodskaartofnormalekaartkleur = GROEN;
 int afstandTussenKaarten;
 int kaart = 0;
 int xCorrectie = 0;
@@ -30,7 +30,7 @@ int puntspeler2;
 int puntspeler3;
 int puntspeler4;
 int[] spelerScore = {0, 0, 0, 0};
-int[] kaartKleuren = {doodskaartofnormalekaartkleur, BLAUW, GRIJS, GEEL, ORANJE, PAARS, CYAAN, ROZE, BRUIN, DONKERROOD, DONKERBLAUW, DONKERGROEN, ZANDBRUIN, LICHT_BLAUW, WIT, BOSGROEN, CEMENTGRIJS, MIDDENVIOLETROOD, LEIGRIJS, DIEPROZE};
+int[] kaartKleuren;
 int[][] plekkenMetKaart;
 int[][] kaartKleur;
 int[][] kaartPlekken = {
@@ -63,8 +63,8 @@ void veranderSpelScherm() {
   case 3:
     beurtEinde();
     eindebeurt = false;
-    voorkantKaartKleur1 = ROOD;
-    voorkantKaartKleur2 = ROOD;
+    //voorkantKaartKleur1 = ROOD;
+    //voorkantKaartKleur2 = ROOD;
     hoevaakOpKaartGeklikt = 0;
     break;
   }
@@ -94,7 +94,7 @@ void tekenBeurtEindeIndicator() {
 //kijkt naar de kleur van de kaarten en 
 void beurtEinde() {
   if (voorkantKaartKleur1 == voorkantKaartKleur2) {//hier kan een for lus gemaakt van worden
-    haalKaartUitSpel();
+    //haalKaartUitSpel();
     switch(spelerMetBeurt) {
     case 1:
       spelerScore[0]++;
@@ -122,8 +122,7 @@ void beurtEinde() {
   }
 }
 
-void haalKaartUitSpel(int kaartnummer ) {  
-  
+void haalKaartUitSpel(int kaartnummer ) {
 }
 
 //tekent alle kaarten
@@ -132,6 +131,7 @@ void tekenKaarten() {
   kaartHoogte = height / 10;
   afstandTussenKaarten = kaartBreedte / 10;
   if (!kaartPlekkenZijnBerekend) { //zorgt ervoor dat de kaartplek maar 1x berekend wordt waardoor de kaarten niet van plek veranderen. Bug voorkomen dus.
+    kaartKleuren = new int[] {doodskaartofnormalekaartkleur, BLAUW, GRIJS, GEEL, ORANJE, PAARS, CYAAN, ROZE, BRUIN, DONKERROOD, DONKERBLAUW, DONKERGROEN, ZANDBRUIN, LICHT_BLAUW, WIT, BOSGROEN, CEMENTGRIJS, MIDDENVIOLETROOD, LEIGRIJS, DIEPROZE};
     hoeveelSetjesMoetenGetekendWorden();
     berekenKaartKleur();
   }
@@ -202,13 +202,16 @@ void voorkantKaartPlekBerekenen(int i, int j) {
 
 void geefKaartPlekDoor(int x, int y) {
   kaart++;
-  if (kaart == 1) {
+  switch (kaart) {
+  case 1:
     xGeklikteKaart1 = x;
     yGeklikteKaart1 = y;
-  } else if (kaart == 2) {
+    break;
+  case 2:
     xGeklikteKaart2 = x;
     yGeklikteKaart2 = y;
     kaart = 0;
+    break;
   }
 }
 
@@ -228,18 +231,18 @@ void berekenKaartKleur() {
       int kleurFrequentie = 0;
       for (int k = 0; k < kaartKleur.length; k++) {
         for (int l = 0; l < kaartKleur[k].length; l++) {//gaat de hele rij af om te kijken of de kleur al 2x bestaat.
-          if (kaartKleur[i][j] == kaartKleur[k][l]) {
+          if (kaartKleur[k][l] == kaartKleur[i][j]) {
             kleurFrequentie++;
-          }
-          if (kleurFrequentie > 2 && j > 0) {
-            j--;
-            kleurFrequentie = 0;
+            if (kleurFrequentie > 2 && j > 0) {
+              j--;
+              kleurFrequentie = 0;
+            }
           }
         }
       }
     }  
     for (int j = 0; j < kaartKleur[i].length; j++) {
-      println(i, j, "kleurkaart "+kaartKleur[i][j] );//kaartkleur is berekend
+      println(i, j, "kleurkaart "+kaartKleur[i][j] ); //Printen van de kleuren voor debuggen
     }
   }
   kaartPlekkenZijnBerekend = true;
@@ -276,15 +279,16 @@ void tekenKleurVanKaart(int x, int y, int breedte, int hoogte, int kleur) {
 //tekent de doodskaarten
 void tekenDoodskaartIndicator() {
   if (getDoodskaarten()) {
+    doodskaartofnormalekaartkleur = ROOD;
     tekenDoodskaartOptie("Doodskaarten AAN", ROOD, "klein");
   } else if (!getDoodskaarten()) {
+    doodskaartofnormalekaartkleur = GROEN;
     tekenDoodskaartOptie("Doodskaarten UIT", GROEN, "klein");
   }
 }
 
 //tekent de tekst die aangeeft of doodskaarten aan staan of niet
 void tekenDoodskaartOptie(String tekst, int kleur, String tekstGrootte) {
-  doodskaartofnormalekaartkleur = kleur;
   fill(kleur);
   textSize(getTekstgrootte(tekstGrootte));
   text(tekst, width - int(textWidth(tekst)), getTekstgrootte(tekstGrootte));
