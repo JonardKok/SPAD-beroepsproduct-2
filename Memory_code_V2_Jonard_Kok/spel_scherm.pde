@@ -225,7 +225,6 @@ void tekenGeklikteKaarten() {
 //DIT BEREKENT DE KLEUREN________________________________________________________________________________________
 void berekenKaartKleur() {
   kaartKleur = new int[plekkenMetKaart.length][plekkenMetKaart[0].length];
-  kaartKleur = {};
   for (int i = 0; i < kaartKleur.length; i++) {
     for (int j = 0; j < kaartKleur[i].length; j++) {
       kaartKleur[i][j] = int(random(1, (aantalSetjes) + 1));
