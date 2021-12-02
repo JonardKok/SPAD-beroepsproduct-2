@@ -134,6 +134,7 @@ void tekenKaarten() {
     kaartKleuren = new int[] {doodskaartofnormalekaartkleur, BLAUW, GRIJS, GEEL, ORANJE, PAARS, CYAAN, ROZE, BRUIN, DONKERROOD, DONKERBLAUW, DONKERGROEN, ZANDBRUIN, LICHT_BLAUW, WIT, BOSGROEN, CEMENTGRIJS, MIDDENVIOLETROOD, LEIGRIJS, DIEPROZE};
     hoeveelSetjesMoetenGetekendWorden();
     berekenKaartKleur();
+    printKleuren();
   }
   tekenKaartenLayout();
   tekenKaartenBuitenScherm();
@@ -221,6 +222,8 @@ void tekenGeklikteKaarten() {
   tekenKaart(xGeklikteKaart2, yGeklikteKaart2, kaartBreedte, kaartHoogte, voorkantKaartKleur2);
 }
 
+
+
 //DIT BEREKENT DE KLEUREN________________________________________________________________________________________
 void berekenKaartKleur() {
   kaartKleur = new int[plekkenMetKaart.length][plekkenMetKaart[0].length];
@@ -228,24 +231,33 @@ void berekenKaartKleur() {
     for (int j = 0; j < kaartKleur[i].length; j++) {
       kaartKleur[i][j] = int(random(1, (aantalSetjes) + 1));
       kaartKleur[i][j] = kaartKleur[i][j] - 1;
+      //println(kaartKleur[i][j]);
       int kleurFrequentie = 0;
       for (int k = 0; k < kaartKleur.length; k++) {
         for (int l = 0; l < kaartKleur[k].length; l++) {//gaat de hele rij af om te kijken of de kleur al 2x bestaat.
           if (kaartKleur[k][l] == kaartKleur[i][j]) {
             kleurFrequentie++;
+            //println(kleurFrequentie);
+            println(kleurFrequentie);
             if (kleurFrequentie > 2 && j > 0) {
-              j--;
               kleurFrequentie = 0;
+              j -=1;
+            } else {
+              println("klopt");
             }
           }
         }
       }
-    }  
+    }
+    kaartPlekkenZijnBerekend = true;
+  }
+}
+void printKleuren() {
+  for (int i = 0; i < kaartKleur.length; i++) {
     for (int j = 0; j < kaartKleur[i].length; j++) {
       println(i, j, "kleurkaart "+kaartKleur[i][j] ); //Printen van de kleuren voor debuggen
     }
   }
-  kaartPlekkenZijnBerekend = true;
 }
 
 //tekent de grid van kaarten zonder kleur._______________________________________________________________________
