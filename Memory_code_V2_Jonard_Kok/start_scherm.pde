@@ -135,20 +135,20 @@ void tekenOpties(int x, int y) {
             x = x + menuTextBreedte;
             y = y - groteTekstGrootte / 3;
             knopBreedte = kleineTekstKnopBreedte + knopTextBreedte;
-            tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, ROOD, kleineTekstGrootte, menuTekst[i][j][k]);
+            tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, getKleuren(ROOD), kleineTekstGrootte, menuTekst[i][j][k]);
             opMinGedrukt = opStartschermKnopGeklikt(x, y, knopBreedte, kleineTekstKnopHoogte);
           } else if (menuTekst[i][j][k] == menuTekst[2][0][1]) { //tekent hoeveelheid spelers
             menuTextBreedte = int(textWidth(menuTekst[1][0][0]));
             knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
             x = x + menuTextBreedte / 3;
             knopBreedte = kleineTekstKnopBreedte + knopTextBreedte;
-            tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, GRIJS, kleineTekstGrootte, menuTekst[i][j][k]);
+            tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, getKleuren(GRIJS), kleineTekstGrootte, menuTekst[i][j][k]);
           } else if (menuTekst[i][j][k] == menuTekst[2][0][2]) { //tekent +
             menuTextBreedte = int(textWidth(menuTekst[1][0][0]));
             knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
             x = x + menuTextBreedte / 3;
             knopBreedte = kleineTekstKnopBreedte + knopTextBreedte;
-            tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, GROEN, kleineTekstGrootte, menuTekst[i][j][k]);
+            tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, getKleuren(GROEN), kleineTekstGrootte, menuTekst[i][j][k]);
             opPlusGedrukt = opStartschermKnopGeklikt(x, y, knopBreedte, kleineTekstKnopHoogte);
           } else if (menuTekst[i][j][k] == menuTekst[2][1][0]) {//tekent nee
             menuTextBreedte = int(textWidth(menuTekst[1][1][0]));
@@ -156,7 +156,7 @@ void tekenOpties(int x, int y) {
             x = x - menuTextBreedte / 2 - (menuTextBreedte / 8);
             y = y + groteTekstGrootte - groteTekstGrootte / 4;
             knopBreedte = kleineTekstKnopBreedte + knopTextBreedte;
-            tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, ROOD, kleineTekstGrootte, menuTekst[i][j][k]);
+            tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, getKleuren(ROOD), kleineTekstGrootte, menuTekst[i][j][k]);
             opNeeGedrukt = opStartschermKnopGeklikt(x, y, knopBreedte, kleineTekstKnopHoogte);
           } else if (menuTekst[i][j][k] == menuTekst[2][1][1]) {//tekent ja
             menuTextBreedte = int(textWidth(menuTekst[1][1][0]));
@@ -235,6 +235,20 @@ void tekst(String tekst, int x, int y, int tekstGrootte) {
   textSize(tekstGrootte);
   fill(TEKST_KLEUR);
   text(tekst, x, y);
+}
+
+int getKleuren(int kleur) {
+  switch(kleur) {
+  case ROOD:
+    return ROOD;
+    break;
+  case  GRIJS:
+    return GRIJS;
+    break;
+  case GROEN:
+    return GROEN;
+    break;
+  }
 }
 
 void tekenKnop(int x, int y, int breedte, int hoogte, int radiusTL, int radiusTR, int radiusBR, int radiusBL, int kleur) {//komt uit bug squash

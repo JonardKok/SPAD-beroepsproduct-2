@@ -4,6 +4,30 @@ boolean opKaartGeklikt;
 boolean kaartPlekkenZijnBerekend;
 boolean eindebeurt;
 boolean overalKlikken;
+//Kleuren
+final int WIT = #FFFFFF;
+final int ROOD = #FF0000;
+final int GROEN = #00FF00;
+final int BLAUW = #0000FF;
+final int GRIJS = #AAAAAA;
+final int GEEL = #FFFF00;
+final int ORANJE = #FFA500;
+final int PAARS = #800080;
+final int CYAAN = #00FFFF;
+final int ROZE = #FFC0CB;
+final int BRUIN = #654321;
+final int DONKERROOD = #8B0000;
+final int DONKERBLAUW = #00008B;
+final int DONKERGROEN = #008B00;
+final int ZANDBRUIN = #F4A460;
+final int KLEUR_DOODSKAARTEN = #FF0000;
+final int LICHT_BLAUW = #ADD8E6;
+final int BOSGROEN = #228B22;
+final int CEMENTGRIJS = #7D8471;
+final int MIDDENVIOLETROOD= #C71585;
+final int LEIGRIJS = #708090;
+final int DIEPROZE= #FF1493;
+final int ACHTERKANT_VAN_KAART_KLEUR = 0;
 int speler;
 int maxAantalSpelers;
 int spelerMetBeurt = 1;
@@ -225,66 +249,70 @@ void tekenGeklikteKaarten() {
 void berekenKaartKleur() {
   kaartKleur = new int[plekkenMetKaart.length][plekkenMetKaart[0].length];
   vulVeldMetDertig();
-  for (int i = 0; i < kaartKleur.length*kaartKleur[0].length; i++ ) {
+  println("lengte",kaartKleur.length*kaartKleur[0].length);
+  for (int i = 0; i < (kaartKleur.length*kaartKleur[0].length)/2; i++ ) {
+    println("berekening gestart");
     tekenAttributen(2, i);
   }
+  kaartPlekkenZijnBerekend = true;
 }
 
 void vulVeldMetDertig() {
   for (int i = 0; i < kaartKleur.length; i++) {
     for (int j = 0; j < kaartKleur[i].length; j++) {
       kaartKleur[i][j] = 30;
+      println(i, j, kaartKleur[i][j]);
     }
   }
 }
 
-
-void tekenAttributen( int aantalItems, int kleurNr) {
-  int kleurfrequentie = 0;
-  for (kleurfrequentie = 0; kleurfrequentie < aantalItems; ) {
-    int x = round(random(0, kaartKleur[0].length-1));
-    int y = round(random(0, kaartKleur.length-1));
-    if (kaartKleur[x][y] == 30) {
-      kaartKleur[x][y] = kleurNr;
+//DIT BEREKENT DE KLEUREN________________________________________________________________________________________
+void tekenAttributen(int aantalItems, int kleurNr) {
+  for (int kleurfrequentie = 0; kleurfrequentie < aantalItems; ) {
+    int j = round(random(0, kaartKleur[0].length-1));
+    int i = round(random(0, kaartKleur.length-1));
+    if (kaartKleur[i][j] == 30) {
+      kaartKleur[i][j] = kleurNr;
       kleurfrequentie += 1;
+      println("kleurtjebedacht", kaartKleur[i][j]);
+      println(kleurNr,"is berekend");
     }
   }
 }
 
 /*
-//DIT BEREKENT DE KLEUREN________________________________________________________________________________________
- void berekenKaartKleur() {
- kaartKleur = new int[plekkenMetKaart.length][plekkenMetKaart[0].length];
- for (int i = 0; i < kaartKleur.length; i++) {
- for (int j = 0; j < kaartKleur[i].length; j++) {
- kaartKleur[i][j] = int(random(1, (aantalSetjes) + 1));
- kaartKleur[i][j] = kaartKleur[i][j] - 1;
- //println(kaartKleur[i][j]);
- int kleurFrequentie = 0;
- kleurennummers.println(kaartKleur[i][j]+" "+"Is_gegenereerd");//
- for (int k = 0; k < kaartKleur.length; k++) {
- for (int l = 0; l < kaartKleur[k].length; l++) {//gaat de hele rij af om te kijken of de kleur al 2x bestaat.
- kleurennummers.println("Check_cijfer:"+kaartKleur[k][l]+ " checkt dit cijfer:"+kaartKleur[i][j]);
- if (kaartKleur[k][l] == kaartKleur[i][j]) {
- kleurFrequentie++;
- kleurennummers.println("KleurFrequentie: ("+kleurFrequentie+")");
- // kleurennummers.println("Frequentie" + kleurFrequentie+ " " + kaartKleur[i][j]);
- if (kleurFrequentie >= 3 && j > 0) {
- kleurFrequentie = 0;
- j -=1;
- kleurennummers.println("J is in de MIN gegaan.");
- }
- }
- }
- }
- }
- kaartPlekkenZijnBerekend = true;
- }
- kleurennummers.println("Klaar");
- kleurennummers.flush();
- kleurennummers.close();
- }
- */
+void berekenKaartKleur() {
+  kaartKleur = new int[plekkenMetKaart.length][plekkenMetKaart[0].length];
+  for (int i = 0; i < kaartKleur.length; i++) {
+    for (int j = 0; j < kaartKleur[i].length; j++) {
+      kaartKleur[i][j] = int(random(1, (aantalSetjes) + 1));
+      kaartKleur[i][j] = kaartKleur[i][j] - 1;
+      //println(kaartKleur[i][j]);
+      int kleurFrequentie = 0;
+      kleurennummers.println(kaartKleur[i][j]+" "+"Is_gegenereerd");//
+      for (int k = 0; k < kaartKleur.length; k++) {
+        for (int l = 0; l < kaartKleur[k].length; l++) {//gaat de hele rij af om te kijken of de kleur al 2x bestaat.
+          kleurennummers.println("Check_cijfer:"+kaartKleur[k][l]+ " checkt dit cijfer:"+kaartKleur[i][j]);
+          if (kaartKleur[k][l] == kaartKleur[i][j]) {
+            kleurFrequentie++;
+            kleurennummers.println("KleurFrequentie: ("+kleurFrequentie+")");
+            // kleurennummers.println("Frequentie" + kleurFrequentie+ " " + kaartKleur[i][j]);
+            if (kleurFrequentie >= 3 && j > 0) {
+              kleurFrequentie = 0;
+              j -=1;
+              kleurennummers.println("J is in de MIN gegaan.");
+            }
+          }
+        }
+      }
+    }
+    kaartPlekkenZijnBerekend = true;
+  }
+  kleurennummers.println("Klaar");
+  kleurennummers.flush();
+  kleurennummers.close();
+}
+*/
 
 
 void printKleuren() {
