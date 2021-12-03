@@ -12,7 +12,7 @@ void setup() {
   fullScreen(FX2D);
   //frameRate(spelFrequentie);
   textAlign(TOP, LEFT);
-
+}
 void draw() {
   clear();
   noStroke();

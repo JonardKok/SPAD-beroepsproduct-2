@@ -27,7 +27,6 @@ final int CEMENTGRIJS = #7D8471;
 final int MIDDENVIOLETROOD= #C71585;
 final int LEIGRIJS = #708090;
 final int DIEPROZE= #FF1493;
-final int ACHTERKANT_VAN_KAART_KLEUR = 0;
 int speler;
 int maxAantalSpelers;
 int spelerMetBeurt = 1;
@@ -57,6 +56,14 @@ int[] spelerScore = {0, 0, 0, 0};
 int[] kaartKleuren;
 int[][] plekkenMetKaart;
 int[][] kaartKleur;
+int[][] geklikteKaarten = {
+  {0, 0, 0, 0, 0, 0, 0, 0}, 
+  {0, 0, 0, 0, 0, 0, 0, 0}, 
+  {0, 0, 0, 0, 0, 0, 0, 0}, 
+  {0, 0, 0, 0, 0, 0, 0, 0},  
+  {0, 0, 0, 0, 0, 0, 0, 0}, 
+};
+
 int[][] kaartPlekken = {
   {0, 1, 2, 3, 4, 5, 6, 7}, 
   {0, 1, 2, 3, 4, 5, 6, 7}, 
@@ -64,8 +71,6 @@ int[][] kaartPlekken = {
   {0, 1, 2, 3, 4, 5, 6, 7}, 
   {0, 1, 2, 3, 4, 5, 6, 7}
 };
-
-int[][] gekliktOpPlek = {{} };
 String tekst;
 String tekstGrootte;
 String[] spelerNamen = {"Speler 1", "Speler 2", "Speler 3", "Speler 4"};
@@ -102,6 +107,7 @@ void klikOveral() {
     hoevaakOpKaartGeklikt = 0;
   }
 }
+
 void tekenGebruikersInterface() {
   tekenDoodskaartIndicator();
   tekenKaarten();
@@ -118,26 +124,9 @@ void tekenBeurtEindeIndicator() {
 //kijkt naar de kleur van de kaarten en 
 void beurtEinde() {
   if (voorkantKaartKleur1 == voorkantKaartKleur2) {//hier kan een for lus gemaakt van worden
-    //haalKaartUitSpel();
-    switch(spelerMetBeurt) {
-    case 1:
-      spelerScore[0]++;
-      println("spelerScore" + spelerScore[0]);
-      spelerMetBeurt++;
-      break;
-    case 2:
-      spelerScore[1]++;
-      spelerMetBeurt++;
-      break;
-    case 3:
-      spelerScore[2]++;
-      spelerMetBeurt++;
-      break;
-    case 4:
-      spelerScore[3]++;
-      spelerMetBeurt++;
-      break;
-    }
+    spelerScore[spelerMetBeurt-1]++;
+    spelerMetBeurt++;
+    println("spelerScore" + spelerScore[spelerMetBeurt-1]);
   } else {
     spelerMetBeurt++;
   }
@@ -146,7 +135,8 @@ void beurtEinde() {
   }
 }
 
-void haalKaartUitSpel(int kaartnummer ) {
+void haalKaartUitSpel() {
+  tekenKaart(xKaart, yKaart, kaartBreedte, kaartHoogte, 0, 0);
 }
 
 //tekent alle kaarten
@@ -242,8 +232,8 @@ void geefKaartPlekDoor(int x, int y) {
 
 // tekent de kaart(en) die omgedraaid zijn.
 void tekenGeklikteKaarten() {
-  tekenKaart(xGeklikteKaart1, yGeklikteKaart1, kaartBreedte, kaartHoogte, voorkantKaartKleur1);
-  tekenKaart(xGeklikteKaart2, yGeklikteKaart2, kaartBreedte, kaartHoogte, voorkantKaartKleur2);
+  tekenKaart(xGeklikteKaart1, yGeklikteKaart1, kaartBreedte, kaartHoogte, voorkantKaartKleur1, WIT);
+  tekenKaart(xGeklikteKaart2, yGeklikteKaart2, kaartBreedte, kaartHoogte, voorkantKaartKleur2, WIT);
 }
 
 void berekenKaartKleur() {
@@ -330,14 +320,14 @@ void tekenKaartenLayout() {
       xKaart = kaartBreedte + kaartBreedte * j + afstandTussenKaarten * j;
       yKaart = kaartHoogte * 2 + kaartHoogte * i + afstandTussenKaarten * i;
       //tekenKaart(xKaart, yKaart, kaartBreedte, kaartHoogte, ROOD); ORIGINEEL
-      tekenKaart(xKaart, yKaart, kaartBreedte, kaartHoogte, kaartKleuren[kaartKleur[i][j]]); //test
+      tekenKaart(xKaart, yKaart, kaartBreedte, kaartHoogte, kaartKleuren[kaartKleur[i][j]], WIT); //test
     }
   }
 }
 
 //tekent de kaart.
-void tekenKaart(int x, int y, int breedte, int hoogte, int kleur) {
-  fill(WIT);
+void tekenKaart(int x, int y, int breedte, int hoogte, int kleur, int kaartrandKleur) {
+  fill(kaartrandKleur);
   rect(x, y, breedte, hoogte, 20);
   tekenKleurVanKaart(x, y, breedte, hoogte, kleur);
 }
@@ -405,12 +395,8 @@ int getAantalSpelers() {
   return aantalSpelers;
 }
 
-boolean isSpelerIndicatorTeVer(int y) {
-  return y >= (getTekstgrootte("klein") * getAantalSpelers());
-}
-
 boolean isXGekliktekaartNul() {
-  return(xGeklikteKaart1 | xGeklikteKaart2 | yGeklikteKaart1 | yGeklikteKaart2) == 0;
+  return xGeklikteKaart1 == 0;
 } 
 
 boolean spelscherm() {
@@ -442,5 +428,5 @@ boolean komtCijferVakerVoor(int cijferFrequentie, int i) {
 
 //boolean die kijkt of er op een kaart geklikt is.
 boolean opKaartGeklikt(int x, int y, int breedte, int hoogte) {
-  return mouseX > x && mouseX < x + breedte && mouseY > y && mouseY < y + hoogte && spelscherm();
+  return mouseX > x && mouseX < x + breedte && mouseY > y && mouseY < y + hoogte && spelscherm()&& !eindebeurt;
 }

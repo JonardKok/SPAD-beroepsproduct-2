@@ -241,14 +241,12 @@ int getKleuren(int kleur) {
   switch(kleur) {
   case ROOD:
     return ROOD;
-    break;
   case  GRIJS:
     return GRIJS;
-    break;
   case GROEN:
     return GROEN;
-    break;
   }
+  return 0;
 }
 
 void tekenKnop(int x, int y, int breedte, int hoogte, int radiusTL, int radiusTR, int radiusBR, int radiusBL, int kleur) {//komt uit bug squash
