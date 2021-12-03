@@ -6,6 +6,7 @@ boolean eindebeurt;
 boolean overalKlikken;
 //Kleuren
 final int WIT = #FFFFFF;
+final int RAAR = #7B68EE;
 final int ROOD = #FF0000;
 final int GROEN = #00FF00;
 final int BLAUW = #0000FF;
@@ -17,13 +18,13 @@ final int CYAAN = #00FFFF;
 final int ROZE = #FFC0CB;
 final int BRUIN = #654321;
 final int DONKERROOD = #8B0000;
-final int DONKERBLAUW = #00008B;
+final int DONKERBLAUW = #00007B;
 final int DONKERGROEN = #008B00;
 final int ZANDBRUIN = #F4A460;
 final int KLEUR_DOODSKAARTEN = #FF0000;
 final int LICHT_BLAUW = #ADD8E6;
-final int BOSGROEN = #228B22;
-final int CEMENTGRIJS = #7D8471;
+final int GEELGROEN = #9ACD32  ;
+final int TARWE = #F5DEB3;
 final int MIDDENVIOLETROOD= #C71585;
 final int LEIGRIJS = #708090;
 final int DIEPROZE= #FF1493;
@@ -60,7 +61,7 @@ int[][] geklikteKaarten = {
   {0, 0, 0, 0, 0, 0, 0, 0}, 
   {0, 0, 0, 0, 0, 0, 0, 0}, 
   {0, 0, 0, 0, 0, 0, 0, 0}, 
-  {0, 0, 0, 0, 0, 0, 0, 0},  
+  {0, 0, 0, 0, 0, 0, 0, 0}, 
   {0, 0, 0, 0, 0, 0, 0, 0}, 
 };
 
@@ -145,7 +146,7 @@ void tekenKaarten() {
   kaartHoogte = height / 10;
   afstandTussenKaarten = kaartBreedte / 10;
   if (!kaartPlekkenZijnBerekend) { //zorgt ervoor dat de kaartplek maar 1x berekend wordt waardoor de kaarten niet van plek veranderen. Bug voorkomen dus.
-    kaartKleuren = new int[] {doodskaartofnormalekaartkleur, BLAUW, GRIJS, GEEL, ORANJE, PAARS, CYAAN, ROZE, BRUIN, DONKERROOD, DONKERBLAUW, DONKERGROEN, ZANDBRUIN, LICHT_BLAUW, WIT, BOSGROEN, CEMENTGRIJS, MIDDENVIOLETROOD, LEIGRIJS, DIEPROZE};
+    kaartKleuren = new int[] {doodskaartofnormalekaartkleur, BLAUW, GRIJS, GEEL, ORANJE, PAARS, CYAAN, ROZE, BRUIN, DONKERROOD, DONKERBLAUW, DONKERGROEN, ZANDBRUIN, LICHT_BLAUW, RAAR, GEELGROEN, TARWE, MIDDENVIOLETROOD, LEIGRIJS, DIEPROZE};
     hoeveelSetjesMoetenGetekendWorden();
     berekenKaartKleur();
     printKleuren();
