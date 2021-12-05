@@ -1,5 +1,6 @@
 boolean kaartPlekkenZijnBerekend;
 boolean eindebeurt;
+boolean puntGekregen;
 //Kleuren
 final int WIT = #FFFFFF;
 final int RAAR = #7B68EE;
@@ -30,6 +31,10 @@ int spelerMetBeurt = 0;
 int hoevaakOpKaartGeklikt;
 int xKaart;
 int yKaart;
+int kolomKaart1;
+int rijKaart1;
+int kolomKaart2;
+int rijKaart2;
 int kaartBreedte;
 int kaartHoogte;
 int voorkantKaartKleur1;
@@ -53,11 +58,11 @@ int[] kaartKleuren;
 int[][] plekkenMetKaart;
 int[][] kaartKleur;
 int[][] geklikteKaarten = {
-  {0, 0, 0, 0, 0, 0, 0, 0}, 
-  {0, 0, 0, 0, 0, 0, 0, 0}, 
-  {0, 0, 0, 0, 0, 0, 0, 0}, 
-  {0, 0, 0, 0, 0, 0, 0, 0}, 
-  {0, 0, 0, 0, 0, 0, 0, 0}, 
+  {#FF0000, #FF0000, #FF0000, #FF0000, #FF0000, #FF0000, #FF0000, #FF0000}, 
+  {#FF0000, #FF0000, #FF0000, #FF0000, #FF0000, #FF0000, #FF0000, #FF0000}, 
+  {#FF0000, #FF0000, #FF0000, #FF0000, #FF0000, #FF0000, #FF0000, #FF0000}, 
+  {#FF0000, #FF0000, #FF0000, #FF0000, #FF0000, #FF0000, #FF0000, #FF0000}, 
+  {#FF0000, #FF0000, #FF0000, #FF0000, #FF0000, #FF0000, #FF0000, #FF0000} 
 };
 
 int[][] kaartPlekken = {
@@ -71,15 +76,22 @@ String tekst;
 String tekstGrootte;
 String[] spelerNamen = {"Speler 1", "Speler 2", "Speler 3", "Speler 4"};
 
-
-//tekent het hele spelscherm
 void tekenSpelScherm() {
-  tekenGebruikersInterface();
+  tekenDoodskaartIndicator();
+  tekenKaarten();
+  tekenSpelers();
+  if (eindebeurt) {
+    tekenBeurtEindeIndicator();
+  }
+}
+
+void tekenBeurtEindeIndicator() {
+  text("Einde beurt", width/2, height/10);
 }
 
 //veranderd het spelscherm als er op een kaart geklikt is.
 void veranderSpelScherm() {
-  kijkOpWelkeKaartGekliktIs();
+  kaartKlikActie();
   switch(hoevaakOpKaartGeklikt) {
   case 2:
     eindebeurt = true;
@@ -88,8 +100,6 @@ void veranderSpelScherm() {
   case 3:
     beurtEinde();
     eindebeurt = false;
-    voorkantKaartKleur1 = ROOD;
-    voorkantKaartKleur2 = ROOD;
     hoevaakOpKaartGeklikt = 0;
     break;
   }
@@ -104,35 +114,20 @@ void klikOveral() {
   }
 }
 
-void tekenGebruikersInterface() {
-  tekenDoodskaartIndicator();
-  tekenKaarten();
-  tekenSpelers();
-  if (eindebeurt) {
-    tekenBeurtEindeIndicator();
-  }
-}
-
-void tekenBeurtEindeIndicator() {
-  text("Einde beurt", width/2, height/10);
-}
-
-//kijkt naar de kleur van de kaarten en 
+//Geeft de speler punten als er punten gegeven kunnen worden en gaat geeft dan de volgende speler de beurt.
 void beurtEinde() {
-  if (voorkantKaartKleur1 == voorkantKaartKleur2 && kanPuntGegevenWorden()) {//hier kan een for lus gemaakt van worden
+  if (kanPuntGegevenWorden()) {//hier kan een for lus gemaakt van worden
     spelerScore[spelerMetBeurt]++;
+    puntGekregen = true;
     spelerMetBeurt++;
     println("spelerScore" + spelerScore[spelerMetBeurt]);
   } else {
+    puntGekregen = false;
     spelerMetBeurt++;
   }
   if (spelerMetBeurt > getAantalSpelers()-1) {
     spelerMetBeurt = 0;
   }
-}
-
-void haalKaartUitSpel() {
-  tekenKaart(xKaart, yKaart, kaartBreedte, kaartHoogte, 0, 0);
 }
 
 //tekent alle kaarten
@@ -182,23 +177,20 @@ void hoeveelSetjesMoetenGetekendWorden() {
 }
 
 //zoekt naar de positie van de kaart waarop geklikt is.
-//Werkt niet omdat de kleuren steeds gepakt worden vanuit de i of de J dus als er eenmaal een rij getekend wordt wordt de hele rij zo.
-void kijkOpWelkeKaartGekliktIs() { 
+void kaartKlikActie() { 
   for (int i = 0; i < (plekkenMetKaart.length); i++) {
     for (int j = 0; j < (plekkenMetKaart[i].length); j++) {
       voorkantKaartPlekBerekenen(i, j);
-      if (opKaartGeklikt(xKaart, yKaart, kaartBreedte, kaartHoogte)) {
+      if (opKaartGeklikt(xKaart, yKaart, kaartBreedte, kaartHoogte, geklikteKaarten[i][j])) {
         hoevaakOpKaartGeklikt += 1;
-        //println("opKaartGeklikt  " + hoevaakOpKaartGeklikt);
         switch(hoevaakOpKaartGeklikt) {
         case 1:
-          geefKaartPlekDoor(xKaart, yKaart);
-
+          geefKaartPlekDoor(xKaart, yKaart, i, j);
           println("kleur " + kaartKleur[i][j], "kaartplek " + plekkenMetKaart[i].length, j, i);
           voorkantKaartKleur1 = kaartKleuren[kaartKleur[i][j]];
           break;
         case 2:
-          geefKaartPlekDoor(xKaart, yKaart);
+          geefKaartPlekDoor(xKaart, yKaart, i, j);
           voorkantKaartKleur2 = kaartKleuren[kaartKleur[i][j]];
           break;
         }
@@ -207,21 +199,27 @@ void kijkOpWelkeKaartGekliktIs() {
   }
 }
 
+
+
 void voorkantKaartPlekBerekenen(int i, int j) {
   xKaart = kaartBreedte + kaartBreedte * j + afstandTussenKaarten * j;
   yKaart = kaartHoogte * 2 + kaartHoogte * i + afstandTussenKaarten * i;
 }
 
-void geefKaartPlekDoor(int x, int y) {
+void geefKaartPlekDoor(int x, int y, int i, int j) {
   kaart++;
   switch (kaart) {
   case 1:
     xGeklikteKaart1 = x;
     yGeklikteKaart1 = y;
+    kolomKaart1 = i;
+    rijKaart1 = j;
     break;
   case 2:
     xGeklikteKaart2 = x;
     yGeklikteKaart2 = y;
+    kolomKaart2 = i;
+    rijKaart2 = j;
     kaart = 0;
     break;
   }
@@ -229,8 +227,8 @@ void geefKaartPlekDoor(int x, int y) {
 
 // tekent de kaart(en) die omgedraaid zijn.
 void tekenGeklikteKaarten() {
-  tekenKaart(xGeklikteKaart1, yGeklikteKaart1, kaartBreedte, kaartHoogte, voorkantKaartKleur1, WIT);
-  tekenKaart(xGeklikteKaart2, yGeklikteKaart2, kaartBreedte, kaartHoogte, voorkantKaartKleur2, WIT);
+  tekenKaart(xGeklikteKaart1, yGeklikteKaart1, kaartBreedte, kaartHoogte, voorkantKaartKleur1);
+  tekenKaart(xGeklikteKaart2, yGeklikteKaart2, kaartBreedte, kaartHoogte, voorkantKaartKleur2);
 }
 
 void berekenKaartKleur() {
@@ -282,17 +280,16 @@ void tekenKaartenLayout() {
     for (int j = 0; j < (kaartPlekken[i].length  - xCorrectie); j++) {//tekent de rij
       xKaart = kaartBreedte + kaartBreedte * j + afstandTussenKaarten * j;
       yKaart = kaartHoogte * 2 + kaartHoogte * i + afstandTussenKaarten * i;
-      tekenKaart(xKaart, yKaart, kaartBreedte, kaartHoogte, ROOD, WIT); //ORIGINEEL
+      tekenKaart(xKaart, yKaart, kaartBreedte, kaartHoogte, geklikteKaarten[i][j]); //ORIGINEEL
       //tekenKaart(xKaart, yKaart, kaartBreedte, kaartHoogte, kaartKleuren[kaartKleur[i][j]], WIT); //test
     }
   }
 }
 
 //tekent de kaart.
-void tekenKaart(int x, int y, int breedte, int hoogte, int kleur, int kaartrandKleur) {
-  fill(kaartrandKleur);
+void tekenKaart(int x, int y, int breedte, int hoogte, int kaartKleur) {
+  fill(kaartKleur);
   rect(x, y, breedte, hoogte, 20);
-  tekenKleurVanKaart(x, y, breedte, hoogte, kleur);
 }
 //tekent de kleur van de kaart.
 void tekenKleurVanKaart(int x, int y, int breedte, int hoogte, int kleur) {
@@ -383,9 +380,10 @@ boolean kanPuntGegevenWorden() {//voorkomt een bug die ervoor zorgt dat je niet 
   println(xGeklikteKaart1, xGeklikteKaart2, yGeklikteKaart1, xGeklikteKaart2);
   if (xGeklikteKaart1 == xGeklikteKaart2 && yGeklikteKaart1 == yGeklikteKaart2) {
     return false;
-  } else {
+  } else if (voorkantKaartKleur1 == voorkantKaartKleur2 && xGeklikteKaart1 != xGeklikteKaart2 && yGeklikteKaart1 != yGeklikteKaart2) {
     return true;
   }
+  return false;
 }
 
 //boolean die van het startscherm de status van doodskaarten pakt zodat je weet welke er wel en niet zijn.
@@ -399,6 +397,6 @@ boolean komtCijferVakerVoor(int cijferFrequentie, int i) {
 }
 
 //boolean die kijkt of er op een kaart geklikt is.
-boolean opKaartGeklikt(int x, int y, int breedte, int hoogte) {
-  return mouseX > x && mouseX < x + breedte && mouseY > y && mouseY < y + hoogte && spelscherm()&& !eindebeurt;
+boolean opKaartGeklikt(int x, int y, int breedte, int hoogte, int kleur) {
+  return mouseX > x && mouseX < x + breedte && mouseY > y && mouseY < y + hoogte && spelscherm() && !eindebeurt && kleur !=0;
 }
