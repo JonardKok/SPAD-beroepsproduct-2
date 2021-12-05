@@ -1,6 +1,3 @@
-boolean kaartPlekkenZijnBerekend;
-boolean eindebeurt;
-boolean puntGekregen;
 //Kleuren
 final int WIT = #FFFFFF;
 final int RAAR = #7B68EE;
@@ -25,6 +22,9 @@ final int TARWE = #F5DEB3;
 final int MIDDENVIOLETROOD= #C71585;
 final int LEIGRIJS = #708090;
 final int DIEPROZE= #FF1493;
+boolean kaartPlekkenZijnBerekend;
+boolean eindebeurt;
+boolean puntGekregen;
 int speler;
 int maxAantalSpelers;
 int spelerMetBeurt = 0;
@@ -90,8 +90,8 @@ void tekenBeurtEindeIndicator() {
 }
 
 //veranderd het spelscherm als er op een kaart geklikt is.
-void veranderSpelScherm() {
-  kaartKlikActie();
+void kaartKlikActies() {
+  kaartZoekenKleur();
   switch(hoevaakOpKaartGeklikt) {
   case 2:
     eindebeurt = true;
@@ -101,14 +101,27 @@ void veranderSpelScherm() {
     beurtEinde();
     eindebeurt = false;
     hoevaakOpKaartGeklikt = 0;
+    gekozenKaartKleurVerbergen();
     break;
   }
 }
 
+void gekozenKaartKleurVerbergen() {
+  if (puntGekregen) {
+    geklikteKaarten[kolomKaart1][rijKaart1] = 0;
+    geklikteKaarten[kolomKaart2][rijKaart2] = 0;
+    voorkantKaartKleur1 = 0;
+    voorkantKaartKleur2 = 0;
+  } else {
+    voorkantKaartKleur1 = ROOD;
+    voorkantKaartKleur2 = ROOD;
+  }
+}
+
 void klikOveral() {
-  if (mouseX != -1 || mouseY != -1 && hoevaakOpKaartGeklikt <= 4 && eindebeurt) {
+  if (hoevaakOpKaartGeklikt <= 4 && eindebeurt) {
     hoevaakOpKaartGeklikt++;
-    println("hoevaakOpKaartGeklikt" + hoevaakOpKaartGeklikt);
+    //println("hoevaakOpKaartGeklikt" + hoevaakOpKaartGeklikt);
   } else {
     hoevaakOpKaartGeklikt = 0;
   }
@@ -120,7 +133,7 @@ void beurtEinde() {
     spelerScore[spelerMetBeurt]++;
     puntGekregen = true;
     spelerMetBeurt++;
-    println("spelerScore" + spelerScore[spelerMetBeurt]);
+   //println("spelerScore" + spelerScore[spelerMetBeurt]);
   } else {
     puntGekregen = false;
     spelerMetBeurt++;
@@ -176,8 +189,8 @@ void hoeveelSetjesMoetenGetekendWorden() {
   }
 }
 
-//zoekt naar de positie van de kaart waarop geklikt is.
-void kaartKlikActie() { 
+//zoekt naar de positie van de kaart waarop geklikt is en veranderd de kleuren.
+void kaartZoekenKleur() { 
   for (int i = 0; i < (plekkenMetKaart.length); i++) {
     for (int j = 0; j < (plekkenMetKaart[i].length); j++) {
       voorkantKaartPlekBerekenen(i, j);
@@ -186,7 +199,7 @@ void kaartKlikActie() {
         switch(hoevaakOpKaartGeklikt) {
         case 1:
           geefKaartPlekDoor(xKaart, yKaart, i, j);
-          println("kleur " + kaartKleur[i][j], "kaartplek " + plekkenMetKaart[i].length, j, i);
+          println("kleur: " + kaartKleur[i][j]+ ". kaartplek: " + plekkenMetKaart[i].length, j, i);
           voorkantKaartKleur1 = kaartKleuren[kaartKleur[i][j]];
           break;
         case 2:
@@ -274,7 +287,7 @@ void printKleuren() {
   }
 }
 
-//tekent de grid van kaarten zonder kleur._______________________________________________________________________
+//tekent de grid van kaarten met de achterkant van de kaart-kleur.
 void tekenKaartenLayout() {
   for (int i = 0; i < (kaartPlekken.length - yCorrectie); i++) {
     for (int j = 0; j < (kaartPlekken[i].length  - xCorrectie); j++) {//tekent de rij
@@ -358,7 +371,7 @@ int getAantalSpelers() {
 boolean isXGekliktekaartNul() {
   return xGeklikteKaart1 == 0;
 } 
-
+ 
 boolean spelscherm() {
   return scherm == SPEL_SCHERM;
 }
@@ -378,9 +391,11 @@ int getTekstgrootte(String tekst) {
 
 boolean kanPuntGegevenWorden() {//voorkomt een bug die ervoor zorgt dat je niet 2x op dezelfde kaart kan klikken voor een punt.
   println(xGeklikteKaart1, xGeklikteKaart2, yGeklikteKaart1, xGeklikteKaart2);
-  if (xGeklikteKaart1 == xGeklikteKaart2 && yGeklikteKaart1 == yGeklikteKaart2) {
+  if (xGeklikteKaart1 == xGeklikteKaart2 || yGeklikteKaart1 == yGeklikteKaart2) {
+    println("Punt kan niet gegeven worden."); //#TESTMETHODE
     return false;
-  } else if (voorkantKaartKleur1 == voorkantKaartKleur2 && xGeklikteKaart1 != xGeklikteKaart2 && yGeklikteKaart1 != yGeklikteKaart2) {
+  } else if (voorkantKaartKleur1 == voorkantKaartKleur2 && xGeklikteKaart1 != xGeklikteKaart2 || yGeklikteKaart1 != yGeklikteKaart2) {
+    println("Punt kan gegeven worden."); //#TESTMETHODE
     return true;
   }
   return false;

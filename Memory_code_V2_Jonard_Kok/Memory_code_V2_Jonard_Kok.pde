@@ -33,6 +33,6 @@ void mouseClicked() {
   if (scherm == START_SCHERM) {
     veranderStartScherm();
   } else if (scherm == SPEL_SCHERM) {
-    veranderSpelScherm();
+    kaartKlikActies();
   }
 }
