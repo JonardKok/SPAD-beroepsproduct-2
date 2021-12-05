@@ -1,9 +1,5 @@
-boolean voorkantKaart;
-boolean achterkantKaart;
-boolean opKaartGeklikt;
 boolean kaartPlekkenZijnBerekend;
 boolean eindebeurt;
-boolean overalKlikken;
 //Kleuren
 final int WIT = #FFFFFF;
 final int RAAR = #7B68EE;
@@ -23,16 +19,15 @@ final int DONKERGROEN = #008B00;
 final int ZANDBRUIN = #F4A460;
 final int KLEUR_DOODSKAARTEN = #FF0000;
 final int LICHT_BLAUW = #ADD8E6;
-final int GEELGROEN = #9ACD32  ;
+final int GEELGROEN = #9ACD32;
 final int TARWE = #F5DEB3;
 final int MIDDENVIOLETROOD= #C71585;
 final int LEIGRIJS = #708090;
 final int DIEPROZE= #FF1493;
 int speler;
 int maxAantalSpelers;
-int spelerMetBeurt = 1;
+int spelerMetBeurt = 0;
 int hoevaakOpKaartGeklikt;
-int kaartsoort;
 int xKaart;
 int yKaart;
 int kaartBreedte;
@@ -93,8 +88,8 @@ void veranderSpelScherm() {
   case 3:
     beurtEinde();
     eindebeurt = false;
-    //voorkantKaartKleur1 = ROOD;
-    //voorkantKaartKleur2 = ROOD;
+    voorkantKaartKleur1 = ROOD;
+    voorkantKaartKleur2 = ROOD;
     hoevaakOpKaartGeklikt = 0;
     break;
   }
@@ -124,15 +119,15 @@ void tekenBeurtEindeIndicator() {
 
 //kijkt naar de kleur van de kaarten en 
 void beurtEinde() {
-  if (voorkantKaartKleur1 == voorkantKaartKleur2) {//hier kan een for lus gemaakt van worden
-    spelerScore[spelerMetBeurt-1]++;
+  if (voorkantKaartKleur1 == voorkantKaartKleur2 && kanPuntGegevenWorden()) {//hier kan een for lus gemaakt van worden
+    spelerScore[spelerMetBeurt]++;
     spelerMetBeurt++;
-    println("spelerScore" + spelerScore[spelerMetBeurt-1]);
+    println("spelerScore" + spelerScore[spelerMetBeurt]);
   } else {
     spelerMetBeurt++;
   }
-  if (spelerMetBeurt > getAantalSpelers()) {
-    spelerMetBeurt = 1;
+  if (spelerMetBeurt > getAantalSpelers()-1) {
+    spelerMetBeurt = 0;
   }
 }
 
@@ -198,6 +193,7 @@ void kijkOpWelkeKaartGekliktIs() {
         switch(hoevaakOpKaartGeklikt) {
         case 1:
           geefKaartPlekDoor(xKaart, yKaart);
+
           println("kleur " + kaartKleur[i][j], "kaartplek " + plekkenMetKaart[i].length, j, i);
           voorkantKaartKleur1 = kaartKleuren[kaartKleur[i][j]];
           break;
@@ -239,7 +235,7 @@ void tekenGeklikteKaarten() {
 
 void berekenKaartKleur() {
   kaartKleur = new int[plekkenMetKaart.length][plekkenMetKaart[0].length];
-  vulVeldMetDertig();
+  vulArrayMetTijdelijkCijfer();
   println("lengte", kaartKleur.length*kaartKleur[0].length);
   for (int i = 0; i < (kaartKleur.length*kaartKleur[0].length)/2; i++ ) {
     println("berekening gestart");
@@ -248,7 +244,7 @@ void berekenKaartKleur() {
   kaartPlekkenZijnBerekend = true;
 }
 
-void vulVeldMetDertig() {
+void vulArrayMetTijdelijkCijfer() {
   for (int i = 0; i < kaartKleur.length; i++) {
     for (int j = 0; j < kaartKleur[i].length; j++) {
       kaartKleur[i][j] = 30;
@@ -271,6 +267,7 @@ void tekenAttributen(int aantalItems, int kleurNr) {
   }
 }
 
+//print de kleuren in de console #TESTMETHODE
 void printKleuren() {
   for (int i = 0; i < kaartKleur.length; i++) {
     for (int j = 0; j < kaartKleur[i].length; j++) {
@@ -285,8 +282,8 @@ void tekenKaartenLayout() {
     for (int j = 0; j < (kaartPlekken[i].length  - xCorrectie); j++) {//tekent de rij
       xKaart = kaartBreedte + kaartBreedte * j + afstandTussenKaarten * j;
       yKaart = kaartHoogte * 2 + kaartHoogte * i + afstandTussenKaarten * i;
-      //tekenKaart(xKaart, yKaart, kaartBreedte, kaartHoogte, ROOD); ORIGINEEL
-      tekenKaart(xKaart, yKaart, kaartBreedte, kaartHoogte, kaartKleuren[kaartKleur[i][j]], WIT); //test
+      tekenKaart(xKaart, yKaart, kaartBreedte, kaartHoogte, ROOD, WIT); //ORIGINEEL
+      //tekenKaart(xKaart, yKaart, kaartBreedte, kaartHoogte, kaartKleuren[kaartKleur[i][j]], WIT); //test
     }
   }
 }
@@ -333,7 +330,7 @@ void tekenSpelers() {
   for (int i = 0; i < maxAantalSpelers; i++) {
     speler++;
     textSize(getTekstgrootte("klein"));
-    if (i == spelerMetBeurt - 1) {
+    if (i == spelerMetBeurt) {
       tekenSpelerNamen(spelerNamen, spelerScore, i, xSpelerText, ySpelerText, ROOD);
     } else {
       tekenSpelerNamen(spelerNamen, spelerScore, i, xSpelerText, ySpelerText, GEEL);
@@ -380,6 +377,15 @@ int getTekstgrootte(String tekst) {
   } //hier zou normaal een else staan, maar omdat er onder de if statements een return staat hoeft dat niet. 
   println("Tekstgrootte is verkeerd getypt, normaal wordt gebruikt");
   return normaleTekstGrootte;
+}
+
+boolean kanPuntGegevenWorden() {//voorkomt een bug die ervoor zorgt dat je niet 2x op dezelfde kaart kan klikken voor een punt.
+  println(xGeklikteKaart1, xGeklikteKaart2, yGeklikteKaart1, xGeklikteKaart2);
+  if (xGeklikteKaart1 == xGeklikteKaart2 && yGeklikteKaart1 == yGeklikteKaart2) {
+    return false;
+  } else {
+    return true;
+  }
 }
 
 //boolean die van het startscherm de status van doodskaarten pakt zodat je weet welke er wel en niet zijn.
