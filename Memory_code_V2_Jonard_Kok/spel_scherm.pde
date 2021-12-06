@@ -25,6 +25,8 @@ final int DIEPROZE= #FF1493;
 boolean kaartPlekkenZijnBerekend;
 boolean eindebeurt;
 boolean puntGekregen;
+boolean kaartBestaat = false;
+boolean kaartenBekeken = false;
 int speler;
 int maxAantalSpelers;
 int spelerMetBeurt = 0;
@@ -58,11 +60,11 @@ int[] kaartKleuren;
 int[][] plekkenMetKaart;
 int[][] kaartKleur;
 int[][] geklikteKaarten = {
-  {#FF0000, #FF0000, #FF0000, #FF0000, #FF0000, #FF0000, #FF0000, #FF0000}, 
-  {#FF0000, #FF0000, #FF0000, #FF0000, #FF0000, #FF0000, #FF0000, #FF0000}, 
-  {#FF0000, #FF0000, #FF0000, #FF0000, #FF0000, #FF0000, #FF0000, #FF0000}, 
-  {#FF0000, #FF0000, #FF0000, #FF0000, #FF0000, #FF0000, #FF0000, #FF0000}, 
-  {#FF0000, #FF0000, #FF0000, #FF0000, #FF0000, #FF0000, #FF0000, #FF0000} 
+  {ROOD, ROOD, ROOD, ROOD, ROOD, ROOD, ROOD, ROOD}, 
+  {ROOD, ROOD, ROOD, ROOD, ROOD, ROOD, ROOD, ROOD}, 
+  {ROOD, ROOD, ROOD, ROOD, ROOD, ROOD, ROOD, ROOD}, 
+  {ROOD, ROOD, ROOD, ROOD, ROOD, ROOD, ROOD, ROOD}, 
+  {ROOD, ROOD, ROOD, ROOD, ROOD, ROOD, ROOD, ROOD}, 
 };
 
 int[][] kaartPlekken = {
@@ -82,6 +84,12 @@ void tekenSpelScherm() {
   tekenSpelers();
   if (eindebeurt) {
     tekenBeurtEindeIndicator();
+    if (!kaartenBekeken) {
+      kijkOfKaartenWegZijn();
+    }
+    if (!kaartBestaat) {
+      scherm = EIND_SCHERM;
+    }
   }
 }
 
@@ -94,6 +102,7 @@ void kaartKlikActies() {
   kaartZoekenKleur();
   switch(hoevaakOpKaartGeklikt) {
   case 2:
+    kaartenBekeken = false;
     eindebeurt = true;
     klikOveral();
     break;
@@ -104,6 +113,23 @@ void kaartKlikActies() {
     gekozenKaartKleurVerbergen();
     break;
   }
+}
+
+void kijkOfKaartenWegZijn() {
+  println("KAARTENWEGMETHODE AANGEROEPEN");
+  for (int i = 0; i < geklikteKaarten.length && !kaartBestaat; i++) {
+    for (int j = 0; j < geklikteKaarten[i].length && !kaartBestaat; j++) {
+      println(geklikteKaarten[i][j]);
+      if (geklikteKaarten[i][j] == ROOD) {
+        println("Kaart bestaat");
+        kaartBestaat = true;
+      } else {
+        println("Kaart bestaat niet.");
+        kaartBestaat = false;
+      }
+    }
+  }
+  kaartenBekeken = true;
 }
 
 void gekozenKaartKleurVerbergen() {
@@ -133,7 +159,7 @@ void beurtEinde() {
     spelerScore[spelerMetBeurt]++;
     puntGekregen = true;
     spelerMetBeurt++;
-   //println("spelerScore" + spelerScore[spelerMetBeurt]);
+    //println("spelerScore" + spelerScore[spelerMetBeurt]);
   } else {
     puntGekregen = false;
     spelerMetBeurt++;
@@ -371,7 +397,7 @@ int getAantalSpelers() {
 boolean isXGekliktekaartNul() {
   return xGeklikteKaart1 == 0;
 } 
- 
+
 boolean spelscherm() {
   return scherm == SPEL_SCHERM;
 }
@@ -389,15 +415,16 @@ int getTekstgrootte(String tekst) {
   return normaleTekstGrootte;
 }
 
-boolean kanPuntGegevenWorden() {//voorkomt een bug die ervoor zorgt dat je niet 2x op dezelfde kaart kan klikken voor een punt.
+boolean kanPuntGegevenWorden() {//voorkomt een bug die ervoor zorgt dat je niet 2x op dezelfde kaart kan klikken voor een punt. //Methode zelf is wel gebugged.
   println(xGeklikteKaart1, xGeklikteKaart2, yGeklikteKaart1, xGeklikteKaart2);
-  if (xGeklikteKaart1 == xGeklikteKaart2 || yGeklikteKaart1 == yGeklikteKaart2) {
+  if ((xGeklikteKaart1 == xGeklikteKaart2) && (yGeklikteKaart1 == yGeklikteKaart2)) {
     println("Punt kan niet gegeven worden."); //#TESTMETHODE
     return false;
-  } else if (voorkantKaartKleur1 == voorkantKaartKleur2 && xGeklikteKaart1 != xGeklikteKaart2 || yGeklikteKaart1 != yGeklikteKaart2) {
+  } else if (voorkantKaartKleur1 == voorkantKaartKleur2 && (xGeklikteKaart1 != xGeklikteKaart2 || yGeklikteKaart1 != yGeklikteKaart2)) {
     println("Punt kan gegeven worden."); //#TESTMETHODE
     return true;
   }
+  println("Beide IF statements zijn genegeerd");
   return false;
 }
 
