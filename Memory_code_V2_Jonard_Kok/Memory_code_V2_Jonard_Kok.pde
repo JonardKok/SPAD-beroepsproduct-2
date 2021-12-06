@@ -2,8 +2,8 @@ final int START_SCHERM = 0;
 final int SPEL_SCHERM = 1;
 final int EIND_SCHERM = 2;
 final int HOEK_RADIUS = 20;
-//int scherm;
-int scherm = EIND_SCHERM;
+int scherm;
+//int scherm = EIND_SCHERM;
 
 void setup() {
   fullScreen(FX2D);
