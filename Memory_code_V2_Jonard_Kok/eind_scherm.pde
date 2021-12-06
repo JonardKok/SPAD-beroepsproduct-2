@@ -1,23 +1,26 @@
 void tekenEindScherm() {
+  aantalSpelers = 4;
+  berekenOptiesTekst(); //WEGHALEN NA SCHRIJVEN CODE!!!!________________________________________________________
   tekenScores();
-  text("Eind-scherm", width / 2, height / 2);
 }
 
 void eindSchermActies() {
 }
 
 void tekenScores() {
-  int xScores = width/4;
+  int xScores = width/8;
   int yScores = height/4;
-  text("scores", xScores, yScores);
+  int tekstGrootte = getTekstGroottes("normaal");
+  textSize(tekstGrootte);
+  text("Scores", xScores, yScores);
   for (int i = 0; i < getSpelers(); i++) {
-    tekenSpelerMetScore(getScore(i), i, xScores, getTekstGroottes("klein"), getKleur("GEEL"));
+    tekenSpelerMetScore(getScore(i), i, xScores, yScores, tekstGrootte, getKleur("GEEL"));
   }
 }
 
-void tekenSpelerMetScore(int spelerScore, int i, int x, int y, int kleur) {
+void tekenSpelerMetScore(int spelerScore, int i, int x, int y, int rijVerschil, int kleur) {
   fill(kleur);
-  text("Speler"+ (i+1) + "Score: " + spelerScore, x, y*2 + y * i);
+  text("Speler "+ (i+1) + " eindscore: " + spelerScore, x, y + rijVerschil + rijVerschil * i);
 }
 
 int getKleur(String kleurNaam) {

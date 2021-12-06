@@ -16,6 +16,9 @@ String spelers = str(aantalSpelers);
 String aantalSetjesTekst = str(aantalSetjes);
 String jaOfNee = ("nee");
 String[][][] menuTekst;
+int kleineTekstGrootte;
+int normaleTekstGrootte;
+int groteTekstGrootte;
 int xTekstPlek;
 int yTekstPlek;
 int menuTextBreedte;
@@ -127,6 +130,7 @@ void tekenOpties(int x, int y) {
     } else if (i > 1) {//knoppen
       for (int j = 0; j < menuTekst[i].length; j++) { //HIER KAN EEN METHODE VOOR GEMAAKT WORDEN!
         for (int k = 0; k < menuTekst[i][j].length; k++) {//moet zo omdat je geen String array in een switch statement kan zetten, helemaal kut.
+        
           //tekenKnoppen(x, y, i, j, k);
           if (menuTekst[i][j][k] == menuTekst[2][0][0]) {//tekent -
             menuTextBreedte = int(textWidth(menuTekst[1][0][0]));
