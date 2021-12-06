@@ -1,17 +1,13 @@
-boolean doodsKaarten;
-int scherm;
 final int START_SCHERM = 0;
 final int SPEL_SCHERM = 1;
 final int EIND_SCHERM = 2;
 final int HOEK_RADIUS = 20;
-final int TEKST_KLEUR = #FFFFFF;
-
+int scherm = EIND_SCHERM;
 
 void setup() {
-  //pakVernieuwingsFrequentie();
   fullScreen(FX2D);
-  //frameRate(spelFrequentie);
   textAlign(TOP, LEFT);
+  berekenTekstGroottes();
 }
 void draw() {
   clear();
@@ -30,9 +26,15 @@ void draw() {
 }
 
 void mouseClicked() {
-  if (scherm == START_SCHERM) {
+  switch (scherm) {
+  case START_SCHERM:
     veranderStartScherm();
-  } else if (scherm == SPEL_SCHERM) {
+    break;
+  case SPEL_SCHERM:
     kaartKlikActies();
+    break;
+  case EIND_SCHERM:
+    eindSchermActies();
+    break;
   }
 }

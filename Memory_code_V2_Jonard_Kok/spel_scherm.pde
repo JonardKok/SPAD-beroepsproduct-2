@@ -25,10 +25,9 @@ final int DIEPROZE= #FF1493;
 boolean kaartPlekkenZijnBerekend;
 boolean eindebeurt;
 boolean puntGekregen;
-boolean kaartBestaat = false;
-boolean kaartenBekeken = false;
+int setjeWeg = 0;
 int speler;
-int maxAantalSpelers;
+int maxAantalSpelers = 1;
 int spelerMetBeurt = 0;
 int hoevaakOpKaartGeklikt;
 int xKaart;
@@ -84,12 +83,6 @@ void tekenSpelScherm() {
   tekenSpelers();
   if (eindebeurt) {
     tekenBeurtEindeIndicator();
-    if (!kaartenBekeken) {
-      kijkOfKaartenWegZijn();
-    }
-    if (!kaartBestaat) {
-      scherm = EIND_SCHERM;
-    }
   }
 }
 
@@ -102,7 +95,6 @@ void kaartKlikActies() {
   kaartZoekenKleur();
   switch(hoevaakOpKaartGeklikt) {
   case 2:
-    kaartenBekeken = false;
     eindebeurt = true;
     klikOveral();
     break;
@@ -113,23 +105,6 @@ void kaartKlikActies() {
     gekozenKaartKleurVerbergen();
     break;
   }
-}
-
-void kijkOfKaartenWegZijn() {
-  println("KAARTENWEGMETHODE AANGEROEPEN");
-  for (int i = 0; i < geklikteKaarten.length && !kaartBestaat; i++) {
-    for (int j = 0; j < geklikteKaarten[i].length && !kaartBestaat; j++) {
-      println(geklikteKaarten[i][j]);
-      if (geklikteKaarten[i][j] == ROOD) {
-        println("Kaart bestaat");
-        kaartBestaat = true;
-      } else {
-        println("Kaart bestaat niet.");
-        kaartBestaat = false;
-      }
-    }
-  }
-  kaartenBekeken = true;
 }
 
 void gekozenKaartKleurVerbergen() {
@@ -158,6 +133,7 @@ void beurtEinde() {
   if (kanPuntGegevenWorden()) {//hier kan een for lus gemaakt van worden
     spelerScore[spelerMetBeurt]++;
     puntGekregen = true;
+    setjeWeg++;
     spelerMetBeurt++;
     //println("spelerScore" + spelerScore[spelerMetBeurt]);
   } else {
@@ -166,6 +142,12 @@ void beurtEinde() {
   }
   if (spelerMetBeurt > getAantalSpelers()-1) {
     spelerMetBeurt = 0;
+  }
+  zijnKaartenWeg();
+}
+void zijnKaartenWeg() {
+  if (setjeWeg == getAantalSetjes()) {
+    scherm = EIND_SCHERM;
   }
 }
 

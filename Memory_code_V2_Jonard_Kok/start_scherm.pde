@@ -11,20 +11,20 @@ int maximumAantalSpelers = 4;
 int minimumAantalSpelers = 1;
 
 //tekst en tekstgroottes
+final int TEKST_KLEUR = #FFFFFF;
 String spelers = str(aantalSpelers);
 String aantalSetjesTekst = str(aantalSetjes);
 String jaOfNee = ("nee");
 String[][][] menuTekst;
 int xTekstPlek;
 int yTekstPlek;
-int kleineTekstGrootte;
-int normaleTekstGrootte;
-int groteTekstGrootte;
 int menuTextBreedte;
 int knopTextBreedte;
 int knopBreedte;
 int knopHoogte;
 
+//doodskaarten
+boolean doodsKaarten;
 
 //knoppengroottes
 int kleineTekstKnopBreedte;
