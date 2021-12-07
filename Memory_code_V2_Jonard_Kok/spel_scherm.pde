@@ -26,6 +26,8 @@ boolean kaartPlekkenZijnBerekend;
 boolean eindebeurt;
 boolean puntGekregen;
 boolean doodskaartGeklikt = false;
+int doodskaartWeg = 0;
+int kaartgeklikt = 0;
 int setjeWeg = 0;
 int speler;
 int maxAantalSpelers = 1;
@@ -51,10 +53,6 @@ int xGeklikteKaart1;
 int yGeklikteKaart1;
 int xGeklikteKaart2;
 int yGeklikteKaart2;
-int puntspeler1;
-int puntspeler2;
-int puntspeler3;
-int puntspeler4;
 int[] spelerScore = {0, 0, 0, 0};
 int[] kaartKleuren;
 int[][] plekkenMetKaart;
@@ -101,9 +99,11 @@ void kaartKlikActies() {
     break;
   case 3:
     beurtEinde();
+    doodskaartGeklikt = false;
     eindebeurt = false;
     hoevaakOpKaartGeklikt = 0;
     gekozenKaartKleurVerbergen();
+    kaartgeklikt = 0;
     break;
   }
 }
@@ -137,6 +137,13 @@ void beurtEinde() {
     setjeWeg++;
     spelerMetBeurt++;
     //println("spelerScore" + spelerScore[spelerMetBeurt]);
+  } else if (doodskaartGeklikt) {
+    spelerScore[spelerMetBeurt]--;
+    doodskaartWeg++;
+    if (doodskaartWeg >= 2) {
+      doodskaartWeg = 0;
+      setjeWeg++;
+    }
   } else {
     puntGekregen = false;
     spelerMetBeurt++;
@@ -205,14 +212,14 @@ void kaartZoekenKleur() {
       voorkantKaartPlekBerekenen(i, j);
       if (opKaartGeklikt(xKaart, yKaart, kaartBreedte, kaartHoogte, geklikteKaarten[i][j])) {
         hoevaakOpKaartGeklikt += 1;
+        kaartgeklikt++;
         println(hoevaakOpKaartGeklikt);
-        switch(hoevaakOpKaartGeklikt) {
+        switch(kaartgeklikt) {
         case 1:
           if (kaartKleuren[kaartKleur[i][j]] == doodskaartOfNormaleKaartKleur && getDoodskaarten()) {
             opDoodsKaartGeklikt(1);
-            voorkantKaartKleur1 = kaartKleuren[kaartKleur[i][j]];
+            voorkantKaartKleur1 = ROOD;
             geefKaartPlekDoor(xKaart, yKaart, i, j);
-            kaart++;
             geefKaartPlekDoor(xKaart, yKaart, i, j);
             println("op doodskaart geklikt");
           } else {
@@ -223,7 +230,7 @@ void kaartZoekenKleur() {
           break;
         case 2:
           if (kaartKleuren[kaartKleur[i][j]] == doodskaartOfNormaleKaartKleur && getDoodskaarten()) {
-            voorkantKaartKleur2 = kaartKleuren[kaartKleur[i][j]];
+            voorkantKaartKleur2 = ROOD;
             println("op doodskaart geklikt");
             geefKaartPlekDoor(xKaart, yKaart, i, j);
             opDoodsKaartGeklikt(2);
@@ -246,7 +253,7 @@ void opDoodsKaartGeklikt(int doodskaartNr) {
     doodskaartGeklikt = true;
     break;
   case 2:
-    voorkantKaartKleur1 = WIT;
+    voorkantKaartKleur1 = GROEN;
     break;
   }
 }
@@ -435,7 +442,7 @@ boolean kanPuntGegevenWorden() {//voorkomt een bug die ervoor zorgt dat je niet 
     println("Punt kan gegeven worden."); //#TESTMETHODE
     return true;
   }
-  println("Beide IF statements zijn genegeerd");
+  println("Beide IF statements zijn genegeerd, geen punt");
   return false;
 }
 
