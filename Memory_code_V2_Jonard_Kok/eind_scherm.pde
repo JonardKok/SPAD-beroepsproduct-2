@@ -1,5 +1,5 @@
 void tekenEindScherm() {
-  aantalSpelers = 4;
+  aantalSpelers = getSpelers();
   berekenOptiesTekst(); //WEGHALEN NA SCHRIJVEN CODE!!!!________________________________________________________
   tekenScores();
 }
