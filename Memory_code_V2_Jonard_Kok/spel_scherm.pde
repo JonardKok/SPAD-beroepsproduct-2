@@ -26,6 +26,7 @@ boolean kaartPlekkenZijnBerekend;
 boolean eindebeurt;
 boolean puntGekregen;
 boolean doodskaartGeklikt = false;
+int doodskaartGekliktVolgorde;
 int doodskaartWeg = 0;
 int kaartgeklikt = 0;
 int setjeWeg = 0;
@@ -99,21 +100,37 @@ void kaartKlikActies() {
     break;
   case 3:
     beurtEinde();
+    gekozenKaartKleurVerbergen();
+    hoevaakOpKaartGeklikt = 0;
+    kaartgeklikt = 0;
     doodskaartGeklikt = false;
     eindebeurt = false;
-    hoevaakOpKaartGeklikt = 0;
-    gekozenKaartKleurVerbergen();
-    kaartgeklikt = 0;
     break;
   }
-}
+}  
 
 void gekozenKaartKleurVerbergen() {
-  if (puntGekregen || doodskaartGeklikt) {
+  if (puntGekregen) {
+    println("punt gekregen");
     geklikteKaarten[kolomKaart1][rijKaart1] = 0;
     geklikteKaarten[kolomKaart2][rijKaart2] = 0;
     voorkantKaartKleur1 = 0;
     voorkantKaartKleur2 = 0;
+  } else if (doodskaartGeklikt) {
+    println("op doodskaart geklikt");
+    println("doodskaartGekliktVolgorde:", doodskaartGekliktVolgorde);
+    if (doodskaartGekliktVolgorde == 1) {
+      println("doodskaart 1"); //#testmethode
+      geklikteKaarten[kolomKaart1][rijKaart1] = 0;
+      geklikteKaarten[kolomKaart2][rijKaart2] = 0;
+      voorkantKaartKleur1 = 0;
+      voorkantKaartKleur2 = 0;
+    } else if (doodskaartGekliktVolgorde == 2) {
+      println("doodskaart 2"); //#testmethode
+      geklikteKaarten[kolomKaart2][rijKaart2] = 0;
+      voorkantKaartKleur1 = WIT;
+      voorkantKaartKleur2 = 0;
+    }
   } else {
     voorkantKaartKleur1 = WIT;
     voorkantKaartKleur2 = WIT;
@@ -221,7 +238,6 @@ void kaartZoekenKleur() {
             voorkantKaartKleur1 = ROOD;
             geefKaartPlekDoor(xKaart, yKaart, i, j);
             geefKaartPlekDoor(xKaart, yKaart, i, j);
-            println("op doodskaart geklikt");
           } else {
             geefKaartPlekDoor(xKaart, yKaart, i, j);
             println("kleur: " + kaartKleur[i][j]+ ". kaartplek: " + plekkenMetKaart[i].length, j, i);
@@ -246,14 +262,16 @@ void kaartZoekenKleur() {
 }
 
 void opDoodsKaartGeklikt(int doodskaartNr) {
+  doodskaartGekliktVolgorde = doodskaartNr;
   switch (doodskaartNr) {
   case 1:
     hoevaakOpKaartGeklikt = 2;
-    voorkantKaartKleur2 = voorkantKaartKleur1;
+    voorkantKaartKleur2 = ROOD;
     doodskaartGeklikt = true;
     break;
   case 2:
-    voorkantKaartKleur1 = GROEN;
+  voorkantKaartKleur2 = ROOD;
+  doodskaartGeklikt = true;
     break;
   }
 }
