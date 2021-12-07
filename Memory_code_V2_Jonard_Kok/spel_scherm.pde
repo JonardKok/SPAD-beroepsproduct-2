@@ -263,18 +263,11 @@ void kaartZoekenKleur() {
 
 void opDoodsKaartGeklikt(int doodskaartNr) {
   doodskaartGekliktVolgorde = doodskaartNr;
-  switch (doodskaartNr) {
-  case 1:
-    hoevaakOpKaartGeklikt = 2;
-    voorkantKaartKleur2 = ROOD;
-    doodskaartGeklikt = true;
-    break;
-  case 2:
   voorkantKaartKleur2 = ROOD;
   doodskaartGeklikt = true;
-    break;
-  }
+  hoevaakOpKaartGeklikt = 2;
 }
+
 
 void voorkantKaartPlekBerekenen(int i, int j) {
   xKaart = kaartBreedte + kaartBreedte * j + afstandTussenKaarten * j;
