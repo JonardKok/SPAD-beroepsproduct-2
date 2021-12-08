@@ -137,7 +137,6 @@ void gekozenKaartKleurVerbergen() {
 void klikOveral() {
   if (hoevaakOpKaartGeklikt <= 4 && eindebeurt) {
     hoevaakOpKaartGeklikt++;
-    //println("hoevaakOpKaartGeklikt" + hoevaakOpKaartGeklikt);
   } else {
     hoevaakOpKaartGeklikt = 0;
   }
@@ -150,7 +149,6 @@ void beurtEinde() {
     puntGekregen = true;
     setjeWeg++;
     spelerMetBeurt++;
-    //println("spelerScore" + spelerScore[spelerMetBeurt]);
   } else if (doodskaartGeklikt) {
     spelerScore[spelerMetBeurt]--;
     doodskaartWeg++;
@@ -168,7 +166,7 @@ void beurtEinde() {
   zijnKaartenWeg();
 }
 void zijnKaartenWeg() {
-  if (setjeWeg == getAantalSetjes()) {
+  if (setjeWeg == getAantalSetjes() || (setjeWeg == getAantalSetjes()-1 && doodskaartWeg !=2)) {
     scherm = EIND_SCHERM;
   }
 }
@@ -181,7 +179,7 @@ void tekenKaarten() {
   if (!kaartPlekkenZijnBerekend) { //zorgt ervoor dat de kaartplek maar 1x berekend wordt waardoor de kaarten niet van plek veranderen. Bug voorkomen dus.
     kaartKleuren = new int[] {doodskaartOfNormaleKaartKleur, BLAUW, GRIJS, GEEL, ORANJE, PAARS, CYAAN, ROZE, BRUIN, DONKERROOD, DONKERBLAUW, DONKERGROEN, ZANDBRUIN, LICHT_BLAUW, RAAR, GEELGROEN, TARWE, MIDDENVIOLETROOD, LEIGRIJS, DIEPROZE};
     hoeveelSetjesMoetenGetekendWorden();
-    berekenKaartKleur();
+    genereerKleuren();
     printKleuren();
   }
   tekenKaartenLayout();
@@ -226,26 +224,20 @@ void kaartZoekenKleur() {
       voorkantKaartPlekBerekenen(i, j);
       if (opKaartGeklikt(xKaart, yKaart, kaartBreedte, kaartHoogte, geklikteKaarten[i][j])) {
         hoevaakOpKaartGeklikt += 1;
-        //println(hoevaakOpKaartGeklikt);
         switch(hoevaakOpKaartGeklikt) {
         case 1:
           if (kaartKleuren[kaartKleur[i][j]] == doodskaartOfNormaleKaartKleur && getDoodskaarten()) {
-            opDoodsKaartGeklikt(1);
+            doodskaartKlik(1, i , j);
             voorkantKaartKleur1 = ROOD;
-            geefKaartPlekDoor(xKaart, yKaart, i, j);
             geefKaartPlekDoor(xKaart, yKaart, i, j);
           } else {
             geefKaartPlekDoor(xKaart, yKaart, i, j);
-            //println("kleur: " + kaartKleur[i][j]+ ". kaartplek: " + plekkenMetKaart[i].length, j, i);
             voorkantKaartKleur1 = kaartKleuren[kaartKleur[i][j]];
           }
           break;
         case 2:
           if (kaartKleuren[kaartKleur[i][j]] == doodskaartOfNormaleKaartKleur && getDoodskaarten()) {
-            voorkantKaartKleur2 = ROOD;
-            println("op doodskaart geklikt");
-            geefKaartPlekDoor(xKaart, yKaart, i, j);
-            opDoodsKaartGeklikt(2);
+            doodskaartKlik(2, i, j);
           } else {
             geefKaartPlekDoor(xKaart, yKaart, i, j);
             voorkantKaartKleur2 = kaartKleuren[kaartKleur[i][j]];
@@ -257,7 +249,9 @@ void kaartZoekenKleur() {
   }
 }
 
-void opDoodsKaartGeklikt(int doodskaartNr) {
+void doodskaartKlik(int doodskaartNr, int i, int j) {
+  println("op doodskaart geklikt");
+  geefKaartPlekDoor(xKaart, yKaart, i, j);
   doodskaartGekliktVolgorde = doodskaartNr;
   voorkantKaartKleur2 = ROOD;
   doodskaartGeklikt = true;
@@ -295,13 +289,11 @@ void tekenGeklikteKaarten() {
   tekenKaart(xGeklikteKaart2, yGeklikteKaart2, kaartBreedte, kaartHoogte, voorkantKaartKleur2);
 }
 
-void berekenKaartKleur() {
+void genereerKleuren() {
   kaartKleur = new int[plekkenMetKaart.length][plekkenMetKaart[0].length];
   vulArrayMetTijdelijkCijfer();
-  println("lengte", kaartKleur.length*kaartKleur[0].length);
   for (int i = 0; i < (kaartKleur.length*kaartKleur[0].length)/2; i++ ) {
-    println("berekening gestart");
-    tekenAttributen(2, i);
+    berekenKaartKleur(2, i);
   }
   kaartPlekkenZijnBerekend = true;
 }
@@ -310,21 +302,18 @@ void vulArrayMetTijdelijkCijfer() {
   for (int i = 0; i < kaartKleur.length; i++) {
     for (int j = 0; j < kaartKleur[i].length; j++) {
       kaartKleur[i][j] = 30;
-      println(i, j, kaartKleur[i][j]);
     }
   }
 }
 
 //DIT BEREKENT DE KLEUREN________________________________________________________________________________________
-void tekenAttributen(int aantalItems, int kleurNr) {
+void berekenKaartKleur(int aantalItems, int kleurNr) {
   for (int kleurfrequentie = 0; kleurfrequentie < aantalItems; ) {
     int j = round(random(0, kaartKleur[0].length-1));
     int i = round(random(0, kaartKleur.length-1));
     if (kaartKleur[i][j] == 30) {
       kaartKleur[i][j] = kleurNr;
       kleurfrequentie += 1;
-      println("kleurtjebedacht", kaartKleur[i][j]);
-      println(kleurNr, "is berekend");
     }
   }
 }
@@ -341,11 +330,10 @@ void printKleuren() {
 //tekent de grid van kaarten met de achterkant van de kaart-kleur.
 void tekenKaartenLayout() {
   for (int i = 0; i < (kaartPlekken.length - yCorrectie); i++) {
-    for (int j = 0; j < (kaartPlekken[i].length  - xCorrectie); j++) {//tekent de rij
+    for (int j = 0; j < (kaartPlekken[i].length  - xCorrectie); j++) {
       xKaart = kaartBreedte + kaartBreedte * j + afstandTussenKaarten * j;
       yKaart = kaartHoogte * 2 + kaartHoogte * i + afstandTussenKaarten * i;
-      tekenKaart(xKaart, yKaart, kaartBreedte, kaartHoogte, geklikteKaarten[i][j]); //ORIGINEEL
-      //tekenKaart(xKaart, yKaart, kaartBreedte, kaartHoogte, kaartKleuren[kaartKleur[i][j]], WIT); //test
+      tekenKaart(xKaart, yKaart, kaartBreedte, kaartHoogte, geklikteKaarten[i][j]);
     }
   }
 }
@@ -409,7 +397,7 @@ void tekenSpelerNamen(String spelernaam[], int spelerScore[], int i, int x, int 
   text(spelernaam[i] + " Score : " + spelerScore[i], x, y + y * i);
 }
 
-//integer die het aantal setjes van het startscherm pakt.
+//integer-methode die het aantal setjes van het startscherm pakt.
 int getAantalSetjes() {
   return aantalSetjes;
 }
