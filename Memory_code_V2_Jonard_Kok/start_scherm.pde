@@ -6,7 +6,7 @@ NODIG:
  knop om het spel te starten
  */
 int aantalSetjes = 12;
-int aantalSpelers = 1;
+int aantalSpelers = 4;
 int maximumAantalSpelers = 4;
 int minimumAantalSpelers = 1;
 

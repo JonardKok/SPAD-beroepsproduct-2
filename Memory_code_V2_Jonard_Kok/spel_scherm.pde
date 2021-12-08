@@ -26,6 +26,7 @@ boolean kaartPlekkenZijnBerekend;
 boolean eindebeurt;
 boolean puntGekregen;
 boolean doodskaartGeklikt = false;
+boolean kaartGevonden = false;
 int doodskaartGekliktVolgorde;
 int doodskaartWeg = 0;
 int setjeWeg = 0;
@@ -101,7 +102,7 @@ void kaartKlikActies() {
     break;
   case 3:
     beurtEinde();
-    gekozenKaartKleurVerbergen();
+    gekozenKaartVerbergen();
     hoevaakOpKaartGeklikt = 0;
     doodskaartGeklikt = false;
     eindebeurt = false;
@@ -109,30 +110,21 @@ void kaartKlikActies() {
   }
 }  
 
-void gekozenKaartKleurVerbergen() {
+void gekozenKaartVerbergen() {
   if (puntGekregen) {
     println("punt gekregen");
     geklikteKaarten[kolomKaart1][rijKaart1] = 0;
     geklikteKaarten[kolomKaart2][rijKaart2] = 0;
-    voorkantKaartKleur1 = 0;
-    voorkantKaartKleur2 = 0;
   } else if (doodskaartGeklikt) {
     println("op doodskaart geklikt");
     if (doodskaartGekliktVolgorde == 1) {
       println("doodskaart 1"); //#testmethode
       geklikteKaarten[kolomKaart1][rijKaart1] = 0;
       geklikteKaarten[kolomKaart2][rijKaart2] = 0;
-      voorkantKaartKleur1 = 0;
-      voorkantKaartKleur2 = 0;
     } else if (doodskaartGekliktVolgorde == 2) {
       println("doodskaart 2"); //#testmethode
       geklikteKaarten[kolomKaart2][rijKaart2] = 0;
-      voorkantKaartKleur1 = WIT;
-      voorkantKaartKleur2 = 0;
     }
-  } else {
-    voorkantKaartKleur1 = WIT;
-    voorkantKaartKleur2 = WIT;
   }
 }
 
@@ -186,7 +178,9 @@ void tekenKaarten() {
   }
   tekenKaartenLayout();
   tekenKaartenBuitenScherm();
-  tekenGeklikteKaarten();
+  if (hoevaakOpKaartGeklikt != 0) {
+    tekenGeklikteKaarten();
+  }
 }
 
 void tekenKaartenBuitenScherm() {
@@ -222,35 +216,28 @@ void hoeveelSetjesMoetenGetekendWorden() {
 //zoekt naar de positie van de kaart waarop geklikt is
 void geefKaartKleurDoor() { 
   println("Er is geklikt");
-  for (int kolom = 0; kolom < (plekkenMetKaart.length); kolom++) {
-    for (int rij = 0; rij < (plekkenMetKaart[kolom].length); rij++) {
+  kaartGevonden = false;
+  for (int kolom = 0; kolom < plekkenMetKaart.length && !kaartGevonden; kolom++) {
+    for (int rij = 0; rij < plekkenMetKaart[kolom].length && !kaartGevonden; rij++) {
       voorkantKaartPlekBerekenen(kolom, rij);
-      //println("mouseX en xKaartGeklikt", xKaartGeklikt, mouseX, (xKaartGeklikt+kaartBreedte));
-      //println("mouseY en YKaartGeklikt", yKaartGeklikt, mouseY, (yKaartGeklikt+kaartHoogte));
-      boolean kaartGeklikt = opKaartGeklikt(xKaartGeklikt, yKaartGeklikt, kaartBreedte, kaartHoogte, geklikteKaarten[kolom][rij]);
-      println(kaartGeklikt);
-      if (kaartGeklikt) {
-        println("kaart is geklikt");
+      if (opKaartGeklikt(xKaartGeklikt, yKaartGeklikt, kaartBreedte, kaartHoogte, geklikteKaarten[kolom][rij])) {
+        kaartGevonden = true;
         hoevaakOpKaartGeklikt += 1;
-        println("hoevaakOpKaartGeklikt", hoevaakOpKaartGeklikt);
         switch(hoevaakOpKaartGeklikt) {
         case 1:
-          if (kaartKleuren[kaartKleur[kolom][rij]] == doodskaartOfNormaleKaartKleur && getDoodskaarten()) {
+          if (opDoodskaartGeklikt(kolom, rij)) {
             doodskaartKlik(1, kolom, rij);
             voorkantKaartKleur1 = ROOD;
-            println("doodskaart1", voorkantKaartKleur1 = kaartKleuren[kaartKleur[kolom][rij]]);
             geefKaartInfoDoor(kolom, rij);
           } else {
             geefKaartInfoDoor(kolom, rij);
-            println("voorkantKaartKleur1", voorkantKaartKleur1 = kaartKleuren[kaartKleur[kolom][rij]]);
             voorkantKaartKleur1 = kaartKleuren[kaartKleur[kolom][rij]];
           }
           break;
         case 2:
-          if (kaartKleuren[kaartKleur[kolom][rij]] == doodskaartOfNormaleKaartKleur && getDoodskaarten()) {
+          if (opDoodskaartGeklikt(kolom, rij)) {
             doodskaartKlik(2, kolom, rij);
           } else {
-            println("voorkantKaartKleur2", voorkantKaartKleur2 = kaartKleuren[kaartKleur[kolom][rij]]);
             geefKaartInfoDoor(kolom, rij);
             voorkantKaartKleur2 = kaartKleuren[kaartKleur[kolom][rij]];
           }
@@ -472,6 +459,10 @@ boolean getDoodskaarten() {
 //boolean die kijkt of een cijfer vaker voor komt, zodat je geen dubbele setjes krijgt.
 boolean komtCijferVakerVoor(int cijferFrequentie, int i) {
   return cijferFrequentie > 2 && i > 0;
+}
+
+boolean opDoodskaartGeklikt(int kolom, int rij){
+  return kaartKleuren[kaartKleur[kolom][rij]] == doodskaartOfNormaleKaartKleur && getDoodskaarten();
 }
 
 //boolean die kijkt of er op een kaart geklikt is.
