@@ -7,6 +7,8 @@ int xText;
 int yText;
 int breedte;
 int hoogte;
+String[] knopNaam = {};
+
 String[][] eindschermKnopOpties = {
   {"Ga naar", "het menu"}, 
   {"Speel het", "spel", "opnieuw"}, 
@@ -20,6 +22,25 @@ void tekenEindScherm() {
 }
 
 void eindSchermActies() {
+  setResetVariabelen(zoekKnop);
+}
+
+String zoekKnop(){
+  berekenKnopPlekken();
+  return 
+}
+
+void berekenKnopPlekken(){
+  
+}
+
+void setResetVariabelen(String soortKnop) {
+  switch (soortKnop) {
+  case "menu":
+    break;
+  case "opnieuw":
+    break;
+  }
 }
 
 void tekenScores() {
@@ -55,7 +76,7 @@ void tekenKnoppen() {
     for (int rij = 0; rij < eindschermKnopOpties[kolom].length; rij++) {
       yText = yText + getTekstGroottes("normaal");
       println(xText, yText);
-      tekenKnoppenTekst(eindschermKnopOpties[kolom][rij], xText, yText);
+      tekenKnoppenTekst(eindschermKnopOpties[kolom][rij], xText, yText, ROOD);
     }
   }
 }
@@ -65,8 +86,8 @@ void tekenKnop(int x, int y, int kleur) {
   rect(x, y, breedte, hoogte, 50);
 }
 
-void tekenKnoppenTekst(String tekst, int x, int y) {
-  fill(#FFFFFF);
+void tekenKnoppenTekst(String tekst, int x, int y, int kleur) {
+  fill(kleur);
   text(tekst, x, y);
 }
 
@@ -88,15 +109,6 @@ int getTekstGroottes(String tekst) {
   }
   println("Tekstgrootte is verkeerd getypt, normaal wordt gebruikt");
   return kleineTekstGrootte;
-}
-
-void setResetVariabelen(String soortKnop) {
-  switch (soortKnop) {
-  case "menu":
-    break;
-  case "opnieuw":
-    break;
-  }
 }
 
 int getScore(int i) {
