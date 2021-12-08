@@ -22,18 +22,18 @@ final int TARWE = #F5DEB3;
 final int MIDDENVIOLETROOD= #C71585;
 final int LEIGRIJS = #708090;
 final int DIEPROZE= #FF1493;
-boolean kaartPlekkenZijnBerekend = false;
+boolean kaartPlekkenZijnBerekend;
 boolean eindebeurt;
 boolean puntGekregen;
-boolean doodskaartGeklikt = false;
-boolean kaartGevonden = false;
+boolean doodskaartGeklikt;
+boolean kaartGevonden;
 int doodskaartGekliktVolgorde;
 int doodskaartWeg = 0;
 int setjeWeg = 0;
 int speler;
-int maxAantalSpelers = 1;
+int maxAantalSpelers = 4;
 int spelerMetBeurt = 0;
-int hoevaakOpKaartGeklikt;
+int hoevaakOpKaartGeklikt = 0;
 int xKaartGeklikt;
 int yKaartGeklikt;
 int xKaart;
@@ -112,19 +112,24 @@ void kaartKlikActies() {
 
 void gekozenKaartVerbergen() {
   if (puntGekregen) {
-    println("punt gekregen");
     geklikteKaarten[kolomKaart1][rijKaart1] = 0;
     geklikteKaarten[kolomKaart2][rijKaart2] = 0;
+    voorkantKaartKleur1 = 0;
+    voorkantKaartKleur2 = 0;
   } else if (doodskaartGeklikt) {
-    println("op doodskaart geklikt");
     if (doodskaartGekliktVolgorde == 1) {
-      println("doodskaart 1"); //#testmethode
       geklikteKaarten[kolomKaart1][rijKaart1] = 0;
       geklikteKaarten[kolomKaart2][rijKaart2] = 0;
+      voorkantKaartKleur1 = 0;
+      voorkantKaartKleur2 = 0;
     } else if (doodskaartGekliktVolgorde == 2) {
-      println("doodskaart 2"); //#testmethode
       geklikteKaarten[kolomKaart2][rijKaart2] = 0;
+      voorkantKaartKleur1 = WIT;
+      voorkantKaartKleur2 = 0;
     }
+  } else {
+    voorkantKaartKleur1 = WIT;
+    voorkantKaartKleur2 = WIT;
   }
 }
 
@@ -153,12 +158,19 @@ void beurtEinde() {
   } else {
     puntGekregen = false;
     spelerMetBeurt++;
+    xGeklikteKaart2 = width;
+    yGeklikteKaart2 = height;
   }
+  resetSpelerBeurt();
+  zijnKaartenWeg();
+}
+
+void resetSpelerBeurt() {
   if (spelerMetBeurt > getAantalSpelers()-1) {
     spelerMetBeurt = 0;
   }
-  zijnKaartenWeg();
 }
+
 void zijnKaartenWeg() {
   if (setjeWeg == getAantalSetjes() || (setjeWeg == getAantalSetjes()-1 && doodskaartWeg !=2 && getDoodskaarten())) {
     scherm = EIND_SCHERM;
@@ -179,10 +191,17 @@ void tekenKaarten() {
   tekenKaartenLayout();
   tekenKaartenBuitenScherm();
   if (hoevaakOpKaartGeklikt != 0) {
+   // geklikteKaartIsZelfdeKaart();
     tekenGeklikteKaarten();
   }
 }
 
+/*
+void geklikteKaartIsZelfdeKaart() {
+  boolean a = xGeklikteKaart1 == xGeklikteKaart2 && yGeklikteKaart1 == yGeklikteKaart2;
+}
+
+*/
 void tekenKaartenBuitenScherm() {
   if (isXGekliktekaartNul()) {//fixt een bug waar de kaart linksboven in het scherm "spawnt"
     xGeklikteKaart1 = width;
@@ -217,8 +236,8 @@ void hoeveelSetjesMoetenGetekendWorden() {
 void geefKaartKleurDoor() { 
   println("Er is geklikt");
   kaartGevonden = false;
-  for (int kolom = 0; kolom < plekkenMetKaart.length && !kaartGevonden; kolom++) {
-    for (int rij = 0; rij < plekkenMetKaart[kolom].length && !kaartGevonden; rij++) {
+  for (int kolom = 0; kolom < plekkenMetKaart.length /*&& !kaartGevonden*/; kolom++) {
+    for (int rij = 0; rij < plekkenMetKaart[kolom].length /*&& !kaartGevonden*/; rij++) {
       voorkantKaartPlekBerekenen(kolom, rij);
       if (opKaartGeklikt(xKaartGeklikt, yKaartGeklikt, kaartBreedte, kaartHoogte, geklikteKaarten[kolom][rij])) {
         kaartGevonden = true;
@@ -294,10 +313,6 @@ void geefKaartInfoDoor(int kolom, int rij) {
 void tekenGeklikteKaarten() {
   tekenKaart(xGeklikteKaart1, yGeklikteKaart1, kaartBreedte, kaartHoogte, voorkantKaartKleur1);
   tekenKaart(xGeklikteKaart2, yGeklikteKaart2, kaartBreedte, kaartHoogte, voorkantKaartKleur2);
-  if (hoevaakOpKaartGeklikt != 0) {
-    println("xGeklikteKaart1, yGeklikteKaart1", xGeklikteKaart1, yGeklikteKaart1);
-    println("xGeklikteKaart2, yGeklikteKaart2,", xGeklikteKaart2, yGeklikteKaart2);
-  }
 }
 
 void genereerKleuren() {
@@ -438,7 +453,7 @@ int getTekstgrootte(String tekst) {
   return normaleTekstGrootte;
 }
 
-boolean kanPuntGegevenWorden() {//voorkomt een bug die ervoor zorgt dat je niet 2x op dezelfde kaart kan klikken voor een punt. //Methode zelf is wel gebugged.
+boolean kanPuntGegevenWorden() {//voorkomt een bug die ervoor zorgt dat je niet 2x op dezelfde kaart kan klikken voor een punt.
   //println(xGeklikteKaart1, xGeklikteKaart2, yGeklikteKaart1, xGeklikteKaart2);
   if ((xGeklikteKaart1 == xGeklikteKaart2) && (yGeklikteKaart1 == yGeklikteKaart2 && doodskaartGeklikt)) {
     println("Punt kan niet gegeven worden."); //#TESTMETHODE
@@ -461,7 +476,7 @@ boolean komtCijferVakerVoor(int cijferFrequentie, int i) {
   return cijferFrequentie > 2 && i > 0;
 }
 
-boolean opDoodskaartGeklikt(int kolom, int rij){
+boolean opDoodskaartGeklikt(int kolom, int rij) {
   return kaartKleuren[kaartKleur[kolom][rij]] == doodskaartOfNormaleKaartKleur && getDoodskaarten();
 }
 
