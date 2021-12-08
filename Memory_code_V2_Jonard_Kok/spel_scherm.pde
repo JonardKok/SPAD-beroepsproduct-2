@@ -33,6 +33,8 @@ int speler;
 int maxAantalSpelers = 1;
 int spelerMetBeurt = 0;
 int hoevaakOpKaartGeklikt;
+int xKaartGeklikt;
+int yKaartGeklikt;
 int xKaart;
 int yKaart;
 int kolomKaart1;
@@ -91,7 +93,7 @@ void tekenBeurtEindeIndicator() {
 
 //veranderd het spelscherm als er op een kaart geklikt is.
 void kaartKlikActies() {
-  kaartZoekenKleur();
+  geefKaartKleurDoor();
   switch(hoevaakOpKaartGeklikt) {
   case 2:
     eindebeurt = true;
@@ -166,7 +168,7 @@ void beurtEinde() {
   zijnKaartenWeg();
 }
 void zijnKaartenWeg() {
-  if (setjeWeg == getAantalSetjes() || (setjeWeg == getAantalSetjes()-1 && doodskaartWeg !=2)) {
+  if (setjeWeg == getAantalSetjes() || (setjeWeg == getAantalSetjes()-1 && doodskaartWeg !=2 && getDoodskaarten())) {
     scherm = EIND_SCHERM;
   }
 }
@@ -217,30 +219,35 @@ void hoeveelSetjesMoetenGetekendWorden() {
   }
 }
 
-//zoekt naar de positie van de kaart waarop geklikt is en veranderd de kleuren.
-void kaartZoekenKleur() { 
-  for (int i = 0; i < (plekkenMetKaart.length); i++) {
-    for (int j = 0; j < (plekkenMetKaart[i].length); j++) {
-      voorkantKaartPlekBerekenen(i, j);
-      if (opKaartGeklikt(xKaart, yKaart, kaartBreedte, kaartHoogte, geklikteKaarten[i][j])) {
+//zoekt naar de positie van de kaart waarop geklikt is
+void geefKaartKleurDoor() { 
+  println("Er is geklikt");
+  for (int kolom = 0; kolom < (plekkenMetKaart.length); kolom++) {
+    for (int rij = 0; rij < (plekkenMetKaart[kolom].length); rij++) {
+      voorkantKaartPlekBerekenen(kolom, rij);
+      if (opKaartGeklikt(xKaartGeklikt, yKaartGeklikt, kaartBreedte, kaartHoogte, geklikteKaarten[kolom][rij])) {
+        println("kaart is geklikt");
         hoevaakOpKaartGeklikt += 1;
         switch(hoevaakOpKaartGeklikt) {
         case 1:
-          if (kaartKleuren[kaartKleur[i][j]] == doodskaartOfNormaleKaartKleur && getDoodskaarten()) {
-            doodskaartKlik(1, i , j);
+          if (kaartKleuren[kaartKleur[kolom][rij]] == doodskaartOfNormaleKaartKleur && getDoodskaarten()) {
+            doodskaartKlik(1, kolom, rij);
             voorkantKaartKleur1 = ROOD;
-            geefKaartPlekDoor(xKaart, yKaart, i, j);
+            println("doodskaart1",voorkantKaartKleur1 = kaartKleuren[kaartKleur[kolom][rij]]);
+            geefKaartInfoDoor(kolom, rij);
           } else {
-            geefKaartPlekDoor(xKaart, yKaart, i, j);
-            voorkantKaartKleur1 = kaartKleuren[kaartKleur[i][j]];
+            geefKaartInfoDoor(kolom, rij);
+            println("voorkantKaartKleur1",voorkantKaartKleur1 = kaartKleuren[kaartKleur[kolom][rij]]);
+            voorkantKaartKleur1 = kaartKleuren[kaartKleur[kolom][rij]];
           }
           break;
         case 2:
-          if (kaartKleuren[kaartKleur[i][j]] == doodskaartOfNormaleKaartKleur && getDoodskaarten()) {
-            doodskaartKlik(2, i, j);
+          if (kaartKleuren[kaartKleur[kolom][rij]] == doodskaartOfNormaleKaartKleur && getDoodskaarten()) {
+            doodskaartKlik(2, kolom, rij);
           } else {
-            geefKaartPlekDoor(xKaart, yKaart, i, j);
-            voorkantKaartKleur2 = kaartKleuren[kaartKleur[i][j]];
+            println("voorkantKaartKleur2",voorkantKaartKleur2 = kaartKleuren[kaartKleur[kolom][rij]]);
+            geefKaartInfoDoor(kolom, rij);
+            voorkantKaartKleur2 = kaartKleuren[kaartKleur[kolom][rij]];
           }
           break;
         }
@@ -249,9 +256,9 @@ void kaartZoekenKleur() {
   }
 }
 
-void doodskaartKlik(int doodskaartNr, int i, int j) {
+void doodskaartKlik(int doodskaartNr, int kolom, int rij) {
   println("op doodskaart geklikt");
-  geefKaartPlekDoor(xKaart, yKaart, i, j);
+  geefKaartInfoDoor(kolom, rij);
   doodskaartGekliktVolgorde = doodskaartNr;
   voorkantKaartKleur2 = ROOD;
   doodskaartGeklikt = true;
@@ -259,25 +266,31 @@ void doodskaartKlik(int doodskaartNr, int i, int j) {
 }
 
 
-void voorkantKaartPlekBerekenen(int i, int j) {
-  xKaart = kaartBreedte + kaartBreedte * j + afstandTussenKaarten * j;
-  yKaart = kaartHoogte * 2 + kaartHoogte * i + afstandTussenKaarten * i;
+void voorkantKaartPlekBerekenen(int kolom, int rij) {
+  xKaartGeklikt = kaartBreedte + kaartBreedte * rij + afstandTussenKaarten * rij;
+  println("xKaart", xKaartGeklikt);
+  yKaartGeklikt = kaartHoogte * 2 + kaartHoogte * kolom + afstandTussenKaarten * kolom;
+  println("yKaart", yKaartGeklikt);
 }
 
-void geefKaartPlekDoor(int x, int y, int i, int j) {
+void geefKaartInfoDoor(int kolom, int rij) {
+  println("kaartplekdooraangeroepen");
   kaart++;
   switch (kaart) {
   case 1:
-    xGeklikteKaart1 = x;
-    yGeklikteKaart1 = y;
-    kolomKaart1 = i;
-    rijKaart1 = j;
+    println("Kaart 1");
+    xGeklikteKaart1 = xKaartGeklikt;
+    yGeklikteKaart1 = yKaartGeklikt;
+    kolomKaart1 = kolom;
+    rijKaart1 = rij;
+    println(xGeklikteKaart1, yGeklikteKaart1);//#TEST
     break;
   case 2:
-    xGeklikteKaart2 = x;
-    yGeklikteKaart2 = y;
-    kolomKaart2 = i;
-    rijKaart2 = j;
+    println("Kaart 2");
+    xGeklikteKaart2 = xKaartGeklikt;
+    yGeklikteKaart2 = yKaartGeklikt;
+    kolomKaart2 = kolom;
+    rijKaart2 = rij;
     kaart = 0;
     break;
   }
@@ -292,16 +305,16 @@ void tekenGeklikteKaarten() {
 void genereerKleuren() {
   kaartKleur = new int[plekkenMetKaart.length][plekkenMetKaart[0].length];
   vulArrayMetTijdelijkCijfer();
-  for (int i = 0; i < (kaartKleur.length*kaartKleur[0].length)/2; i++ ) {
-    berekenKaartKleur(2, i);
+  for (int hoeveelheidSetjes = 0; hoeveelheidSetjes < (kaartKleur.length*kaartKleur[0].length)/2; hoeveelheidSetjes++ ) {
+    berekenKaartKleur(2, hoeveelheidSetjes);
   }
   kaartPlekkenZijnBerekend = true;
 }
 
 void vulArrayMetTijdelijkCijfer() {
-  for (int i = 0; i < kaartKleur.length; i++) {
-    for (int j = 0; j < kaartKleur[i].length; j++) {
-      kaartKleur[i][j] = 30;
+  for (int kolom = 0; kolom < kaartKleur.length; kolom++) {
+    for (int rij = 0; rij < kaartKleur[kolom].length; rij++) {
+      kaartKleur[kolom][rij] = 30;
     }
   }
 }
@@ -309,10 +322,10 @@ void vulArrayMetTijdelijkCijfer() {
 //DIT BEREKENT DE KLEUREN________________________________________________________________________________________
 void berekenKaartKleur(int aantalItems, int kleurNr) {
   for (int kleurfrequentie = 0; kleurfrequentie < aantalItems; ) {
-    int j = round(random(0, kaartKleur[0].length-1));
-    int i = round(random(0, kaartKleur.length-1));
-    if (kaartKleur[i][j] == 30) {
-      kaartKleur[i][j] = kleurNr;
+    int rij = round(random(0, kaartKleur[0].length-1));
+    int kolom = round(random(0, kaartKleur.length-1));
+    if (kaartKleur[kolom][rij] == 30) {
+      kaartKleur[kolom][rij] = kleurNr;
       kleurfrequentie += 1;
     }
   }
@@ -320,9 +333,9 @@ void berekenKaartKleur(int aantalItems, int kleurNr) {
 
 //print de kleuren in de console #TESTMETHODE
 void printKleuren() {
-  for (int i = 0; i < kaartKleur.length; i++) {
-    for (int j = 0; j < kaartKleur[i].length; j++) {
-      println(i, j, "kleurkaart "+kaartKleur[i][j] ); //Printen van de kleuren voor debuggen
+  for (int kolom = 0; kolom < kaartKleur.length; kolom++) {
+    for (int rij = 0; rij < kaartKleur[kolom].length; rij++) {
+      println(kolom, rij, "kleurkaart "+kaartKleur[kolom][rij] ); //Printen van de kleuren voor debuggen
     }
   }
 }
@@ -377,15 +390,14 @@ void tekenSpelers() {
   int xSpelerText = getTekstgrootte("klein");
   int ySpelerText = xSpelerText;
   for (int i = 0; i < maxAantalSpelers; i++) {
-    speler++;
     textSize(getTekstgrootte("klein"));
     if (i == spelerMetBeurt) {
       tekenSpelerNamen(spelerNamen, spelerScore, i, xSpelerText, ySpelerText, ROOD);
     } else {
       tekenSpelerNamen(spelerNamen, spelerScore, i, xSpelerText, ySpelerText, GEEL);
     }
-    if (speler >= maxAantalSpelers) {
-      speler = 0;
+    if (i >= maxAantalSpelers) {
+      i = 0;
     }
   }
 }
