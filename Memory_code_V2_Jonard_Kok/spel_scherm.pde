@@ -22,7 +22,7 @@ final int TARWE = #F5DEB3;
 final int MIDDENVIOLETROOD= #C71585;
 final int LEIGRIJS = #708090;
 final int DIEPROZE= #FF1493;
-boolean kaartPlekkenZijnBerekend;
+boolean kaartPlekkenZijnBerekend = false;
 boolean eindebeurt;
 boolean puntGekregen;
 boolean doodskaartGeklikt = false;

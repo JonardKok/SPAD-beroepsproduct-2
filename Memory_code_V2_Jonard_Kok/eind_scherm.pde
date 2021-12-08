@@ -5,42 +5,93 @@ int xKnop;
 int yKnop;
 int xText;
 int yText;
-int breedte;
-int hoogte;
-String[] knopNaam = {};
-
+int eindSchermKnopBreedte;
+int eindSchermKnopHoogte;
+boolean knopGevonden = false;
+String[] knopNaam = {"menu", "opnieuw", "stoppen"};
 String[][] eindschermKnopOpties = {
   {"Ga naar", "het menu"}, 
   {"Speel het", "spel", "opnieuw"}, 
   {"Stop met", "spelen"}
 };
 void tekenEindScherm() {
-  aantalSpelers = getSpelers();
   berekenOptiesTekst(); //WEGHALEN NA SCHRIJVEN CODE, DEZE STAAT IN HET START SCHERM!!!!________________________________________________________
+  aantalSpelers = getSpelers();
   tekenScores();
   tekenKnoppen();
 }
 
 void eindSchermActies() {
-  setResetVariabelen(zoekKnop);
+  knopActie(zoekKnop());
 }
 
-String zoekKnop(){
-  berekenKnopPlekken();
-  return 
+String zoekKnop() {
+  for (int knop = 0; knop < knopNaam.length; knop++) {
+    xKnop = eindSchermKnopBreedte * knop;
+    yKnop = height / 2;
+    if (opEindschermKnopGedrukt (xKnop, yKnop, eindSchermKnopBreedte, eindSchermKnopHoogte)) {
+      println("knop gevonden", knopNaam[knop]);
+      return knopNaam[knop];
+    }
+  }
+  return "geen_knop";
 }
 
-void berekenKnopPlekken(){
-  
-}
-
-void setResetVariabelen(String soortKnop) {
-  switch (soortKnop) {
+void knopActie(String knop) {
+  switch (knop) {
   case "menu":
+    setMenuResetVariabelen();
+    scherm = START_SCHERM;
     break;
   case "opnieuw":
+    setSpelResetVariabelen();
+    scherm = SPEL_SCHERM;
+    break;
+  case "stoppen":
+    exit();
     break;
   }
+}
+
+void setMenuResetVariabelen() {
+  setSpelResetVariabelen();
+  aantalSetjes = 12;
+  aantalSpelers = 1;
+  jaOfNee = "nee";
+}
+
+void setSpelResetVariabelen() {
+  kaartPlekkenZijnBerekend = false;
+  eindebeurt = false;
+  puntGekregen = false;
+  doodskaartGeklikt = false;
+  kaartGevonden = false;
+  doodskaartWeg = 0;
+  setjeWeg = 0;
+  spelerMetBeurt = 0;
+  hoevaakOpKaartGeklikt = 0;
+  voorkantKaartKleur1 = 0;
+  voorkantKaartKleur2 = 0;
+  xKaartGeklikt = 0;
+  yKaartGeklikt = 0;
+  xKaart = 0;
+  yKaart = 0;
+  kolomKaart1 = 0;
+  rijKaart1 = 0;
+  kolomKaart2 = 0;
+  rijKaart2 = 0;
+  doodskaartOfNormaleKaartKleur = GROEN;
+  kaart = 0;
+  xCorrectie = 0;
+  yCorrectie = 0;
+  spelerScore = new int[] {0, 0, 0, 0};
+  geklikteKaarten = new int[][] {
+  {WIT, WIT, WIT, WIT, WIT, WIT, WIT, WIT}, 
+  {WIT, WIT, WIT, WIT, WIT, WIT, WIT, WIT}, 
+  {WIT, WIT, WIT, WIT, WIT, WIT, WIT, WIT}, 
+  {WIT, WIT, WIT, WIT, WIT, WIT, WIT, WIT}, 
+  {WIT, WIT, WIT, WIT, WIT, WIT, WIT, WIT}, 
+};
 }
 
 void tekenScores() {
@@ -66,16 +117,15 @@ void tekenSpelerMetScore(int spelerScore, int i, int x, int y, int rijVerschil) 
 void tekenKnoppen() {
   xKnop = 0;
   for (int kolom = 0; kolom < eindschermKnopOpties.length; kolom++) {
-    breedte = width / 3;
-    hoogte = height/2;
-    xKnop = breedte * kolom;
-    yKnop = hoogte;
-    xText = xKnop + breedte / 4;
-    yText = yKnop + hoogte / 4;
+    eindSchermKnopBreedte = width / 3;
+    eindSchermKnopHoogte = height/2;
+    xKnop = eindSchermKnopBreedte * kolom;
+    yKnop = eindSchermKnopHoogte;
+    xText = xKnop + eindSchermKnopBreedte / 4;
+    yText = yKnop + eindSchermKnopHoogte / 4;
     tekenKnop(xKnop, yKnop, #0F0F0F);
     for (int rij = 0; rij < eindschermKnopOpties[kolom].length; rij++) {
       yText = yText + getTekstGroottes("normaal");
-      println(xText, yText);
       tekenKnoppenTekst(eindschermKnopOpties[kolom][rij], xText, yText, ROOD);
     }
   }
@@ -83,7 +133,7 @@ void tekenKnoppen() {
 
 void tekenKnop(int x, int y, int kleur) {
   fill(kleur);
-  rect(x, y, breedte, hoogte, 50);
+  rect(x, y, eindSchermKnopBreedte, eindSchermKnopHoogte, 50);
 }
 
 void tekenKnoppenTekst(String tekst, int x, int y, int kleur) {

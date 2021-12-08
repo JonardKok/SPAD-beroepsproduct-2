@@ -6,7 +6,7 @@ NODIG:
  knop om het spel te starten
  */
 int aantalSetjes = 12;
-int aantalSpelers = 4;
+int aantalSpelers = 1;
 int maximumAantalSpelers = 4;
 int minimumAantalSpelers = 1;
 
@@ -14,7 +14,7 @@ int minimumAantalSpelers = 1;
 final int TEKST_KLEUR = #FFFFFF;
 String spelers = str(aantalSpelers);
 String aantalSetjesTekst = str(aantalSetjes);
-String jaOfNee = ("nee");
+String jaOfNee = "nee";
 String[][][] menuTekst;
 int kleineTekstGrootte;
 int normaleTekstGrootte;
