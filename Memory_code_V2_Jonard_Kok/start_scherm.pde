@@ -130,94 +130,92 @@ void tekenOpties(int x, int y) {
     } else if (i > 1) {//knoppen
       for (int j = 0; j < menuTekst[i].length; j++) { //HIER KAN EEN METHODE VOOR GEMAAKT WORDEN!
         for (int k = 0; k < menuTekst[i][j].length; k++) {//moet zo omdat je geen String array in een switch statement kan zetten, helemaal kut.
-        
-          //tekenKnoppen(x, y, i, j, k);
           if (menuTekst[i][j][k] == menuTekst[2][0][0]) {//tekent -
-            menuTextBreedte = int(textWidth(menuTekst[1][0][0]));
-            textSize(kleineTekstGrootte);
-            knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
-            x = x + menuTextBreedte;
-            y = y - groteTekstGrootte / 3;
-            knopBreedte = kleineTekstKnopBreedte + knopTextBreedte;
-            tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, getKleuren(ROOD), kleineTekstGrootte, menuTekst[i][j][k]);
-            opMinGedrukt = opStartschermKnopGeklikt(x, y, knopBreedte, kleineTekstKnopHoogte);
-          } else if (menuTekst[i][j][k] == menuTekst[2][0][1]) { //tekent hoeveelheid spelers
-            menuTextBreedte = int(textWidth(menuTekst[1][0][0]));
-            knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
-            x = x + menuTextBreedte / 3;
-            knopBreedte = kleineTekstKnopBreedte + knopTextBreedte;
-            tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, getKleuren(GRIJS), kleineTekstGrootte, menuTekst[i][j][k]);
-          } else if (menuTekst[i][j][k] == menuTekst[2][0][2]) { //tekent +
-            menuTextBreedte = int(textWidth(menuTekst[1][0][0]));
-            knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
-            x = x + menuTextBreedte / 3;
-            knopBreedte = kleineTekstKnopBreedte + knopTextBreedte;
-            tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, getKleuren(GROEN), kleineTekstGrootte, menuTekst[i][j][k]);
-            opPlusGedrukt = opStartschermKnopGeklikt(x, y, knopBreedte, kleineTekstKnopHoogte);
-          } else if (menuTekst[i][j][k] == menuTekst[2][1][0]) {//tekent nee
-            menuTextBreedte = int(textWidth(menuTekst[1][1][0]));
-            knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
-            x = x - menuTextBreedte / 2 - (menuTextBreedte / 8);
-            y = y + groteTekstGrootte - groteTekstGrootte / 4;
-            knopBreedte = kleineTekstKnopBreedte + knopTextBreedte;
-            tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, getKleuren(ROOD), kleineTekstGrootte, menuTekst[i][j][k]);
-            opNeeGedrukt = opStartschermKnopGeklikt(x, y, knopBreedte, kleineTekstKnopHoogte);
-          } else if (menuTekst[i][j][k] == menuTekst[2][1][1]) {//tekent ja
-            menuTextBreedte = int(textWidth(menuTekst[1][1][0]));
-            knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
-            x = x + menuTextBreedte / 2;
-            knopBreedte = knopTextBreedte + kleineTekstKnopBreedte;
-            tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, GROEN, kleineTekstGrootte, menuTekst[i][j][k]);
-            opJaGedrukt = opStartschermKnopGeklikt(x, y, knopBreedte, kleineTekstKnopHoogte);
-          } else if (menuTekst[i][j][k] == menuTekst[2][1][2]) {//tekent optie
-            menuTextBreedte = int(textWidth(menuTekst[1][1][0]));
-            knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
-            x = x + menuTextBreedte / 3;
-            knopBreedte = knopTextBreedte + kleineTekstKnopBreedte;
-            tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, GRIJS, kleineTekstGrootte, menuTekst[i][j][k]);
-          } else if (menuTekst[i][j][k] == menuTekst[2][2][0]) { //tekent 12
-            menuTextBreedte = int(textWidth(menuTekst[1][2][0]));
-            knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
-            x = x - menuTextBreedte - menuTextBreedte / 3;
-            y = y + groteTekstGrootte - groteTekstGrootte / 4;
-            knopBreedte = kleineTekstKnopBreedte + knopTextBreedte;
-            tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, GROEN, kleineTekstGrootte, menuTekst[i][j][k]);
-            op12Gedrukt = opStartschermKnopGeklikt(x, y, knopBreedte, kleineTekstKnopHoogte);
-          } else if (menuTekst[i][j][k] == menuTekst[2][2][1]) {//tekent 16
-            menuTextBreedte = int(textWidth(menuTekst[1][2][0]));
-            knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
-            x = x + knopTextBreedte * 2;
-            tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, GROEN, kleineTekstGrootte, menuTekst[i][j][k]);
-            op16Gedrukt = opStartschermKnopGeklikt(x, y, knopBreedte, kleineTekstKnopHoogte);
-          } else if (menuTekst[i][j][k] == menuTekst[2][2][2]) {//tekent 20
-            menuTextBreedte = int(textWidth(menuTekst[1][1][0]));
-            knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
-            x = x + knopTextBreedte * 2;
-            tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, GROEN, kleineTekstGrootte, menuTekst[i][j][k]);
-            op20Gedrukt = opStartschermKnopGeklikt(x, y, knopBreedte, kleineTekstKnopHoogte);
-          } else if (menuTekst[i][j][k] == menuTekst[2][2][3]) {//tekent aantal setjes
-            menuTextBreedte = int(textWidth(menuTekst[1][1][0]));
-            knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
-            x = x + knopTextBreedte * 2;
-            tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, GRIJS, kleineTekstGrootte, menuTekst[i][j][k]);
-          } else if (menuTekst[i][j][k] == menuTekst[2][3][0]) {//tekent startknop
-            menuTextBreedte = int(textWidth(menuTekst[1][1][0]));
-            knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
-            x = 0;
-            y = y + groteTekstGrootte - groteTekstGrootte / 4;
-            knopBreedte = width / 2;
-            knopHoogte = height - y;
-            tekenKnopMetTekst(x, y, knopBreedte, knopHoogte, 10, 10, 10, 10, GROEN, groteTekstGrootte, menuTekst[i][j][k]);
-            opStartGedrukt = opStartschermKnopGeklikt(x, y, knopBreedte, knopHoogte);
-          } else if (menuTekst[i][j][k] == menuTekst[2][3][1]) {//tekent stopknop
-            menuTextBreedte = int(textWidth(menuTekst[1][1][0]));
-            knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
-            x = width / 2;
-            knopBreedte = width / 2;
-            knopHoogte = height - y;
-            tekenKnopMetTekst(x, y, knopBreedte, knopHoogte, 10, 10, 10, 10, ROOD, groteTekstGrootte, menuTekst[i][j][k]);
-            opStopGedrukt = opStartschermKnopGeklikt(x, y, knopBreedte, knopHoogte);
-          }
+           menuTextBreedte = int(textWidth(menuTekst[1][0][0]));
+           textSize(kleineTekstGrootte);
+           knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
+           x = x + menuTextBreedte;
+           y = y - groteTekstGrootte / 3;
+           knopBreedte = kleineTekstKnopBreedte + knopTextBreedte;
+           tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, getKleuren(ROOD), kleineTekstGrootte, menuTekst[i][j][k]);
+           opMinGedrukt = opStartschermKnopGeklikt(x, y, knopBreedte, kleineTekstKnopHoogte);
+           } else if (menuTekst[i][j][k] == menuTekst[2][0][1]) { //tekent hoeveelheid spelers
+           menuTextBreedte = int(textWidth(menuTekst[1][0][0]));
+           knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
+           x = x + menuTextBreedte / 3;
+           knopBreedte = kleineTekstKnopBreedte + knopTextBreedte;
+           tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, getKleuren(GRIJS), kleineTekstGrootte, menuTekst[i][j][k]);
+           } else if (menuTekst[i][j][k] == menuTekst[2][0][2]) { //tekent +
+           menuTextBreedte = int(textWidth(menuTekst[1][0][0]));
+           knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
+           x = x + menuTextBreedte / 3;
+           knopBreedte = kleineTekstKnopBreedte + knopTextBreedte;
+           tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, getKleuren(GROEN), kleineTekstGrootte, menuTekst[i][j][k]);
+           opPlusGedrukt = opStartschermKnopGeklikt(x, y, knopBreedte, kleineTekstKnopHoogte);
+           } else if (menuTekst[i][j][k] == menuTekst[2][1][0]) {//tekent nee
+           menuTextBreedte = int(textWidth(menuTekst[1][1][0]));
+           knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
+           x = x - menuTextBreedte / 2 - (menuTextBreedte / 8);
+           y = y + groteTekstGrootte - groteTekstGrootte / 4;
+           knopBreedte = kleineTekstKnopBreedte + knopTextBreedte;
+           tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, getKleuren(ROOD), kleineTekstGrootte, menuTekst[i][j][k]);
+           opNeeGedrukt = opStartschermKnopGeklikt(x, y, knopBreedte, kleineTekstKnopHoogte);
+           } else if (menuTekst[i][j][k] == menuTekst[2][1][1]) {//tekent ja
+           menuTextBreedte = int(textWidth(menuTekst[1][1][0]));
+           knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
+           x = x + menuTextBreedte / 2;
+           knopBreedte = knopTextBreedte + kleineTekstKnopBreedte;
+           tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, GROEN, kleineTekstGrootte, menuTekst[i][j][k]);
+           opJaGedrukt = opStartschermKnopGeklikt(x, y, knopBreedte, kleineTekstKnopHoogte);
+           } else if (menuTekst[i][j][k] == menuTekst[2][1][2]) {//tekent optie
+           menuTextBreedte = int(textWidth(menuTekst[1][1][0]));
+           knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
+           x = x + menuTextBreedte / 3;
+           knopBreedte = knopTextBreedte + kleineTekstKnopBreedte;
+           tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, GRIJS, kleineTekstGrootte, menuTekst[i][j][k]);
+           } else if (menuTekst[i][j][k] == menuTekst[2][2][0]) { //tekent 12
+           menuTextBreedte = int(textWidth(menuTekst[1][2][0]));
+           knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
+           x = x - menuTextBreedte - menuTextBreedte / 3;
+           y = y + groteTekstGrootte - groteTekstGrootte / 4;
+           knopBreedte = kleineTekstKnopBreedte + knopTextBreedte;
+           tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, GROEN, kleineTekstGrootte, menuTekst[i][j][k]);
+           op12Gedrukt = opStartschermKnopGeklikt(x, y, knopBreedte, kleineTekstKnopHoogte);
+           } else if (menuTekst[i][j][k] == menuTekst[2][2][1]) {//tekent 16
+           menuTextBreedte = int(textWidth(menuTekst[1][2][0]));
+           knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
+           x = x + knopTextBreedte * 2;
+           tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, GROEN, kleineTekstGrootte, menuTekst[i][j][k]);
+           op16Gedrukt = opStartschermKnopGeklikt(x, y, knopBreedte, kleineTekstKnopHoogte);
+           } else if (menuTekst[i][j][k] == menuTekst[2][2][2]) {//tekent 20
+           menuTextBreedte = int(textWidth(menuTekst[1][1][0]));
+           knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
+           x = x + knopTextBreedte * 2;
+           tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, GROEN, kleineTekstGrootte, menuTekst[i][j][k]);
+           op20Gedrukt = opStartschermKnopGeklikt(x, y, knopBreedte, kleineTekstKnopHoogte);
+           } else if (menuTekst[i][j][k] == menuTekst[2][2][3]) {//tekent aantal setjes
+           menuTextBreedte = int(textWidth(menuTekst[1][1][0]));
+           knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
+           x = x + knopTextBreedte * 2;
+           tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, GRIJS, kleineTekstGrootte, menuTekst[i][j][k]);
+           } else if (menuTekst[i][j][k] == menuTekst[2][3][0]) {//tekent startknop
+           menuTextBreedte = int(textWidth(menuTekst[1][1][0]));
+           knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
+           x = 0;
+           y = y + groteTekstGrootte - groteTekstGrootte / 4;
+           knopBreedte = width / 2;
+           knopHoogte = height - y;
+           tekenKnopMetTekst(x, y, knopBreedte, knopHoogte, 10, 10, 10, 10, GROEN, groteTekstGrootte, menuTekst[i][j][k]);
+           opStartGedrukt = opStartschermKnopGeklikt(x, y, knopBreedte, knopHoogte);
+           } else if (menuTekst[i][j][k] == menuTekst[2][3][1]) {//tekent stopknop
+           menuTextBreedte = int(textWidth(menuTekst[1][1][0]));
+           knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
+           x = width / 2;
+           knopBreedte = width / 2;
+           knopHoogte = height - y;
+           tekenKnopMetTekst(x, y, knopBreedte, knopHoogte, 10, 10, 10, 10, ROOD, groteTekstGrootte, menuTekst[i][j][k]);
+           opStopGedrukt = opStartschermKnopGeklikt(x, y, knopBreedte, knopHoogte);
+           } 
         }
       }
     }

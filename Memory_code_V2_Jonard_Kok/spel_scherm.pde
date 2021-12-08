@@ -225,19 +225,24 @@ void geefKaartKleurDoor() {
   for (int kolom = 0; kolom < (plekkenMetKaart.length); kolom++) {
     for (int rij = 0; rij < (plekkenMetKaart[kolom].length); rij++) {
       voorkantKaartPlekBerekenen(kolom, rij);
-      if (opKaartGeklikt(xKaartGeklikt, yKaartGeklikt, kaartBreedte, kaartHoogte, geklikteKaarten[kolom][rij])) {
+      //println("mouseX en xKaartGeklikt", xKaartGeklikt, mouseX, (xKaartGeklikt+kaartBreedte));
+      //println("mouseY en YKaartGeklikt", yKaartGeklikt, mouseY, (yKaartGeklikt+kaartHoogte));
+      boolean kaartGeklikt = opKaartGeklikt(xKaartGeklikt, yKaartGeklikt, kaartBreedte, kaartHoogte, geklikteKaarten[kolom][rij]);
+      println(kaartGeklikt);
+      if (kaartGeklikt) {
         println("kaart is geklikt");
         hoevaakOpKaartGeklikt += 1;
+        println("hoevaakOpKaartGeklikt", hoevaakOpKaartGeklikt);
         switch(hoevaakOpKaartGeklikt) {
         case 1:
           if (kaartKleuren[kaartKleur[kolom][rij]] == doodskaartOfNormaleKaartKleur && getDoodskaarten()) {
             doodskaartKlik(1, kolom, rij);
             voorkantKaartKleur1 = ROOD;
-            println("doodskaart1",voorkantKaartKleur1 = kaartKleuren[kaartKleur[kolom][rij]]);
+            println("doodskaart1", voorkantKaartKleur1 = kaartKleuren[kaartKleur[kolom][rij]]);
             geefKaartInfoDoor(kolom, rij);
           } else {
             geefKaartInfoDoor(kolom, rij);
-            println("voorkantKaartKleur1",voorkantKaartKleur1 = kaartKleuren[kaartKleur[kolom][rij]]);
+            println("voorkantKaartKleur1", voorkantKaartKleur1 = kaartKleuren[kaartKleur[kolom][rij]]);
             voorkantKaartKleur1 = kaartKleuren[kaartKleur[kolom][rij]];
           }
           break;
@@ -245,12 +250,14 @@ void geefKaartKleurDoor() {
           if (kaartKleuren[kaartKleur[kolom][rij]] == doodskaartOfNormaleKaartKleur && getDoodskaarten()) {
             doodskaartKlik(2, kolom, rij);
           } else {
-            println("voorkantKaartKleur2",voorkantKaartKleur2 = kaartKleuren[kaartKleur[kolom][rij]]);
+            println("voorkantKaartKleur2", voorkantKaartKleur2 = kaartKleuren[kaartKleur[kolom][rij]]);
             geefKaartInfoDoor(kolom, rij);
             voorkantKaartKleur2 = kaartKleuren[kaartKleur[kolom][rij]];
           }
           break;
         }
+      } else {
+        println("op onbekende kaart geklikt");
       }
     }
   }
@@ -283,7 +290,7 @@ void geefKaartInfoDoor(int kolom, int rij) {
     yGeklikteKaart1 = yKaartGeklikt;
     kolomKaart1 = kolom;
     rijKaart1 = rij;
-    println(xGeklikteKaart1, yGeklikteKaart1);//#TEST
+    println("xGeklikteKaart1, yGeklikteKaart1", xGeklikteKaart1, yGeklikteKaart1);//#TEST
     break;
   case 2:
     println("Kaart 2");
@@ -300,6 +307,10 @@ void geefKaartInfoDoor(int kolom, int rij) {
 void tekenGeklikteKaarten() {
   tekenKaart(xGeklikteKaart1, yGeklikteKaart1, kaartBreedte, kaartHoogte, voorkantKaartKleur1);
   tekenKaart(xGeklikteKaart2, yGeklikteKaart2, kaartBreedte, kaartHoogte, voorkantKaartKleur2);
+  if (hoevaakOpKaartGeklikt != 0) {
+    println("xGeklikteKaart1, yGeklikteKaart1", xGeklikteKaart1, yGeklikteKaart1);
+    println("xGeklikteKaart2, yGeklikteKaart2,", xGeklikteKaart2, yGeklikteKaart2);
+  }
 }
 
 void genereerKleuren() {
@@ -441,7 +452,7 @@ int getTekstgrootte(String tekst) {
 }
 
 boolean kanPuntGegevenWorden() {//voorkomt een bug die ervoor zorgt dat je niet 2x op dezelfde kaart kan klikken voor een punt. //Methode zelf is wel gebugged.
-  println(xGeklikteKaart1, xGeklikteKaart2, yGeklikteKaart1, xGeklikteKaart2);
+  //println(xGeklikteKaart1, xGeklikteKaart2, yGeklikteKaart1, xGeklikteKaart2);
   if ((xGeklikteKaart1 == xGeklikteKaart2) && (yGeklikteKaart1 == yGeklikteKaart2 && doodskaartGeklikt)) {
     println("Punt kan niet gegeven worden."); //#TESTMETHODE
     return false;
@@ -465,5 +476,6 @@ boolean komtCijferVakerVoor(int cijferFrequentie, int i) {
 
 //boolean die kijkt of er op een kaart geklikt is.
 boolean opKaartGeklikt(int x, int y, int breedte, int hoogte, int kleur) {
+  println(mouseX > x, mouseX < x + breedte, mouseY > Y, mouseY < y + hoogte, spelscherm(), !eindebeurt, kleur !=0);
   return mouseX > x && mouseX < x + breedte && mouseY > y && mouseY < y + hoogte && spelscherm() && !eindebeurt && kleur !=0;
 }

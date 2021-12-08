@@ -10,7 +10,6 @@ void setup() {
   textAlign(TOP, LEFT);
 }
 void draw() {
-  clear();
   noStroke();
   switch (scherm) {
   case START_SCHERM:
