@@ -1,6 +1,6 @@
 //Kleuren
 final int WIT = #FFFFFF;
-final int RAAR = #7B68EE;
+final int PAARSACHTIG = #7B68EE;
 final int ROOD = #FF0000;
 final int GROEN = #00FF00;
 final int BLAUW = #0000FF;
@@ -15,7 +15,6 @@ final int DONKERROOD = #8B0000;
 final int DONKERBLAUW = #00007B;
 final int DONKERGROEN = #008B00;
 final int ZANDBRUIN = #F4A460;
-final int KLEUR_DOODSKAARTEN = #FF0000;
 final int LICHT_BLAUW = #ADD8E6;
 final int GEELGROEN = #9ACD32;
 final int TARWE = #F5DEB3;
@@ -27,10 +26,11 @@ boolean eindebeurt;
 boolean puntGekregen;
 boolean doodskaartGeklikt;
 boolean kaartGevonden;
+int xSpelerText;
+int ySpelerText;
 int doodskaartGekliktVolgorde;
 int doodskaartWeg = 0;
 int setjeWeg = 0;
-int speler;
 int maxAantalSpelers = 4;
 int spelerMetBeurt = 0;
 int hoevaakOpKaartGeklikt = 0;
@@ -51,7 +51,6 @@ int afstandTussenKaarten;
 int kaart = 0;
 int xCorrectie = 0;
 int yCorrectie = 0;
-int voorkantKleurKaart;
 int xGeklikteKaart1;
 int yGeklikteKaart1;
 int xGeklikteKaart2;
@@ -75,8 +74,6 @@ int[][] kaartPlekken = {
   {0, 1, 2, 3, 4, 5, 6, 7}, 
   {0, 1, 2, 3, 4, 5, 6, 7}
 };
-String tekst;
-String tekstGrootte;
 String[] spelerNamen = {"Speler 1", "Speler 2", "Speler 3", "Speler 4"};
 
 void tekenSpelScherm() {
@@ -88,93 +85,28 @@ void tekenSpelScherm() {
   }
 }
 
-void tekenBeurtEindeIndicator() {
-  text("Einde beurt", width/2, height/10);
-}
 
-//veranderd het spelscherm als er op een kaart geklikt is.
-void kaartKlikActies() {
-  geefKaartKleurDoor();
-  switch(hoevaakOpKaartGeklikt) {
-  case 2:
-    eindebeurt = true;
-    klikOveral();
-    break;
-  case 3:
-    beurtEinde();
-    gekozenKaartVerbergen();
-    hoevaakOpKaartGeklikt = 0;
-    doodskaartGeklikt = false;
-    eindebeurt = false;
-    break;
-  }
-}  
-
-void gekozenKaartVerbergen() {
-  if (puntGekregen) {
-    geklikteKaarten[kolomKaart1][rijKaart1] = 0;
-    geklikteKaarten[kolomKaart2][rijKaart2] = 0;
-    voorkantKaartKleur1 = 0;
-    voorkantKaartKleur2 = 0;
-  } else if (doodskaartGeklikt) {
-    if (doodskaartGekliktVolgorde == 1) {
-      geklikteKaarten[kolomKaart1][rijKaart1] = 0;
-      geklikteKaarten[kolomKaart2][rijKaart2] = 0;
-      voorkantKaartKleur1 = 0;
-      voorkantKaartKleur2 = 0;
-    } else if (doodskaartGekliktVolgorde == 2) {
-      geklikteKaarten[kolomKaart2][rijKaart2] = 0;
-      voorkantKaartKleur1 = WIT;
-      voorkantKaartKleur2 = 0;
-    }
-  } else {
-    voorkantKaartKleur1 = WIT;
-    voorkantKaartKleur2 = WIT;
+//tekent de doodskaarten
+void tekenDoodskaartIndicator() {
+  if (getDoodskaarten()) {
+    doodskaartOfNormaleKaartKleur = ROOD;
+    tekenDoodskaartOptie("Doodskaarten AAN", ROOD, "klein");
+  } else if (!getDoodskaarten()) {
+    doodskaartOfNormaleKaartKleur = GROEN;
+    tekenDoodskaartOptie("Doodskaarten UIT", GROEN, "klein");
   }
 }
 
-void klikOveral() {
-  if (hoevaakOpKaartGeklikt <= 4 && eindebeurt) {
-    hoevaakOpKaartGeklikt++;
-  } else {
-    hoevaakOpKaartGeklikt = 0;
-  }
+//boolean die van het startscherm de status van doodskaarten pakt zodat je weet welke er wel en niet zijn.
+boolean getDoodskaarten() {
+  return doodsKaarten;
 }
 
-//Geeft de speler punten als er punten gegeven kunnen worden en gaat geeft dan de volgende speler de beurt.
-void beurtEinde() {
-  if (kanPuntGegevenWorden()) {
-    spelerScore[spelerMetBeurt]++;
-    puntGekregen = true;
-    setjeWeg++;
-    spelerMetBeurt++;
-  } else if (doodskaartGeklikt) {
-    spelerScore[spelerMetBeurt]--;
-    doodskaartWeg++;
-    if (doodskaartWeg >= 2) {
-      doodskaartWeg = 0;
-      setjeWeg++;
-    }
-  } else {
-    puntGekregen = false;
-    spelerMetBeurt++;
-    xGeklikteKaart2 = width;
-    yGeklikteKaart2 = height;
-  }
-  resetSpelerBeurt();
-  zijnKaartenWeg();
-}
-
-void resetSpelerBeurt() {
-  if (spelerMetBeurt > getAantalSpelers()-1) {
-    spelerMetBeurt = 0;
-  }
-}
-
-void zijnKaartenWeg() {
-  if (setjeWeg == getAantalSetjes() || (setjeWeg == getAantalSetjes()-1 && doodskaartWeg !=2 && getDoodskaarten())) {
-    scherm = EIND_SCHERM;
-  }
+//tekent de tekst die aangeeft of doodskaarten aan staan of niet
+void tekenDoodskaartOptie(String tekst, int kleur, String tekstGrootte) {
+  fill(kleur);
+  textSize(getTekstgrootte(tekstGrootte));
+  text(tekst, width - int(textWidth(tekst)), getTekstgrootte(tekstGrootte));
 }
 
 //tekent alle kaarten
@@ -183,31 +115,14 @@ void tekenKaarten() {
   kaartHoogte = height / 10;
   afstandTussenKaarten = kaartBreedte / 10;
   if (!kaartPlekkenZijnBerekend) { //zorgt ervoor dat de kaartplek maar 1x berekend wordt waardoor de kaarten niet van plek veranderen. Bug voorkomen dus.
-    kaartKleuren = new int[] {doodskaartOfNormaleKaartKleur, BLAUW, GRIJS, GEEL, ORANJE, PAARS, CYAAN, ROZE, BRUIN, DONKERROOD, DONKERBLAUW, DONKERGROEN, ZANDBRUIN, LICHT_BLAUW, RAAR, GEELGROEN, TARWE, MIDDENVIOLETROOD, LEIGRIJS, DIEPROZE};
+    kaartKleuren = new int[] {doodskaartOfNormaleKaartKleur, BLAUW, GRIJS, GEEL, ORANJE, PAARS, CYAAN, ROZE, BRUIN, DONKERROOD, DONKERBLAUW, DONKERGROEN, ZANDBRUIN, LICHT_BLAUW, PAARSACHTIG, GEELGROEN, TARWE, MIDDENVIOLETROOD, LEIGRIJS, DIEPROZE};
     hoeveelSetjesMoetenGetekendWorden();
     genereerKleuren();
     printKleuren();
   }
   tekenKaartenLayout();
-  tekenKaartenBuitenScherm();
   if (hoevaakOpKaartGeklikt != 0) {
-   // geklikteKaartIsZelfdeKaart();
     tekenGeklikteKaarten();
-  }
-}
-
-/*
-void geklikteKaartIsZelfdeKaart() {
-  boolean a = xGeklikteKaart1 == xGeklikteKaart2 && yGeklikteKaart1 == yGeklikteKaart2;
-}
-
-*/
-void tekenKaartenBuitenScherm() {
-  if (isXGekliktekaartNul()) {//fixt een bug waar de kaart linksboven in het scherm "spawnt"
-    xGeklikteKaart1 = width;
-    yGeklikteKaart1 = height;
-    xGeklikteKaart2 = width;
-    yGeklikteKaart2 = height;
   }
 }
 
@@ -230,89 +145,6 @@ void hoeveelSetjesMoetenGetekendWorden() {
     yCorrectie = 0;
     break;
   }
-}
-
-//zoekt naar de positie van de kaart waarop geklikt is
-void geefKaartKleurDoor() { 
-  println("Er is geklikt");
-  kaartGevonden = false;
-  for (int kolom = 0; kolom < plekkenMetKaart.length /*&& !kaartGevonden*/; kolom++) {
-    for (int rij = 0; rij < plekkenMetKaart[kolom].length /*&& !kaartGevonden*/; rij++) {
-      voorkantKaartPlekBerekenen(kolom, rij);
-      if (opKaartGeklikt(xKaartGeklikt, yKaartGeklikt, kaartBreedte, kaartHoogte, geklikteKaarten[kolom][rij])) {
-        kaartGevonden = true;
-        hoevaakOpKaartGeklikt += 1;
-        switch(hoevaakOpKaartGeklikt) {
-        case 1:
-          if (opDoodskaartGeklikt(kolom, rij)) {
-            doodskaartKlik(1, kolom, rij);
-            voorkantKaartKleur1 = ROOD;
-            geefKaartInfoDoor(kolom, rij);
-          } else {
-            geefKaartInfoDoor(kolom, rij);
-            voorkantKaartKleur1 = kaartKleuren[kaartKleur[kolom][rij]];
-          }
-          break;
-        case 2:
-          if (opDoodskaartGeklikt(kolom, rij)) {
-            doodskaartKlik(2, kolom, rij);
-          } else {
-            geefKaartInfoDoor(kolom, rij);
-            voorkantKaartKleur2 = kaartKleuren[kaartKleur[kolom][rij]];
-          }
-          break;
-        }
-      } else {
-        println("op onbekende kaart geklikt");
-      }
-    }
-  }
-}
-
-void doodskaartKlik(int doodskaartNr, int kolom, int rij) {
-  println("op doodskaart geklikt");
-  geefKaartInfoDoor(kolom, rij);
-  doodskaartGekliktVolgorde = doodskaartNr;
-  voorkantKaartKleur2 = ROOD;
-  doodskaartGeklikt = true;
-  hoevaakOpKaartGeklikt = 2;
-}
-
-
-void voorkantKaartPlekBerekenen(int kolom, int rij) {
-  xKaartGeklikt = kaartBreedte + kaartBreedte * rij + afstandTussenKaarten * rij;
-  println("xKaart", xKaartGeklikt);
-  yKaartGeklikt = kaartHoogte * 2 + kaartHoogte * kolom + afstandTussenKaarten * kolom;
-  println("yKaart", yKaartGeklikt);
-}
-
-void geefKaartInfoDoor(int kolom, int rij) {
-  println("kaartplekdooraangeroepen");
-  kaart++;
-  switch (kaart) {
-  case 1:
-    println("Kaart 1");
-    xGeklikteKaart1 = xKaartGeklikt;
-    yGeklikteKaart1 = yKaartGeklikt;
-    kolomKaart1 = kolom;
-    rijKaart1 = rij;
-    println("xGeklikteKaart1, yGeklikteKaart1", xGeklikteKaart1, yGeklikteKaart1);//#TEST
-    break;
-  case 2:
-    println("Kaart 2");
-    xGeklikteKaart2 = xKaartGeklikt;
-    yGeklikteKaart2 = yKaartGeklikt;
-    kolomKaart2 = kolom;
-    rijKaart2 = rij;
-    kaart = 0;
-    break;
-  }
-}
-
-// tekent de kaart(en) die omgedraaid zijn.
-void tekenGeklikteKaarten() {
-  tekenKaart(xGeklikteKaart1, yGeklikteKaart1, kaartBreedte, kaartHoogte, voorkantKaartKleur1);
-  tekenKaart(xGeklikteKaart2, yGeklikteKaart2, kaartBreedte, kaartHoogte, voorkantKaartKleur2);
 }
 
 void genereerKleuren() {
@@ -353,6 +185,12 @@ void printKleuren() {
   }
 }
 
+// tekent de kaart(en) die omgedraaid zijn.
+void tekenGeklikteKaarten() {
+  tekenKaart(xGeklikteKaart1, yGeklikteKaart1, kaartBreedte, kaartHoogte, voorkantKaartKleur1);
+  tekenKaart(xGeklikteKaart2, yGeklikteKaart2, kaartBreedte, kaartHoogte, voorkantKaartKleur2);
+}
+
 //tekent de grid van kaarten met de achterkant van de kaart-kleur.
 void tekenKaartenLayout() {
   for (int i = 0; i < (kaartPlekken.length - yCorrectie); i++) {
@@ -369,75 +207,20 @@ void tekenKaart(int x, int y, int breedte, int hoogte, int kaartKleur) {
   fill(kaartKleur);
   rect(x, y, breedte, hoogte, 20);
 }
-//tekent de kleur van de kaart.
-void tekenKleurVanKaart(int x, int y, int breedte, int hoogte, int kleur) {
-  breedte = breedte / 4;
-  hoogte = hoogte / 4;
-  x = x + breedte * 2;
-  y = y + hoogte * 2;
-  fill(kleur);
-  rect(x, y, breedte, hoogte);
-}
-
-//tekent de doodskaarten
-void tekenDoodskaartIndicator() {
-  if (getDoodskaarten()) {
-    doodskaartOfNormaleKaartKleur = ROOD;
-    tekenDoodskaartOptie("Doodskaarten AAN", ROOD, "klein");
-  } else if (!getDoodskaarten()) {
-    doodskaartOfNormaleKaartKleur = GROEN;
-    tekenDoodskaartOptie("Doodskaarten UIT", GROEN, "klein");
-  }
-}
-
-//tekent de tekst die aangeeft of doodskaarten aan staan of niet
-void tekenDoodskaartOptie(String tekst, int kleur, String tekstGrootte) {
-  fill(kleur);
-  textSize(getTekstgrootte(tekstGrootte));
-  text(tekst, width - int(textWidth(tekst)), getTekstgrootte(tekstGrootte));
-}
 
 //tekent de spelers
 void tekenSpelers() {
   maxAantalSpelers = getAantalSpelers();
-  int xSpelerText = getTekstgrootte("klein");
-  int ySpelerText = xSpelerText;
+  xSpelerText = getTekstgrootte("klein");
+  ySpelerText = xSpelerText;
   for (int i = 0; i < maxAantalSpelers; i++) {
     textSize(getTekstgrootte("klein"));
     if (i == spelerMetBeurt) {
-      tekenSpelerNamen(spelerNamen, spelerScore, i, xSpelerText, ySpelerText, ROOD);
+      tekenSpelerNamen(spelerNamen[i], spelerScore, i, xSpelerText, ySpelerText, ROOD);
     } else {
-      tekenSpelerNamen(spelerNamen, spelerScore, i, xSpelerText, ySpelerText, GEEL);
-    }
-    if (i >= maxAantalSpelers) {
-      i = 0;
+      tekenSpelerNamen(spelerNamen[i], spelerScore, i, xSpelerText, ySpelerText, GEEL);
     }
   }
-}
-
-//text(spelerNamen[i] + " Score : " + spelerScore[i], xSpelerText, );
-
-void tekenSpelerNamen(String spelernaam[], int spelerScore[], int i, int x, int y, int kleur) {
-  fill(kleur);
-  text(spelernaam[i] + " Score : " + spelerScore[i], x, y + y * i);
-}
-
-//integer-methode die het aantal setjes van het startscherm pakt.
-int getAantalSetjes() {
-  return aantalSetjes;
-}
-
-//integer die het aantal spelers van het startscherm pakt.
-int getAantalSpelers() {
-  return aantalSpelers;
-}
-
-boolean isXGekliktekaartNul() {
-  return xGeklikteKaart1 == 0;
-} 
-
-boolean spelscherm() {
-  return scherm == SPEL_SCHERM;
 }
 
 //integer die de tekstgroottes van het startscherm pakt.
@@ -448,40 +231,200 @@ int getTekstgrootte(String tekst) {
     return normaleTekstGrootte;
   } else if (tekst == "groot") {
     return groteTekstGrootte;
-  } //hier zou normaal een else staan, maar omdat er onder de if statements een return staat hoeft dat niet. 
-  println("Tekstgrootte is verkeerd getypt, normaal wordt gebruikt");
+  } 
   return normaleTekstGrootte;
 }
 
-boolean kanPuntGegevenWorden() {//voorkomt een bug die ervoor zorgt dat je niet 2x op dezelfde kaart kan klikken voor een punt.
-  //println(xGeklikteKaart1, xGeklikteKaart2, yGeklikteKaart1, xGeklikteKaart2);
-  if ((xGeklikteKaart1 == xGeklikteKaart2) && (yGeklikteKaart1 == yGeklikteKaart2 && doodskaartGeklikt)) {
-    println("Punt kan niet gegeven worden."); //#TESTMETHODE
-    return false;
-  } else if (voorkantKaartKleur1 == voorkantKaartKleur2 && ((xGeklikteKaart1 != xGeklikteKaart2) || (yGeklikteKaart1 != yGeklikteKaart2)) && !doodskaartGeklikt) {
-    println("Punt kan gegeven worden."); //#TESTMETHODE
-    return true;
+void tekenSpelerNamen(String spelernaam, int spelerScore[], int i, int x, int y, int kleur) {
+  fill(kleur);
+  text(spelernaam + " Score : " + spelerScore[i], x, y + y * i);
+}
+
+void tekenBeurtEindeIndicator() {
+  text("Einde beurt", width/2, height/10);
+}
+
+//veranderd het spelscherm als er op een kaart geklikt is.
+void kaartKlikActies() {
+  geefKaartKleurDoor();
+  switch(hoevaakOpKaartGeklikt) {
+  case 2:
+    eindebeurt = true;
+    klikOveral();
+    break;
+  case 3:
+    beurtEinde();
+    gekozenKaartVerbergen();
+    hoevaakOpKaartGeklikt = 0;
+    doodskaartGeklikt = false;
+    eindebeurt = false;
+    break;
   }
-  println("Beide IF statements zijn genegeerd, geen punt");
-  return false;
+}  
+
+//zoekt naar de positie van de kaart waarop geklikt is
+void geefKaartKleurDoor() {
+  kaartGevonden = false;
+  for (int kolom = 0; kolom < plekkenMetKaart.length /*&& !kaartGevonden*/; kolom++) {
+    for (int rij = 0; rij < plekkenMetKaart[kolom].length /*&& !kaartGevonden*/; rij++) {
+      voorkantKaartPlekBerekenen(kolom, rij);
+      if (opKaartGeklikt(xKaartGeklikt, yKaartGeklikt, kaartBreedte, kaartHoogte, geklikteKaarten[kolom][rij])) {
+        kaartGevonden = true;
+        hoevaakOpKaartGeklikt += 1;
+        switch(hoevaakOpKaartGeklikt) {
+        case 1:
+          voorkantKaartKleur1 = kaartKleuren[kaartKleur[kolom][rij]];
+          if (opDoodskaartGeklikt(kolom, rij)) {
+            doodskaartKlik(1, kolom, rij);
+            geefKaartInfoDoor(kolom, rij);
+          } else {
+            geefKaartInfoDoor(kolom, rij);
+          }
+          break;
+        case 2:
+          if (opDoodskaartGeklikt(kolom, rij)) {
+            doodskaartKlik(2, kolom, rij);
+          } else {
+            geefKaartInfoDoor(kolom, rij);
+            voorkantKaartKleur2 = kaartKleuren[kaartKleur[kolom][rij]];
+          }
+          break;
+        }
+      }
+    }
+  }
 }
 
-//boolean die van het startscherm de status van doodskaarten pakt zodat je weet welke er wel en niet zijn.
-boolean getDoodskaarten() {
-  return doodsKaarten;
+void voorkantKaartPlekBerekenen(int kolom, int rij) {
+  xKaartGeklikt = kaartBreedte + kaartBreedte * rij + afstandTussenKaarten * rij;
+  yKaartGeklikt = kaartHoogte * 2 + kaartHoogte * kolom + afstandTussenKaarten * kolom;
 }
 
-//boolean die kijkt of een cijfer vaker voor komt, zodat je geen dubbele setjes krijgt.
-boolean komtCijferVakerVoor(int cijferFrequentie, int i) {
-  return cijferFrequentie > 2 && i > 0;
+//boolean die kijkt of er op een kaart geklikt is.
+boolean opKaartGeklikt(int x, int y, int breedte, int hoogte, int kleur) {
+  return mouseX > x && mouseX < x + breedte && mouseY > y && mouseY < y + hoogte && spelscherm() && !eindebeurt && kleur !=0;
+}
+
+boolean spelscherm() {
+  return scherm == SPEL_SCHERM;
 }
 
 boolean opDoodskaartGeklikt(int kolom, int rij) {
   return kaartKleuren[kaartKleur[kolom][rij]] == doodskaartOfNormaleKaartKleur && getDoodskaarten();
 }
 
-//boolean die kijkt of er op een kaart geklikt is.
-boolean opKaartGeklikt(int x, int y, int breedte, int hoogte, int kleur) {
-  println(mouseX > x, mouseX < x + breedte, mouseY > Y, mouseY < y + hoogte, spelscherm(), !eindebeurt, kleur !=0);
-  return mouseX > x && mouseX < x + breedte && mouseY > y && mouseY < y + hoogte && spelscherm() && !eindebeurt && kleur !=0;
+void doodskaartKlik(int doodskaartNr, int kolom, int rij) {
+  geefKaartInfoDoor(kolom, rij);
+  doodskaartGekliktVolgorde = doodskaartNr;
+  voorkantKaartKleur2 = ROOD;
+  doodskaartGeklikt = true;
+  hoevaakOpKaartGeklikt = 2;
+}
+
+void geefKaartInfoDoor(int kolom, int rij) {
+  kaart++;
+  switch (kaart) {
+  case 1:
+    xGeklikteKaart1 = xKaartGeklikt;
+    yGeklikteKaart1 = yKaartGeklikt;
+    kolomKaart1 = kolom;
+    rijKaart1 = rij;
+    break;
+  case 2:
+    xGeklikteKaart2 = xKaartGeklikt;
+    yGeklikteKaart2 = yKaartGeklikt;
+    kolomKaart2 = kolom;
+    rijKaart2 = rij;
+    kaart = 0;
+    break;
+  }
+}
+
+void klikOveral() {
+  if (hoevaakOpKaartGeklikt <= 4 && eindebeurt) {
+    hoevaakOpKaartGeklikt++;
+  } else {
+    hoevaakOpKaartGeklikt = 0;
+  }
+}
+
+//Geeft de speler punten als er punten gegeven kunnen worden en gaat geeft dan de volgende speler de beurt.
+void beurtEinde() {
+  if (kanPuntGegevenWorden()) {
+    spelerScore[spelerMetBeurt]++;
+    puntGekregen = true;
+    setjeWeg++;
+    println("setjeWeg3", setjeWeg);
+    spelerMetBeurt++;
+  } else if (doodskaartGeklikt) {//HIER ZIT EEN FOUT SETJEWEG WORDT 3
+    spelerScore[spelerMetBeurt]--;
+    doodskaartWeg++;
+    println("doodskaartWeg");
+    println("setjeWeg1", setjeWeg);
+    if (doodskaartWeg >= 2) {
+      doodskaartWeg = 0;
+      setjeWeg++;
+      println("setjeWeg2", setjeWeg);
+    }
+  } else {
+    puntGekregen = false;
+    spelerMetBeurt++;
+    xGeklikteKaart2 = width;
+    yGeklikteKaart2 = height;
+  }
+  resetSpelerBeurt();
+  zijnKaartenWeg();
+}
+
+boolean kanPuntGegevenWorden() {//voorkomt een bug die ervoor zorgt dat je niet 2x op dezelfde kaart kan klikken voor een punt.
+  if ((xGeklikteKaart1 == xGeklikteKaart2) && (yGeklikteKaart1 == yGeklikteKaart2 && doodskaartGeklikt)) {
+    return false;
+  } else if (voorkantKaartKleur1 == voorkantKaartKleur2 && ((xGeklikteKaart1 != xGeklikteKaart2) || (yGeklikteKaart1 != yGeklikteKaart2)) && !doodskaartGeklikt) {
+    return true;
+  }
+  return false;
+}
+
+void resetSpelerBeurt() {
+  if (spelerMetBeurt > getAantalSpelers()-1) {
+    spelerMetBeurt = 0;
+  }
+}
+
+
+int getAantalSpelers() { //integer die het aantal spelers van het startscherm pakt.
+  return aantalSpelers;
+}
+
+void zijnKaartenWeg() {
+  if (setjeWeg == getAantalSetjes() || (setjeWeg == getAantalSetjes() && doodskaartWeg !=2 && getDoodskaarten())) {
+    scherm = EIND_SCHERM;
+  }
+}
+
+int getAantalSetjes() { //methode die het aantal setjes .
+  return aantalSetjes;
+}
+
+void gekozenKaartVerbergen() {
+  if (puntGekregen) {
+    geklikteKaarten[kolomKaart1][rijKaart1] = 0;
+    geklikteKaarten[kolomKaart2][rijKaart2] = 0;
+    voorkantKaartKleur1 = 0;
+    voorkantKaartKleur2 = 0;
+  } else if (doodskaartGeklikt) {
+    if (doodskaartGekliktVolgorde == 1) {
+      geklikteKaarten[kolomKaart1][rijKaart1] = 0;
+      geklikteKaarten[kolomKaart2][rijKaart2] = 0;
+      voorkantKaartKleur1 = 0;
+      voorkantKaartKleur2 = 0;
+    } else if (doodskaartGekliktVolgorde == 2) {
+      geklikteKaarten[kolomKaart2][rijKaart2] = 0;
+      voorkantKaartKleur1 = WIT;
+      voorkantKaartKleur2 = 0;
+    }
+  } else {
+    voorkantKaartKleur1 = WIT;
+    voorkantKaartKleur2 = WIT;
+  }
 }

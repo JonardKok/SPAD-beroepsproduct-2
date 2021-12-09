@@ -7,18 +7,52 @@ int xText;
 int yText;
 int eindSchermKnopBreedte;
 int eindSchermKnopHoogte;
-boolean knopGevonden = false;
 String[] knopNaam = {"menu", "opnieuw", "stoppen"};
 String[][] eindschermKnopOpties = {
   {"Ga naar", "het menu"}, 
   {"Speel het", "spel", "opnieuw"}, 
   {"Stop met", "spelen"}
 };
+
 void tekenEindScherm() {
-  berekenTekstGroottes(); //WEGHALEN NA SCHRIJVEN CODE, DEZE STAAT IN HET START SCHERM!!!!________________________________________________________
   aantalSpelers = getSpelers();
   tekenScores();
   tekenKnoppen();
+}
+
+int getSpelers() {
+  return aantalSpelers;
+}
+
+void tekenScores() {
+  berekenPlekken();
+  textSize(eindSchermTekstGrootte);
+  fill(getKleur("GEEL"));
+  text("Scores", xScores, yScores);
+  for (int i = 0; i < getSpelers(); i++) {
+    tekenSpelerMetScore(getScore(i), i, xScores, yScores, eindSchermTekstGrootte);
+  }
+}
+
+void berekenPlekken() {
+  eindSchermTekstGrootte = getTekstGroottes("normaal");
+  xScores = width/100;
+  yScores = eindSchermTekstGrootte;
+}
+
+int getKleur(String kleurNaam) {
+  if (kleurNaam == "GEEL") {
+    return GEEL;
+  }
+  return 255;
+}
+
+int getScore(int i) {
+  return spelerScore[i];
+}
+
+void tekenSpelerMetScore(int spelerScore, int i, int x, int y, int rijVerschil) {
+  text("Speler "+ (i+1) + " eindscore: " + spelerScore, x, y + rijVerschil + rijVerschil * i);
 }
 
 void eindSchermActies() {
@@ -30,11 +64,18 @@ String zoekKnop() {
     xKnop = eindSchermKnopBreedte * knop;
     yKnop = height / 2;
     if (opEindschermKnopGedrukt (xKnop, yKnop, eindSchermKnopBreedte, eindSchermKnopHoogte)) {
-      println("knop gevonden", knopNaam[knop]);
       return knopNaam[knop];
     }
   }
   return "geen_knop";
+}
+
+boolean opEindschermKnopGedrukt (int x, int y, int breedte, int hoogte) {
+  return mouseX > x && mouseX < x + breedte && mouseY > y && mouseY < y + hoogte && eindscherm();
+}
+
+boolean eindscherm() {//komt uit bug squash
+  return scherm == EIND_SCHERM;
 }
 
 void knopActie(String knop) {
@@ -70,8 +111,8 @@ void setSpelResetVariabelen() {
   setjeWeg = 0;
   spelerMetBeurt = 0;
   hoevaakOpKaartGeklikt = 0;
-  voorkantKaartKleur1 = 0;
-  voorkantKaartKleur2 = 0;
+  voorkantKaartKleur1 = #FFFFFF;
+  voorkantKaartKleur2 = #FFFFFF;
   xKaartGeklikt = 0;
   yKaartGeklikt = 0;
   xKaart = 0;
@@ -86,33 +127,14 @@ void setSpelResetVariabelen() {
   yCorrectie = 0;
   spelerScore = new int[] {0, 0, 0, 0};
   geklikteKaarten = new int[][] {
-  {WIT, WIT, WIT, WIT, WIT, WIT, WIT, WIT}, 
-  {WIT, WIT, WIT, WIT, WIT, WIT, WIT, WIT}, 
-  {WIT, WIT, WIT, WIT, WIT, WIT, WIT, WIT}, 
-  {WIT, WIT, WIT, WIT, WIT, WIT, WIT, WIT}, 
-  {WIT, WIT, WIT, WIT, WIT, WIT, WIT, WIT}, 
-};
+    {WIT, WIT, WIT, WIT, WIT, WIT, WIT, WIT}, 
+    {WIT, WIT, WIT, WIT, WIT, WIT, WIT, WIT}, 
+    {WIT, WIT, WIT, WIT, WIT, WIT, WIT, WIT}, 
+    {WIT, WIT, WIT, WIT, WIT, WIT, WIT, WIT}, 
+    {WIT, WIT, WIT, WIT, WIT, WIT, WIT, WIT}, 
+  };
 }
 
-void tekenScores() {
-  berekenPlekken();
-  textSize(eindSchermTekstGrootte);
-  fill(getKleur("GEEL"));
-  text("Scores", xScores, yScores);
-  for (int i = 0; i < getSpelers(); i++) {
-    tekenSpelerMetScore(getScore(i), i, xScores, yScores, eindSchermTekstGrootte);
-  }
-}
-
-void berekenPlekken() {
-  eindSchermTekstGrootte = getTekstGroottes("normaal");
-  xScores = width/100;
-  yScores = eindSchermTekstGrootte;
-}
-
-void tekenSpelerMetScore(int spelerScore, int i, int x, int y, int rijVerschil) {
-  text("Speler "+ (i+1) + " eindscore: " + spelerScore, x, y + rijVerschil + rijVerschil * i);
-}
 
 void tekenKnoppen() {
   xKnop = 0;
@@ -136,18 +158,6 @@ void tekenKnop(int x, int y, int kleur) {
   rect(x, y, eindSchermKnopBreedte, eindSchermKnopHoogte, 50);
 }
 
-void tekenKnoppenTekst(String tekst, int x, int y, int kleur) {
-  fill(kleur);
-  text(tekst, x, y);
-}
-
-int getKleur(String kleurNaam) {
-  if (kleurNaam == "GEEL") {
-    return GEEL;
-  }
-  return 255;
-}
-
 int getTekstGroottes(String tekst) {
   switch (tekst) {
   case "klein":
@@ -157,22 +167,10 @@ int getTekstGroottes(String tekst) {
   case "groot":
     return groteTekstGrootte;
   }
-  println("Tekstgrootte is verkeerd getypt, normaal wordt gebruikt");
   return kleineTekstGrootte;
 }
 
-int getScore(int i) {
-  return spelerScore[i];
-}
-
-int getSpelers() {
-  return aantalSpelers;
-}
-
-boolean eindscherm() {//komt uit bug squash
-  return scherm == EIND_SCHERM;
-}
-
-boolean opEindschermKnopGedrukt (int x, int y, int breedte, int hoogte) {
-  return mouseX > x && mouseX < x + breedte && mouseY > y && mouseY < y + hoogte && eindscherm();
+void tekenKnoppenTekst(String tekst, int x, int y, int kleur) {
+  fill(kleur);
+  text(tekst, x, y);
 }

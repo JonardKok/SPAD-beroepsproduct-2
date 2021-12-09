@@ -1,7 +1,6 @@
 final int START_SCHERM = 0;
 final int SPEL_SCHERM = 1;
 final int EIND_SCHERM = 2;
-final int HOEK_RADIUS = 20;
 int scherm;
 //int scherm = EIND_SCHERM;
 
@@ -28,7 +27,7 @@ void draw() {
 void mouseClicked() {
   switch (scherm) {
   case START_SCHERM:
-    veranderStartScherm();
+    veranderSpelInstellingen();
     break;
   case SPEL_SCHERM:
     kaartKlikActies();
