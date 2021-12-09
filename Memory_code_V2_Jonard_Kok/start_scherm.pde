@@ -9,7 +9,6 @@ int aantalSetjes = 12;
 int aantalSpelers = 1;
 int maximumAantalSpelers = 4;
 int minimumAantalSpelers = 1;
-final int TEKST_KLEUR = #FFFFFF;
 String spelers = str(aantalSpelers);
 String aantalSetjesTekst = str(aantalSetjes);
 String jaOfNee = "nee";
@@ -27,34 +26,24 @@ int groteTekstGrootte;
 int xTekstPlek;
 int yTekstPlek;
 int knopTussenRuimte;
-int menuTextBreedte;
-int knopTextBreedte;
 int knopBreedte;
 int knopHoogte;
 int geklikteKnopKolom;
 int geklikteKnopRij;
+boolean doodsKaarten;
+boolean groottesBerekend;
+String geklikteKnop;
 int knopKleuren[][]= {
   {getKleuren("ROOD"), getKleuren("GROEN"), getKleuren("GRIJS"), }, 
   {getKleuren("ROOD"), getKleuren("GROEN"), getKleuren("GRIJS") }, 
   {getKleuren("GROEN"), getKleuren("GROEN"), getKleuren("GROEN"), getKleuren("GRIJS") }, 
 };
 int actieKnopKleuren[] = {getKleuren("GROEN"), getKleuren("ROOD")};
-boolean doodsKaarten;  
-boolean groottesBerekend;
-boolean opMinGedrukt;
-boolean opPlusGedrukt;
-boolean opJaGedrukt;
-boolean opNeeGedrukt;
-boolean op12Gedrukt;
-boolean op16Gedrukt;
-boolean op20Gedrukt;
-boolean opStartGedrukt;
-boolean opStopGedrukt;
-boolean[][] knopKlik = {
-  {opMinGedrukt, opPlusGedrukt}, 
-  {opJaGedrukt, opNeeGedrukt}, 
-  {op12Gedrukt, op16Gedrukt, op20Gedrukt}, 
-  {opStartGedrukt, opStopGedrukt}
+String[][] knopKlik = {
+  {"min", "plus"}, 
+  {"nee", "ja"}, 
+  {"12", "16", "20"}, 
+  {"start", "stop"}
 };
 
 
@@ -67,55 +56,46 @@ void tekenStartScherm() {
 
 void veranderStartScherm() {
   berekenKlikPlek();
-  knopKlik[geklikteKnopKolom][geklikteKnopRij] = true;
+  geklikteKnop = knopKlik[geklikteKnopKolom][geklikteKnopRij];
   neemActie();
 }
 
 void neemActie() {
-  println(geklikteKnopKolom, geklikteKnopRij);
-  for (int i = 0; i < knopKlik.length; i++) {
-    for (int j = 0; j < knopKlik[i].length; j++) {
-      println(knopKlik[i][j]);
-    }
-  }
-  if (opPlusGedrukt) {
-    println("plus");
-    if (kanSpelerPlus()) {//wilde hier een switch statement van maken maar dat werkt niet met arrays blijkbaar.
-      aantalSpelers++;
-      spelers = str(aantalSpelers);
-    }
-  } else if (opMinGedrukt) {
-    println("min");
+  switch (geklikteKnop) {
+  case "min":
     if (kanSpelerMin()) {
       aantalSpelers--;
       spelers = str(aantalSpelers);
     }
-  } else if (opJaGedrukt) {
-    println("ja");
-    jaOfNee = "ja";
+    break;
+  case "plus":
+    if (kanSpelerPlus()) {
+      aantalSpelers++;
+      spelers = str(aantalSpelers);
+    }
+    break;
+  case "ja":
+    jaOfNee = geklikteKnop;
     doodsKaarten = true;
-  } else if (opNeeGedrukt) {
-    println("nee");
-    jaOfNee = "nee";
+    break;
+  case "nee":
+    jaOfNee = geklikteKnop;
     doodsKaarten = false;
-  } else if (op12Gedrukt) {
-    println("12");
-    aantalSetjes = 12;
+    break;
+  case "12":
+  case "16":
+  case "20":
+    aantalSetjes = int(geklikteKnop);
     aantalSetjesTekst = str(aantalSetjes);
-  } else if (op16Gedrukt) {
-    println("16");
-    aantalSetjes = 16;
-    aantalSetjesTekst = str(aantalSetjes);
-  } else if (op20Gedrukt) {
-    println("20");
-    aantalSetjes = 20;
-    aantalSetjesTekst = str(aantalSetjes);
-  } else if (opStartGedrukt) {
+    break;
+  case "start":
     scherm = SPEL_SCHERM;
-  } else if (opStopGedrukt) {
+    break;
+  case "stop":
     exit();
+    break;
   }
-  knopKlik[geklikteKnopKolom][geklikteKnopRij] = false;
+  geklikteKnop = "leeg";
   updateOptieKnoppen();
 }
 
@@ -142,7 +122,6 @@ void opInstellingenGeklikt() {
         geklikteKnopKolom = i;
         geklikteKnopRij = j;
         knopgeklikt++;
-        println("op een knop geklikt", knopgeklikt, geklikteKnopKolom, geklikteKnopRij);
       }
     }
   }
@@ -195,7 +174,7 @@ void tekenActieKnoppen(int x, int y, String tekst, int arrayPlek) {
 
 void tekenTekst(String tekst, int x, int y, int tekstGrootte) {
   textSize(tekstGrootte);
-  fill(TEKST_KLEUR);
+  fill(WIT);
   text(tekst, x, y);
 }
 
@@ -226,7 +205,7 @@ void berekenKnop(int x, int y, int tekstGrootte) {
 void tekenKnopMetTekst(int x, int y, int breedte, int hoogte, int radius, int kleur, int tekstGrootte, String tekst) {
   berekenKnop(x, y, tekstGrootte);
   tekenKnop(x, y, breedte, hoogte, radius, kleur);
-  fill(TEKST_KLEUR);
+  fill(WIT);
   textSize(tekstGrootte);
   if (tekst == "Nee" || tekst == "nee") {
     text(tekst, xTekstPlek - breedte / 10, yTekstPlek);
