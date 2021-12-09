@@ -15,7 +15,7 @@ String[][] eindschermKnopOpties = {
   {"Stop met", "spelen"}
 };
 void tekenEindScherm() {
-  berekenOptiesTekst(); //WEGHALEN NA SCHRIJVEN CODE, DEZE STAAT IN HET START SCHERM!!!!________________________________________________________
+  berekenTekstGroottes(); //WEGHALEN NA SCHRIJVEN CODE, DEZE STAAT IN HET START SCHERM!!!!________________________________________________________
   aantalSpelers = getSpelers();
   tekenScores();
   tekenKnoppen();

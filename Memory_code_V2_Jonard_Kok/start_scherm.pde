@@ -9,31 +9,38 @@ int aantalSetjes = 12;
 int aantalSpelers = 1;
 int maximumAantalSpelers = 4;
 int minimumAantalSpelers = 1;
-
-//tekst en tekstgroottes
 final int TEKST_KLEUR = #FFFFFF;
 String spelers = str(aantalSpelers);
 String aantalSetjesTekst = str(aantalSetjes);
 String jaOfNee = "nee";
-String[][][] menuTekst;
+String[][] optieKnoppen = {
+  { "-", "+", spelers}, 
+  {"Nee", "Ja", jaOfNee}, 
+  { "12", "16", "20", aantalSetjesTekst}
+};
+String[] menuTekst = {"Aantal spelers: ", "Doodskaarten?", "Aantal setjes:"};
+String[] startEnStopKnop = {"Start spel", "Stop spel"};
+int knop;
 int kleineTekstGrootte;
 int normaleTekstGrootte;
 int groteTekstGrootte;
 int xTekstPlek;
 int yTekstPlek;
+int knopTussenRuimte;
 int menuTextBreedte;
 int knopTextBreedte;
 int knopBreedte;
 int knopHoogte;
-
-//doodskaarten
-boolean doodsKaarten;
-
-//knoppengroottes
-int kleineTekstKnopBreedte;
-int kleineTekstKnopHoogte;
-
-//Op bepaalde knop gedrukt
+int geklikteKnopKolom;
+int geklikteKnopRij;
+int knopKleuren[][]= {
+  {getKleuren("ROOD"), getKleuren("GROEN"), getKleuren("GRIJS"), }, 
+  {getKleuren("ROOD"), getKleuren("GROEN"), getKleuren("GRIJS") }, 
+  {getKleuren("GROEN"), getKleuren("GROEN"), getKleuren("GROEN"), getKleuren("GRIJS") }, 
+};
+int actieKnopKleuren[] = {getKleuren("GROEN"), getKleuren("ROOD")};
+boolean doodsKaarten;  
+boolean groottesBerekend;
 boolean opMinGedrukt;
 boolean opPlusGedrukt;
 boolean opJaGedrukt;
@@ -43,41 +50,64 @@ boolean op16Gedrukt;
 boolean op20Gedrukt;
 boolean opStartGedrukt;
 boolean opStopGedrukt;
-boolean[] knop = {opMinGedrukt, opPlusGedrukt, opJaGedrukt, opNeeGedrukt, op12Gedrukt, op16Gedrukt, op20Gedrukt, opStartGedrukt, opStopGedrukt};
+boolean[][] knopKlik = {
+  {opMinGedrukt, opPlusGedrukt}, 
+  {opJaGedrukt, opNeeGedrukt}, 
+  {op12Gedrukt, op16Gedrukt, op20Gedrukt}, 
+  {opStartGedrukt, opStopGedrukt}
+};
 
 
 void tekenStartScherm() {
-  opties();
+  if (!groottesBerekend) {
+    berekenOpties();
+  }
+  tekenOpties(width/100, height/100);
 }
 
 void veranderStartScherm() {
-  instellingVeranderd();
+  berekenKlikPlek();
+  knopKlik[geklikteKnopKolom][geklikteKnopRij] = true;
+  neemActie();
 }
 
-void instellingVeranderd() {
+void neemActie() {
+  println(geklikteKnopKolom, geklikteKnopRij);
+  for (int i = 0; i < knopKlik.length; i++) {
+    for (int j = 0; j < knopKlik[i].length; j++) {
+      println(knopKlik[i][j]);
+    }
+  }
   if (opPlusGedrukt) {
-    if (kanSpelerPlus()) {
+    println("plus");
+    if (kanSpelerPlus()) {//wilde hier een switch statement van maken maar dat werkt niet met arrays blijkbaar.
       aantalSpelers++;
       spelers = str(aantalSpelers);
     }
   } else if (opMinGedrukt) {
+    println("min");
     if (kanSpelerMin()) {
       aantalSpelers--;
       spelers = str(aantalSpelers);
     }
   } else if (opJaGedrukt) {
+    println("ja");
     jaOfNee = "ja";
     doodsKaarten = true;
   } else if (opNeeGedrukt) {
+    println("nee");
     jaOfNee = "nee";
     doodsKaarten = false;
   } else if (op12Gedrukt) {
+    println("12");
     aantalSetjes = 12;
     aantalSetjesTekst = str(aantalSetjes);
   } else if (op16Gedrukt) {
+    println("16");
     aantalSetjes = 16;
     aantalSetjesTekst = str(aantalSetjes);
   } else if (op20Gedrukt) {
+    println("20");
     aantalSetjes = 20;
     aantalSetjesTekst = str(aantalSetjes);
   } else if (opStartGedrukt) {
@@ -85,175 +115,105 @@ void instellingVeranderd() {
   } else if (opStopGedrukt) {
     exit();
   }
+  knopKlik[geklikteKnopKolom][geklikteKnopRij] = false;
+  updateOptieKnoppen();
 }
 
-void opties() {
-  berekenOpties();
-  tekenOpties(100, 250);
-}
-
-void berekenOpties() {
-  berekenOptiesTekst();
-}
-
-void menuOpties() {
-}
-
-void berekenOptiesTekst() {
-  kleineTekstGrootte = ((width+height) / 2) / 50;
-  normaleTekstGrootte = ((width+height) / 2) / 15;
-  groteTekstGrootte = ((width+height) / 2) / 10;
-  kleineTekstKnopBreedte = kleineTekstGrootte;
-  kleineTekstKnopHoogte = kleineTekstGrootte + kleineTekstGrootte/2;
-}
-
-void tekenOpties(int x, int y) {
-  menuTekst = new String[][][] {
-    { {"Opties"} }, //titel
-    { {"Aantal spelers: "}, {"Doodskaarten?"}, {"Aantal setjes:"}}, //tekst van opties
-    { {"-", spelers, "+"}, {"Nee", "Ja", jaOfNee}, {"12", "16", "20", aantalSetjesTekst}, {"Start spel", "Stop spel"} }//knoppenopties
+void updateOptieKnoppen() {
+  optieKnoppen = new String[][] {
+    { "-", "+", spelers}, 
+    {"Nee", "Ja", jaOfNee}, 
+    { "12", "16", "20", aantalSetjesTekst}
   };
-  for (int i = 0; i < menuTekst.length; i++) {
-    if (i == 0) {//titel
-      for (int j = 0; j < menuTekst[i].length; j++) {
-        for (int k = 0; k < menuTekst[i][j].length; k++) {
-          tekst(menuTekst[i][j][k], x, y - (groteTekstGrootte / 2), groteTekstGrootte);
-        }
-      }
-    } else if (i == 1) {//opties
-      y = y + groteTekstGrootte / 4;
-      for (int j = 0; j < menuTekst[i].length; j++) {
-        for (int k = 0; k < menuTekst[i][j].length; k++) {
-          tekst(menuTekst[i][j][k], x, y + ((normaleTekstGrootte + normaleTekstGrootte / 10)*j) + (normaleTekstGrootte*k), normaleTekstGrootte);
-        }
-      }
-    } else if (i > 1) {//knoppen
-      for (int j = 0; j < menuTekst[i].length; j++) { //HIER KAN EEN METHODE VOOR GEMAAKT WORDEN!
-        for (int k = 0; k < menuTekst[i][j].length; k++) {//moet zo omdat je geen String array in een switch statement kan zetten, helemaal kut.
-          if (menuTekst[i][j][k] == menuTekst[2][0][0]) {//tekent -
-           menuTextBreedte = int(textWidth(menuTekst[1][0][0]));
-           textSize(kleineTekstGrootte);
-           knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
-           x = x + menuTextBreedte;
-           y = y - groteTekstGrootte / 3;
-           knopBreedte = kleineTekstKnopBreedte + knopTextBreedte;
-           tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, getKleuren(ROOD), kleineTekstGrootte, menuTekst[i][j][k]);
-           opMinGedrukt = opStartschermKnopGeklikt(x, y, knopBreedte, kleineTekstKnopHoogte);
-           } else if (menuTekst[i][j][k] == menuTekst[2][0][1]) { //tekent hoeveelheid spelers
-           menuTextBreedte = int(textWidth(menuTekst[1][0][0]));
-           knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
-           x = x + menuTextBreedte / 3;
-           knopBreedte = kleineTekstKnopBreedte + knopTextBreedte;
-           tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, getKleuren(GRIJS), kleineTekstGrootte, menuTekst[i][j][k]);
-           } else if (menuTekst[i][j][k] == menuTekst[2][0][2]) { //tekent +
-           menuTextBreedte = int(textWidth(menuTekst[1][0][0]));
-           knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
-           x = x + menuTextBreedte / 3;
-           knopBreedte = kleineTekstKnopBreedte + knopTextBreedte;
-           tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, getKleuren(GROEN), kleineTekstGrootte, menuTekst[i][j][k]);
-           opPlusGedrukt = opStartschermKnopGeklikt(x, y, knopBreedte, kleineTekstKnopHoogte);
-           } else if (menuTekst[i][j][k] == menuTekst[2][1][0]) {//tekent nee
-           menuTextBreedte = int(textWidth(menuTekst[1][1][0]));
-           knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
-           x = x - menuTextBreedte / 2 - (menuTextBreedte / 8);
-           y = y + groteTekstGrootte - groteTekstGrootte / 4;
-           knopBreedte = kleineTekstKnopBreedte + knopTextBreedte;
-           tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, getKleuren(ROOD), kleineTekstGrootte, menuTekst[i][j][k]);
-           opNeeGedrukt = opStartschermKnopGeklikt(x, y, knopBreedte, kleineTekstKnopHoogte);
-           } else if (menuTekst[i][j][k] == menuTekst[2][1][1]) {//tekent ja
-           menuTextBreedte = int(textWidth(menuTekst[1][1][0]));
-           knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
-           x = x + menuTextBreedte / 2;
-           knopBreedte = knopTextBreedte + kleineTekstKnopBreedte;
-           tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, GROEN, kleineTekstGrootte, menuTekst[i][j][k]);
-           opJaGedrukt = opStartschermKnopGeklikt(x, y, knopBreedte, kleineTekstKnopHoogte);
-           } else if (menuTekst[i][j][k] == menuTekst[2][1][2]) {//tekent optie
-           menuTextBreedte = int(textWidth(menuTekst[1][1][0]));
-           knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
-           x = x + menuTextBreedte / 3;
-           knopBreedte = knopTextBreedte + kleineTekstKnopBreedte;
-           tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, GRIJS, kleineTekstGrootte, menuTekst[i][j][k]);
-           } else if (menuTekst[i][j][k] == menuTekst[2][2][0]) { //tekent 12
-           menuTextBreedte = int(textWidth(menuTekst[1][2][0]));
-           knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
-           x = x - menuTextBreedte - menuTextBreedte / 3;
-           y = y + groteTekstGrootte - groteTekstGrootte / 4;
-           knopBreedte = kleineTekstKnopBreedte + knopTextBreedte;
-           tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, GROEN, kleineTekstGrootte, menuTekst[i][j][k]);
-           op12Gedrukt = opStartschermKnopGeklikt(x, y, knopBreedte, kleineTekstKnopHoogte);
-           } else if (menuTekst[i][j][k] == menuTekst[2][2][1]) {//tekent 16
-           menuTextBreedte = int(textWidth(menuTekst[1][2][0]));
-           knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
-           x = x + knopTextBreedte * 2;
-           tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, GROEN, kleineTekstGrootte, menuTekst[i][j][k]);
-           op16Gedrukt = opStartschermKnopGeklikt(x, y, knopBreedte, kleineTekstKnopHoogte);
-           } else if (menuTekst[i][j][k] == menuTekst[2][2][2]) {//tekent 20
-           menuTextBreedte = int(textWidth(menuTekst[1][1][0]));
-           knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
-           x = x + knopTextBreedte * 2;
-           tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, GROEN, kleineTekstGrootte, menuTekst[i][j][k]);
-           op20Gedrukt = opStartschermKnopGeklikt(x, y, knopBreedte, kleineTekstKnopHoogte);
-           } else if (menuTekst[i][j][k] == menuTekst[2][2][3]) {//tekent aantal setjes
-           menuTextBreedte = int(textWidth(menuTekst[1][1][0]));
-           knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
-           x = x + knopTextBreedte * 2;
-           tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, GRIJS, kleineTekstGrootte, menuTekst[i][j][k]);
-           } else if (menuTekst[i][j][k] == menuTekst[2][3][0]) {//tekent startknop
-           menuTextBreedte = int(textWidth(menuTekst[1][1][0]));
-           knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
-           x = 0;
-           y = y + groteTekstGrootte - groteTekstGrootte / 4;
-           knopBreedte = width / 2;
-           knopHoogte = height - y;
-           tekenKnopMetTekst(x, y, knopBreedte, knopHoogte, 10, 10, 10, 10, GROEN, groteTekstGrootte, menuTekst[i][j][k]);
-           opStartGedrukt = opStartschermKnopGeklikt(x, y, knopBreedte, knopHoogte);
-           } else if (menuTekst[i][j][k] == menuTekst[2][3][1]) {//tekent stopknop
-           menuTextBreedte = int(textWidth(menuTekst[1][1][0]));
-           knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
-           x = width / 2;
-           knopBreedte = width / 2;
-           knopHoogte = height - y;
-           tekenKnopMetTekst(x, y, knopBreedte, knopHoogte, 10, 10, 10, 10, ROOD, groteTekstGrootte, menuTekst[i][j][k]);
-           opStopGedrukt = opStartschermKnopGeklikt(x, y, knopBreedte, knopHoogte);
-           } 
-        }
+}
+
+void berekenKlikPlek() {
+  opInstellingenGeklikt();
+  opStartOfStopGeklikt();
+}
+int knopgeklikt = 0;
+
+void opInstellingenGeklikt() {
+  int yPlek;
+  for (int i = 0; i < optieKnoppen.length; i++) {
+    for (int j = 0; j < optieKnoppen[i].length; j++) {
+      yPlek = normaleTekstGrootte + normaleTekstGrootte * i;
+      if (opStartschermKnopGeklikt(berekenXplek(j), berekenYPlek(yPlek), knopBreedte, knopHoogte, knopKleuren[i][j])) {
+        geklikteKnopKolom = i;
+        geklikteKnopRij = j;
+        knopgeklikt++;
+        println("op een knop geklikt", knopgeklikt, geklikteKnopKolom, geklikteKnopRij);
       }
     }
   }
 }
 
-//void tekenKnoppen(int x, int y, int i, int j, int k) {
-//  textSize(kleineTekstGrootte);
-//  menuTextBreedte = int(textWidth(menuTekst[1][0][0]));
-//  knopTextBreedte = int(textWidth(menuTekst[i][j][k]));
-//  x = x + menuTextBreedte;
-//  y = y - groteTekstGrootte / 3;
-//  knopBreedte = kleineTekstKnopBreedte + knopTextBreedte;
-//  tekenKnopMetTekst(x, y, knopBreedte, kleineTekstKnopHoogte, 10, 10, 10, 10, ROOD, kleineTekstGrootte, menuTekst[i][j][k]);
-//}
+void opStartOfStopGeklikt() {
+  for (int i = 0; i < startEnStopKnop.length; i++) {
+    if (opStartschermKnopGeklikt((width/2)*i, height/2, width/2, height/2, actieKnopKleuren[i])) {
+      geklikteKnopKolom = 3;
+      geklikteKnopRij = i;
+    }
+  }
+}
 
+void berekenOpties() {
+  berekenTekstGroottes();
+  berekenKnopBreedte();
+  groottesBerekend = true;
+}
 
-void tekst(String tekst, int x, int y, int tekstGrootte) {
+void berekenKnopBreedte() {
+  knopBreedte = width / 13;
+  knopHoogte = height / 13;
+  knopTussenRuimte = width/100;
+}
+
+void berekenTekstGroottes() {
+  kleineTekstGrootte = ((width+height) / 2) / 50;
+  normaleTekstGrootte = ((width+height) / 2) / 15;
+  groteTekstGrootte = ((width+height) / 2) / 10;
+}
+
+void tekenOpties(int xPlek, int yPlek) {
+  for (int i = 0; i < menuTekst.length; i++) {//tekent 
+    yPlek = normaleTekstGrootte + normaleTekstGrootte * i;
+    tekenTekst(menuTekst[i], xPlek, yPlek, normaleTekstGrootte);
+    for (int j = 0; j < optieKnoppen[i].length; j++) {
+      tekenKnopMetTekst(berekenXplek(j), berekenYPlek(yPlek), knopBreedte, knopHoogte, 10, knopKleuren[i][j], kleineTekstGrootte, optieKnoppen[i][j]);
+    }
+    tekenActieKnoppen(0, height / 2, startEnStopKnop[knop], i);
+  }
+}
+
+void tekenActieKnoppen(int x, int y, String tekst, int arrayPlek) {
+  if (arrayPlek > 1) {
+    arrayPlek = arrayPlek-2;
+  }
+  tekenKnopMetTekst(x + (width/2)*arrayPlek, y, width/2, height/2, 10, actieKnopKleuren[arrayPlek], groteTekstGrootte, tekst);
+}
+
+void tekenTekst(String tekst, int x, int y, int tekstGrootte) {
   textSize(tekstGrootte);
   fill(TEKST_KLEUR);
   text(tekst, x, y);
 }
 
-int getKleuren(int kleur) {
+int getKleuren(String kleur) {
   switch(kleur) {
-  case ROOD:
+  case "ROOD":
     return ROOD;
-  case  GRIJS:
+  case  "GRIJS":
     return GRIJS;
-  case GROEN:
+  case "GROEN":
     return GROEN;
   }
   return 0;
 }
 
-void tekenKnop(int x, int y, int breedte, int hoogte, int radiusTL, int radiusTR, int radiusBR, int radiusBL, int kleur) {//komt uit bug squash
+void tekenKnop(int x, int y, int breedte, int hoogte, int radius, int kleur) {//komt uit bug squash
   fill(kleur);
-  rect(x, y, breedte, hoogte, radiusTL, radiusTR, radiusBR, radiusBL);
+  rect(x, y, breedte, hoogte, radius);
 }
 
 void berekenKnop(int x, int y, int tekstGrootte) {
@@ -263,9 +223,9 @@ void berekenKnop(int x, int y, int tekstGrootte) {
   yTekstPlek = y + tekstGrootte + tekstGrootte / 3;
 }
 
-void tekenKnopMetTekst(int x, int y, int breedte, int hoogte, int radiusTL, int radiusTR, int radiusBR, int radiusBL, int kleur, int tekstGrootte, String tekst) {
+void tekenKnopMetTekst(int x, int y, int breedte, int hoogte, int radius, int kleur, int tekstGrootte, String tekst) {
   berekenKnop(x, y, tekstGrootte);
-  tekenKnop(x, y, breedte, hoogte, radiusTL, radiusTR, radiusBR, radiusBL, kleur);
+  tekenKnop(x, y, breedte, hoogte, radius, kleur);
   fill(TEKST_KLEUR);
   textSize(tekstGrootte);
   if (tekst == "Nee" || tekst == "nee") {
@@ -287,6 +247,14 @@ boolean startscherm() {//komt uit bug squash
   return scherm == START_SCHERM;
 }
 
-boolean opStartschermKnopGeklikt (int x, int y, int breedte, int hoogte) {
-  return mouseX > x && mouseX < x + breedte && mouseY > y && mouseY < y + hoogte && startscherm();
+boolean opStartschermKnopGeklikt (int x, int y, int breedte, int hoogte, int kleur) {
+  return mouseX > x && mouseX < x + breedte && mouseY > y && mouseY < y + hoogte && startscherm() && kleur != getKleuren("GRIJS");
+}
+
+int berekenXplek(int factor) {
+  return width/2 + knopBreedte * factor + knopTussenRuimte * factor;
+}
+
+int berekenYPlek(int yPlek) {
+  return yPlek-normaleTekstGrootte/2-width/200;
 }
