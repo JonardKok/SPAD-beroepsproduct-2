@@ -1,10 +1,3 @@
-/*
-NODIG:
- Knop die de hoeveelheid spelers instelt.
- Doodskaarten[ja][nee]
- aantal setjes(12 16 20 24 28) 
- knop om het spel te starten
- */
 final int MAXIMUMAANTALSPELERS = 4;
 final int MINIMUMAANTALSPELERS = 1;
 int aantalSetjes = 12;
@@ -45,34 +38,33 @@ String[][] knopKlik = {
   {"start", "stop"}
 };
 
-
-void tekenStartScherm() {
+void tekenStartScherm() { //tekent het hele startscherm.
   if (!groottesBerekend) {
     berekenOpties();
   }
   tekenOpties(width/100, height/100);
 }
 
-void berekenOpties() {
-  berekenKnopBreedte();
+void berekenOpties() { //Bereknt de plekken van de opties.
+  berekenKnopGroottes();
   berekenTekstGroottes();
   groottesBerekend = true;
 }
 
-void berekenKnopBreedte() {
+void berekenKnopGroottes() { //Berekent de groottes van de knop.
   knopBreedte = width / 13;
   knopHoogte = height / 13;
   knopTussenRuimte = width/100;
 }
 
-void berekenTekstGroottes() {
+void berekenTekstGroottes() {//Berekent de groottes van de tekst zodat het er altijd goed uit ziet.
   kleineTekstGrootte = ((width+height) / 2) / 50;
   normaleTekstGrootte = ((width+height) / 2) / 15;
   groteTekstGrootte = ((width+height) / 2) / 10;
 }
 
-void tekenOpties(int xPlek, int yPlek) {
-  for (int i = 0; i < menuTekst.length; i++) {//tekent 
+void tekenOpties(int xPlek, int yPlek) {//tekent de tekst en de knoppen in het menu.
+  for (int i = 0; i < menuTekst.length; i++) {
     yPlek = normaleTekstGrootte + normaleTekstGrootte * i;
     tekenTekst(menuTekst[i], xPlek, yPlek, normaleTekstGrootte);
     for (int j = 0; j < optieKnoppen[i].length; j++) {
@@ -84,24 +76,17 @@ void tekenOpties(int xPlek, int yPlek) {
   }
 }
 
-int berekenXPlek(int xPlek) {
-  return width/2 + knopBreedte * xPlek + knopTussenRuimte * xPlek;
-}
-
-int berekenYPlek(int yPlek) {
-  return yPlek-normaleTekstGrootte/2-width/200;
-}
-
-void tekenTekst(String tekst, int x, int y, int tekstGrootte) {
+void tekenTekst(String tekst, int x, int y, int tekstGrootte) {//tekent de tekst.
   textSize(tekstGrootte);
-  fill(WIT);
+  fill(getKleuren("WIT"));
   text(tekst, x, y);
 }
 
+//Tekent de menuknoppen met tekst.
 void tekenKnopMetTekst(int x, int y, int breedte, int hoogte, int radius, int kleur, int tekstGrootte, String tekst) {
   berekenKnop(x, y, tekstGrootte);
   tekenKnop(x, y, breedte, hoogte, radius, kleur);
-  fill(WIT);
+  fill(getKleuren("WIT"));
   textSize(tekstGrootte);
   if (tekst == "Nee" || tekst == "nee") {
     text(tekst, xTekstPlek - breedte / 10, yTekstPlek);
@@ -110,10 +95,9 @@ void tekenKnopMetTekst(int x, int y, int breedte, int hoogte, int radius, int kl
   }
 }
 
-void berekenKnop(int x, int y, int tekstGrootte) {
-  x = x + knopBreedte / 4;
+void berekenKnop(int x, int y, int tekstGrootte) {//berekent de knopplekken.
   y = y - tekstGrootte / 10;
-  xTekstPlek = x;
+  xTekstPlek = x + knopBreedte / 3;
   yTekstPlek = y + tekstGrootte + tekstGrootte / 3;
 }
 
@@ -148,6 +132,14 @@ void opInstellingenGeklikt() {
       }
     }
   }
+}
+
+int berekenXPlek(int factor) { //berekent de x-coordinaat van de optieknoppen.
+  return width/2 + knopBreedte * factor + knopTussenRuimte * factor;
+}
+
+int berekenYPlek(int yPlek) {
+  return yPlek-normaleTekstGrootte/2-width/200;
 }
 
 void opStartOfStopGeklikt() {
@@ -222,6 +214,8 @@ int getKleuren(String kleur) {
     return GRIJS;
   case "GROEN":
     return GROEN;
+  case "WIT":
+    return WIT;
   }
   return 0;
-}
+}  

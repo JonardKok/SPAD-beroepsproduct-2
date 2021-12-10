@@ -354,17 +354,13 @@ void beurtEinde() {
     spelerScore[spelerMetBeurt]++;
     puntGekregen = true;
     setjeWeg++;
-    println("setjeWeg3", setjeWeg);
     spelerMetBeurt++;
   } else if (doodskaartGeklikt) {//HIER ZIT EEN FOUT SETJEWEG WORDT 3
     spelerScore[spelerMetBeurt]--;
     doodskaartWeg++;
-    println("doodskaartWeg");
-    println("setjeWeg1", setjeWeg);
     if (doodskaartWeg >= 2) {
       doodskaartWeg = 0;
       setjeWeg++;
-      println("setjeWeg2", setjeWeg);
     }
   } else {
     puntGekregen = false;

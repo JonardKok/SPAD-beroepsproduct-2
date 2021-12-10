@@ -1,4 +1,4 @@
-
+//Deze methode zou de kaartkleuren berekenen en als een kleur 3x bestaat in de array zorgt die ervoor dat de kleur opnieuw berekend wordt.
 //void berekenKaartKleuren() {
 //  kaartKleur = new int[plekkenMetKaart.length][plekkenMetKaart[0].length];
 //  for (int i = 0; i < kaartKleur.length; i++) {
