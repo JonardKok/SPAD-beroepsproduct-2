@@ -110,18 +110,18 @@ void tekenActieKnoppen(int x, int y, String tekst, int arrayPlek) {
   tekenKnopMetTekst(x + (width/2)*arrayPlek, y, width/2, height/2, 10, actieKnopKleuren[arrayPlek], groteTekstGrootte, tekst);
 }
 
-void veranderSpelInstellingen() {
+void veranderSpelInstellingen() {//veranderd het spelscherm als er geklikt is.
   berekenKlikPlek();
   geklikteKnop = knopKlik[geklikteKnopKolom][geklikteKnopRij];
   neemActie();
 }
 
-void berekenKlikPlek() {
+void berekenKlikPlek() {//berekent op welke knop er geklikt is.
   opInstellingenGeklikt();
   opStartOfStopGeklikt();
 }
 
-void opInstellingenGeklikt() {
+void opInstellingenGeklikt() {//berekent of er op een knop is geklikt die de instellingen veranderd
   int yPlek;
   for (int i = 0; i < optieKnoppen.length; i++) {
     for (int j = 0; j < optieKnoppen[i].length; j++) {
@@ -138,11 +138,11 @@ int berekenXPlek(int factor) { //berekent de x-coordinaat van de optieknoppen.
   return width/2 + knopBreedte * factor + knopTussenRuimte * factor;
 }
 
-int berekenYPlek(int yPlek) {
+int berekenYPlek(int yPlek) { //berekent de y coordinaat van de optieknoppen
   return yPlek-normaleTekstGrootte/2-width/200;
 }
 
-void opStartOfStopGeklikt() {
+void opStartOfStopGeklikt() {//berekent of er op de start of stopknop is gedrukt.
   for (int i = 0; i < startEnStopKnop.length; i++) {
     if (opStartschermKnopGeklikt((width/2)*i, height/2, width/2, height/2, actieKnopKleuren[i])) {
       geklikteKnopKolom = 3;
@@ -151,15 +151,15 @@ void opStartOfStopGeklikt() {
   }
 }
 
-boolean opStartschermKnopGeklikt (int x, int y, int breedte, int hoogte, int kleur) {
-  return mouseX > x && mouseX < x + breedte && mouseY > y && mouseY < y + hoogte && startscherm() && kleur != getKleuren("GRIJS");
+boolean opStartschermKnopGeklikt (int x, int y, int breedte, int hoogte, int kleur) {//bepaald of er op een knop is gedrukt op het startscherm.
+  return mouseX > x && mouseX < x + breedte && mouseY > y && mouseY < y + hoogte && isSchermStartScherm() && kleur != getKleuren("GRIJS");
 }
 
-boolean startscherm() {//komt uit bug squash
+boolean isSchermStartScherm() {//bepaald of het scherm het startscherm is.
   return scherm == START_SCHERM;
 }
 
-void neemActie() {
+void neemActie() {//bepaald de geklikte knop en neemt actie op het knoptype.
   switch (geklikteKnop) {
   case "min":
     if (aantalSpelers > MINIMUMAANTALSPELERS) {
@@ -198,7 +198,7 @@ void neemActie() {
   updateOptieKnoppen();
 }
 
-void updateOptieKnoppen() {
+void updateOptieKnoppen() {//update de array die de knoptext laat zien in het menu.
   optieKnoppen = new String[][] {
     { "-", "+", spelers}, 
     {"Nee", "Ja", jaOfNee}, 
@@ -206,11 +206,11 @@ void updateOptieKnoppen() {
   };
 }
 
-int getKleuren(String kleur) {
+int getKleuren(String kleur) {//haalt de kleuren op van het spelscherm;
   switch(kleur) {
   case "ROOD":
     return ROOD;
-  case  "GRIJS":
+  case "GRIJS":
     return GRIJS;
   case "GROEN":
     return GROEN;
