@@ -5,7 +5,7 @@ int scherm;
 //int scherm = EIND_SCHERM;
 
 void setup() {
-  fullScreen(FX2D);
+  fullScreen();
   textAlign(TOP, LEFT);
 }
 void draw() {
