@@ -21,6 +21,7 @@ final int TARWE = #F5DEB3;
 final int MIDDENVIOLETROOD= #C71585;
 final int LEIGRIJS = #708090;
 final int DIEPROZE= #FF1493;
+final int NUMMERBUITENARRAY = 30;
 boolean kaartPlekkenZijnBerekend;
 boolean eindebeurt;
 boolean puntGekregen;
@@ -153,7 +154,7 @@ void genereerKleuren() {//genereert de kaartkleuren.
 void vulArrayMetTijdelijkCijfer() {//vult de array met tijdelijke cijfers die niet voor kunnen komen door het spel te spelen.
   for (int kolom = 0; kolom < kaartKleur.length; kolom++) {
     for (int rij = 0; rij < kaartKleur[kolom].length; rij++) {
-      kaartKleur[kolom][rij] = 30;
+      kaartKleur[kolom][rij] = NUMMERBUITENARRAY;
     }
   }
 }
@@ -162,7 +163,7 @@ void berekenKaartKleur(int aantalItems, int kleurNr) { //vult de kaart array met
   for (int kleurfrequentie = 0; kleurfrequentie < aantalItems; ) {
     int rij = round(random(0, kaartKleur[0].length-1));
     int kolom = round(random(0, kaartKleur.length-1));
-    if (kaartKleur[kolom][rij] == 30) {
+    if (kaartKleur[kolom][rij] == NUMMERBUITENARRAY) {
       kaartKleur[kolom][rij] = kleurNr;
       kleurfrequentie += 1;
     }
@@ -361,12 +362,16 @@ void beurtEinde() {//Geeft de speler punten als er punten gegeven kunnen worden 
 }
 
 boolean kanPuntGegevenWorden() {//voorkomt een bug die ervoor zorgt dat je niet 2x op dezelfde kaart kan klikken voor een punt.
-  if ((xGeklikteKaart1 == xGeklikteKaart2) && (yGeklikteKaart1 == yGeklikteKaart2 && doodskaartGeklikt)) {
+  if (komtKaartOvereen()) {
     return false;
   } else if (voorkantKaartKleur1 == voorkantKaartKleur2 && ((xGeklikteKaart1 != xGeklikteKaart2) || (yGeklikteKaart1 != yGeklikteKaart2)) && !doodskaartGeklikt) {
     return true;
   }
   return false;
+}
+
+boolean komtKaartOvereen(){
+  return xGeklikteKaart1 == xGeklikteKaart2 && yGeklikteKaart1 == yGeklikteKaart2 && doodskaartGeklikt;
 }
 
 void resetSpelerBeurt() {//geeft de beurt weer aan de eerste speler als de speler met beurt hoger is dan het aantal spelers.
